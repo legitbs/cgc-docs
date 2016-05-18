@@ -1,0 +1,5 @@
+%h1 files to title
+
+%ul
+  - sitemap.resources.select{|r| r.data[:title].nil? }.each do |r|
+    %li= r.path
