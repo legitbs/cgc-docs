@@ -1,3 +1,6 @@
+---
+title: Scoring a Challenge Binary Set
+---
 # Scoring a Challenge Binary Set
 
 This walk-through will guide the reader through the approximate performance

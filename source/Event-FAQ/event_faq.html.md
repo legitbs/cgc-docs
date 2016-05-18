@@ -1,3 +1,6 @@
+---
+title: Event FAQ
+---
 # FAQ
 
 The Cyber Grand Challenge will communicate with teams via this FAQ during the challenge events. The content will be copied into the master CGC FAQ post-event.

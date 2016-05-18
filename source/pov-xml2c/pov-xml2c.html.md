@@ -1,3 +1,6 @@
+---
+title: pov-xml2c
+---
 % pov-xml2c(1) Cyber Grand Challenge Manuals
 % Chris Eagle <cseagle@nps.edu>
 % February 11, 2015

@@ -1,3 +1,6 @@
+---
+title: Submitting a Challenge Binary
+---
 # Submitting a Challenge Binary
 
 This walk-through is targeted at the performers under contract to create Challenge Binaries (CBs) for the Cyber Grand Challenge. This walk-through will guide CB authors through submitting a completed challenge binary. Here they will also find details of the challenge binary acceptance criteria including how submissions will be assessed and feedback processes for remediation. CGC competitor teams may also be interested in this guidance to CB authors.
@@ -68,7 +71,7 @@ Challenge Binary authors are strongly encouraged to make the use of this special
         - C POVs must follow CB Source Code requirements
 - Challenge Test module comprised of Service polls
     * Must have consistent input and output paired behavior
-    * Must provide coverage for all _major or significant_ aspects of binary functionality.  Code segments that are not exercised by any poll may effectively never be executed and may therefore be considered superfluous. 
+    * Must provide coverage for all _major or significant_ aspects of binary functionality.  Code segments that are not exercised by any poll may effectively never be executed and may therefore be considered superfluous.
     * Should incorporate the CBs algorithm to verify the contents of the special flag page.
     * Each must be capable of generating at least 1,000,000 unique service polls.
     * Polls must be generated automatically; such polls must be named GEN_DDDDD after generation as detailed in 'Naming Convention' below.  Generated polls are not submitted as POVML, instead they are generated as part of the make process.  CB authors must submit all software required to generate polls. If using the supplied generator this means CB authors must supply the generation spec. (see understanding-poll-generators for more information)
@@ -81,7 +84,7 @@ Challenge Binary authors are strongly encouraged to make the use of this special
           is a unique serial integer with leading zeros if necessary, as
           assigned by the author.
 
-- Source code 
+- Source code
     * Building:
         - A CB shall contain no external library dependencies. Dynamic linking is
           not supported in the CGC execution environment.
@@ -94,8 +97,8 @@ Challenge Binary authors are strongly encouraged to make the use of this special
             + -nostartfiles
             + -nodefaultlibs
             + -nostdlib
-    * The only authorized linker for CGC challenge binaries is the CGC 
-      version of ld, i386-linux-cgc-ld, as provided by DARPA. All executable 
+    * The only authorized linker for CGC challenge binaries is the CGC
+      version of ld, i386-linux-cgc-ld, as provided by DARPA. All executable
       files used in the CGC must be valid output from i386-linux-cgc-ld.
     * All challenge binaries must continue to function properly after all
       Cgc32_Shdr (Elf32_Shdr) section headers have been removed from the
@@ -115,8 +118,8 @@ Challenge Binary authors are strongly encouraged to make the use of this special
           libraries. Alternatively authors may make use of any standard library
           routines supplied by DARPA.
         - The use of native assembly within CBs is strictly limited to \_start stubs
-          and system call wrappers (e.g. no 'inline' assembly placed about CB code). 
-          Specifically, assembly language may not be utilized to increase the 
+          and system call wrappers (e.g. no 'inline' assembly placed about CB code).
+          Specifically, assembly language may not be utilized to increase the
           complexity/obscurity of a CB in any way.
         - The use of machine-dependent instructions, 'shellcode' or JIT within
           CBs is discouraged but not prohibited.  (e.g. calling into a data
@@ -133,16 +136,16 @@ Challenge Binary authors are strongly encouraged to make the use of this special
           be avoided. DARPA would encourage authors to use the special flag
           page when the challenge binary logic merely needs an external data
           source without the requirement for strong pseudo randomness.
-        - Authors must facilitate creation of both a vulnerable and patched version 
-          of the CB.  The distinction between the vulnerable and not vulnerable 
-          version is identified by one or more instances of a preprocessor 
+        - Authors must facilitate creation of both a vulnerable and patched version
+          of the CB.  The distinction between the vulnerable and not vulnerable
+          version is identified by one or more instances of a preprocessor
           directive "#ifdef PATCHED_<n>" where the <n> is the PoV number,
           followed by an optional "#else" and "#endif". The purpose of this
           differentiation is to allow the visualization framework to
           automatically distinguish between PoVs.
           Patched CBs must be **not** be vulnerable to associated PoVs.
 <a id='README'></a>
-- README that must include: 
+- README that must include:
     * Must be in _markdown_ format and follow the sample template provided
     * Author + contact info (i.e. "Clint Eastwood" <clint@example.com>)
     * Performer group of the Author (i.e. DARPA)
@@ -158,7 +161,7 @@ Challenge Binary authors are strongly encouraged to make the use of this special
        * Description of the vulnerability
        * CWE classification
            - must include which CWE(s) are covered by the author's best assessment
-           - only documented vulnerabilities that have PoVs, mitigation and 
+           - only documented vulnerabilities that have PoVs, mitigation and
              service poll coverage will be considered
        * Generic class of the vulnerability: buffer overflow, underflow, format
          string, use-after-free, etc.
@@ -181,13 +184,13 @@ Challenge Binary authors are strongly encouraged to make the use of this special
 
 Run 'make clean' before to copying files to the submissions branch.<br>
  svn copy svn+ssh://server/trunk/<mypath>/AAAAA_DDDDD svn+ssh://server/branches/submissions/AAAAA_DDDDD -m "Submitting a new CB..."
-    
+
 - Delivery to DARPA:
     * Each CB delivered to DARPA must contain a complete copy of all source code
        - Including "library" code that is required to build a working executable file for the given CB.
        - Including any generation tool used to automatically create polls
     * When packaged for delivery, a CB must include all source code
-      required to successfully build the binary. 
+      required to successfully build the binary.
         - If a CB links to a static
       library, that static library must be compiled as part of the CB build and
       all source code for that library must be included in the CB delivery.
@@ -226,7 +229,7 @@ Run 'make clean' before to copying files to the submissions branch.<br>
              |- lib [optional]   <directory>
                   |- all .c, .cc, .h files that implement any C library
                   |- functionality
-             |- README.md A markdown file as described above 
+             |- README.md A markdown file as described above
              |- Makefile  A makefile that follows the CGC service guide
 
 ```
@@ -242,7 +245,7 @@ but is not intended to provide a complete list. Please note that this list may b
 - PoV vs RB - confirm that the PoVs are ineffective against the replacement binary
 - service polls vs RB - verify the correctness of the service polls
 - evaluate the CB against existing program analysis tools
-- check for code reuse 
+- check for code reuse
 
 #### Each CS will be independently evaluated.
 Collated statistics will be provided on a dashboard on the submission/svn server, showing anonymized results for CWE coverage as well as how the CB fares against a variety of program analysis utilities. These statistics are intended to keep the CB authors apprised of the overall composition of CGC. These statistics are explicitly covered by the CGC NDA and not for distribution outside of the CGC team.

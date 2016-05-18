@@ -1,3 +1,6 @@
+---
+title: CGC Executable Format
+---
 % CGC Executable Format Manuals
 
 # NAME

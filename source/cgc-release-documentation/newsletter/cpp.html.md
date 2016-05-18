@@ -1,3 +1,6 @@
+---
+title: CGC Newsletter 2
+---
 # CGC News Letter 2
 
 ## Introduction

@@ -1,3 +1,6 @@
+---
+title: CGC Repositories
+---
 # CGC Repositories
 
 Cyber Grand Challenge has released the CGC DECREE Operating System and examples via two mediums: github, and a binary repository.

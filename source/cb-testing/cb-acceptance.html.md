@@ -1,3 +1,6 @@
+---
+title: cb-acceptance
+---
 % CB-ACCEPTANCE(1) Cyber Grand Challenge Manuals
 % Brian Caswell <bmc@lungetech.com>
 % May 5, 2015

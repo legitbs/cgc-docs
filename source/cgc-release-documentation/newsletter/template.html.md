@@ -1,3 +1,6 @@
+---
+title: CGC Newsletter Template
+---
 # CGC News Letter N
 ## Introduction
 ## Background

@@ -1,3 +1,6 @@
+---
+title: Debugging a Challenge Binary
+---
 # Debugging a Challenge Binary
 
 This walk-through will guide you through debugging a challenge binary.  

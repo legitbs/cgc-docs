@@ -1,3 +1,6 @@
+---
+title: cgcef_verify
+---
 % CGCEF_VERIFY(1) Cyber Grand Challenge Manuals
 % April 17, 2014
 

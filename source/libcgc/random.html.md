@@ -1,3 +1,6 @@
+---
+title: random
+---
 % CGC Application Binary Interface
 
 # NAME

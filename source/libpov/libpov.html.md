@@ -1,3 +1,6 @@
+---
+title: libpov
+---
 % CGC Proof of Vulnerability Support Library
 # NAME
 *libpov* - CGC POV API

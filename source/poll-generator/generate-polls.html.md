@@ -1,3 +1,6 @@
+---
+title: generate-polls
+---
 % GENERATE-POLLS(1) Cyber Grand Challenge Manuals
 % Brian Caswell <bmc@lungetech.com>
 % May 1, 2015

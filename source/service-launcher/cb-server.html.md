@@ -1,3 +1,6 @@
+---
+title: cb-server
+---
 % CB-SERVER(1) Cyber Grand Challenge Manuals
 % Brian Caswell <bmc@lungetech.com>
 % April 17, 2014

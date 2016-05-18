@@ -1,3 +1,6 @@
+---
+title: Understanding Poll Generators
+---
 # Dynamically writing polls
 
 Challenge binary interactivity verification within the context of the DARPA Cyber

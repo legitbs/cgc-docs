@@ -1,3 +1,6 @@
+---
+title: Running Intel PIN on DECREE Challenge Binaries
+---
 # Running Intel PIN on DECREE Challenge Binaries
 
 This walk-through will guide you through the process of building and running the ["Simple Instruction Count"](https://software.intel.com/sites/landingpage/pintool/docs/65163/Pin/html/index.html#EXAMPLES) pintool on a DECREE Challenge Binary. 

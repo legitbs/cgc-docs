@@ -1,3 +1,6 @@
+---
+title: Running the Virtual Machine
+---
 # Running the Virtual Machine
 
 This walk-through will guide you through the process of using Vagrant to automatically download, provision and run the development and testing VM.

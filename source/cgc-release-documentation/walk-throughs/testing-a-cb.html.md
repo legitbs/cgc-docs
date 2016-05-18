@@ -1,3 +1,6 @@
+---
+title: Testing a Challenge Binary
+---
 # Testing a Challenge Binary
 
 This walk-through will guide you through testing a challenge binary.  

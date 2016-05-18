@@ -1,3 +1,6 @@
+---
+title: Understanding Proofs of Vulnerability in CFE
+---
 # Proof of Vulnerability (POV) in CFE
 
 The DARPA CGC FAQ (see https://cgc.darpa.mil/documents.aspx) in question 29, details 

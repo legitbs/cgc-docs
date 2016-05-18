@@ -1,3 +1,6 @@
+---
+title: type1_negotiate
+---
 % CGC POV API
 
 # NAME

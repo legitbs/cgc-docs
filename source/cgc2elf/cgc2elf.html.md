@@ -1,3 +1,6 @@
+---
+title: cgc2elf
+---
 % CGCEF_VERIFY(1) Cyber Grand Challenge Manuals
 % September 24, 2014
 

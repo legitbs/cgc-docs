@@ -1,3 +1,6 @@
+---
+title: deallocate
+---
 % CGC Application Binary Interface
 
 # NAME

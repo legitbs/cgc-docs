@@ -1,3 +1,6 @@
+---
+title: Virtual Competition
+---
 # Virtual Competition
 
 This walk-through will guide you in the use of a CGC CFE simulator, known as Virtual Competition

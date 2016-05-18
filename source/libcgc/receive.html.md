@@ -1,3 +1,6 @@
+---
+title: receive
+---
 % CGC Application Binary Interface
 
 # NAME

@@ -1,3 +1,6 @@
+---
+title: Building a Challenge Binary
+---
 # Building a Challenge Binary
 
 This walk-through will guide you through building a challenge binary.  

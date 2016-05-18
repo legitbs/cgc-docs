@@ -1,3 +1,6 @@
+---
+title: ti-server
+---
 % TI-SERVER(1) Cyber Grand Challenge Manuals
 % Chris Eagle <cseagle@nps.edu>
 % April 18, 2015

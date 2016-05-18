@@ -1,3 +1,6 @@
+---
+title: ti-client
+---
 % TI-CLIENT(1) Cyber Grand Challenge Manuals
 % Tim <tim@0x90labs.com>
 % April 18, 2015

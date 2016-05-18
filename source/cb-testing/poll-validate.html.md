@@ -1,3 +1,6 @@
+---
+title: poll-validate
+---
 % POLL-VALIDATE(1) Cyber Grand Challenge Manuals
 % Brian Caswell <bmc@lungetech.com>
 % April 18, 2014

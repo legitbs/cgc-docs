@@ -1,3 +1,6 @@
+---
+title: allocate
+---
 % CGC Application Binary Interface
 
 # NAME

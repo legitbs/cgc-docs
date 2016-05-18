@@ -1,3 +1,6 @@
+---
+title: cb-test
+---
 % CB-TEST(1) Cyber Grand Challenge Manuals
 % Brian Caswell <bmc@lungetech.com>
 % April 18, 2014

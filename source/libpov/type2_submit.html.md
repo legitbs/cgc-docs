@@ -1,3 +1,6 @@
+---
+title: type2_submit
+---
 % CGC POV API
 
 # NAME

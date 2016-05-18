@@ -1,3 +1,6 @@
+---
+title: Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace
+---
 # Writing an instruction tracer for DECREE Challenge Binaries using ptrace
 
 This walk-through illustrates how *ptrace* can be used to obtain a simple instruction trace for DECREE Challenge Binaries. This walk-through is related to the *Running Intel PIN on DECREE Challenge Binaries* walk-through and also makes use of the *wrapper* capability in cb-test.

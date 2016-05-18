@@ -1,3 +1,6 @@
+---
+title: cb-replay-pov
+---
 % CB-REPLAY-POV(1) Cyber Grand Challenge Manuals
 % Brian Caswell <bmc@lungetech.com>
 % May 5, 2015

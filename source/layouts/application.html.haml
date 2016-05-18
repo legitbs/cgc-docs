@@ -15,7 +15,7 @@
           %ul
             - sitemap.resources.select{|r| r.data[:title] }.each do |r|
               %li
-                %a{href: r.path}= r.data[:title]
+                %a{href: r.url}= r.data[:title]
 
       #main_col
         = yield

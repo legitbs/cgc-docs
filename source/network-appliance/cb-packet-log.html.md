@@ -1,3 +1,6 @@
+---
+title: cb-packet-log
+---
 % CB-PROXY(1) Cyber Grand Challenge Manuals
 % Brian Caswell <bmc@lungetech.com>
 % June 1, 2015

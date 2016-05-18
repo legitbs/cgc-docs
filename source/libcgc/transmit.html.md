@@ -1,3 +1,6 @@
+---
+title: transmit
+---
 % CGC Application Binary Interface
 
 # NAME

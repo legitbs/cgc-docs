@@ -1,3 +1,6 @@
+---
+title: Using the Network Appliance
+---
 # Using the Network Appliance
 
 The network security appliance provided within CGC, cb-proxy, is an application layer inspection and modification engine designed to sit between a client and Challenge Binary (CB).
