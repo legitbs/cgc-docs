@@ -1,19 +1,21 @@
 body {
-  background-color: $light-gray;
-  color: $medium-gray;
+  background-color: $light_grey;
+  color: $dark_grey;
 }
 
-.delete-me {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
+h1, h2, h3, h4, h5, h6 {
+    color: $light_grey;
+    background-color: $grape;
+    $inset: 0.2em;
+    margin: (-$inset) (-$inset) ($small-spacing - $inset);
+    padding: $inset;
+}
 
-  .container {
-    text-align: center;
-
-    h1 {
-      font-weight: 200;
-    }
-  }
+a:link, a:visited {
+            color: $grape;
+        }
+a:hover {
+    text-decoration: underline;
+    color: $crimson;
+    text-shadow: none;
 }

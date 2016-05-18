@@ -1,16 +1,19 @@
 #container
   @include outer-container
   #nav_col
-    @include span-columns(2)
+    @include span-columns(3)
     #logo
       background-image: url("/assets/images/2016-logo.png")
       background-position: center center
       background-repeat: no-repeat
       background-size: cover
+      width: 176px
       height: 218px
+      margin: 1em auto
 
   #main_col
-    @include span-columns(10)
+    @include span-columns(9)
+    margin-top: 1em
 
 footer
   @include outer-container

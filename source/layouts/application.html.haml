@@ -18,7 +18,10 @@
                 %a{href: r.url}= r.data[:title]
 
       #main_col
-        = yield
+        #title
+          %h1= current_page.data[:title]
+        #content
+          = yield
     %footer
       %p Published by Legitimate Business Syndicate.
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.1.min.js"
