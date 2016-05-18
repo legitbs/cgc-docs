@@ -2,7 +2,7 @@ DATA.each_line do |line|
   filename = line.chomp
   puts filename
   buf = File.read(filename)
-  puts buf.lines[0..5].join("\n")
+  puts buf.lines[0..5].join("")
 
   puts "enter empty string to not title, or a title"
   cand = gets
