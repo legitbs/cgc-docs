@@ -11,10 +11,14 @@
     #container
       #nav_col
         #logo
+          %a{href: '/'}
+            CGC Docs, published by Legitimate Business Syndicate
         #nav
           %ul
             - prev_section = nil
-            - sitemap.resources.select{|r| r.data[:title] }.each do |r|
+            - titled_resources = sitemap.resources.select{|r| r.data[:title] }
+            - sorted_resources = titled_resources.sort_by{|r| (r.url.split('/')[1..2] || ['', '']) + [r.data[:title]]}
+            - sorted_resources.each do |r|
               - section = r.url.split('/')[1..-2]
               - if section != prev_section && !section.nil?
                 - prev_section = section
