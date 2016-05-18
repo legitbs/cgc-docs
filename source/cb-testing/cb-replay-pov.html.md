@@ -1,13 +1,8 @@
 ---
 title: cb-replay-pov
 ---
-% CB-REPLAY-POV(1) Cyber Grand Challenge Manuals
-% Brian Caswell <bmc@lungetech.com>
-% May 5, 2015
 
-# NAME
-
-cb-replay-pov - CB POV replay utility
+CB POV replay utility
 
 # SYNOPSIS
 
@@ -57,11 +52,11 @@ cb-replay-pov is a utility to send deterministic testing traffic to a CGC challe
 
 # EXAMPLE USES
 
-* cb-replay-pov --host 127.0.0.1 --port 10000 test.pov
+`cb-replay-pov --host 127.0.0.1 --port 10000 test.pov`
 
 This will test the challenge binary listening on port '10000' on the IP address '127.0.0.1' with the POV 'test.pov'
 
-* cb-replay-pov --host 10.10.10.10 --port 31337 test-1.pov test-2.pov test-3.pov
+`cb-replay-pov --host 10.10.10.10 --port 31337 test-1.pov test-2.pov test-3.pov`
 
 This will test the challenge binary listening on port '31337' on the IP address '10.10.10.10' with the Poll/POVs 'test-1.pov', 'test-2.pov', 'test-3.pov'.
 

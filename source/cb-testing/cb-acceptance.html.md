@@ -1,13 +1,8 @@
 ---
 title: cb-acceptance
 ---
-% CB-ACCEPTANCE(1) Cyber Grand Challenge Manuals
-% Brian Caswell <bmc@lungetech.com>
-% May 5, 2015
 
-# NAME
-
-cb-acceptance - Challenge Binary acceptance testing utility
+Challenge Binary acceptance testing utility
 
 # SYNOPSIS
 
@@ -15,11 +10,12 @@ cb-acceptance [options] *CB* [*CB* ...]
 
 # DESCRIPTION
 
-cb-acceptance is a utility to verify CGC challenge binary (CB) acceptability.  
+cb-acceptance is a utility to verify CGC challenge binary (CB) acceptability.
 
 cb-acceptance output is in the TAP format.
 
 # ARGUMENTS
+
 *CB* [*CB* ...]
 
 # OPTIONS
@@ -44,15 +40,15 @@ cb-acceptance output is in the TAP format.
 
 # EXAMPLE USES
 
-* cb-acceptance /usr/share/cgc-sample-challenges/examples/CADET_00001
+`cb-acceptance /usr/share/cgc-sample-challenges/examples/CADET_00001`
 
 This will test the CADET_00001 binary.
 
-* cb-acceptance --cb_type cqe /usr/share/cgc-sample-challenges/examples/CADET_00001
+`cb-acceptance --cb_type cqe /usr/share/cgc-sample-challenges/examples/CADET_00001`
 
 This will test the CADET_00001 binary, verifying it is a CB for CQE.
 
-* cb-acceptance --check_type static /usr/share/cgc-sample-challenges/examples/CADET_00001
+`cb-acceptance --check_type static /usr/share/cgc-sample-challenges/examples/CADET_00001`
 
 This will test the CADET_00001 binary, only verifying the static components that do not require any content generation.
 
@@ -62,7 +58,10 @@ Copyright (C) 2015, Brian Caswell <bmc@lungetech.com>
 
 # SEE ALSO
 
-`cb-test` (1), `poll-validate` (1)
+[`cb-test`][1] (1), [`poll-validate`][2] (1)
+
+[1]: /cb-testing/cb-test/
+[2]: /cb-testing/poll-validate/
 
 For information regarding the TAP Format, see <http://testanything.org/>
 

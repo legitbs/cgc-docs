@@ -1,13 +1,8 @@
 ---
 title: poll-validate
 ---
-% POLL-VALIDATE(1) Cyber Grand Challenge Manuals
-% Brian Caswell <bmc@lungetech.com>
-% April 18, 2014
 
-# NAME
-
-poll-validate - Poll/POV validation utility
+Poll/POV validation utility
 
 # SYNOPSIS
 
@@ -19,7 +14,7 @@ poll-validate is a utility to validate a set of POVs or Polls follow the Replay 
 
 # EXAMPLE USES
 
-* poll-validate test-1.xml test-2.xml
+`poll-validate test-1.xml test-2.xml`
 
 This will validate 'test-1.xml' and 'test-2.xml' against the replay DTD.
 

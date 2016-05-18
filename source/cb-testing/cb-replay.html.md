@@ -1,17 +1,12 @@
 ---
 title: cb-replay
 ---
-% CB-REPLAY(1) Cyber Grand Challenge Manuals
-% Brian Caswell <bmc@lungetech.com>
-% April 18, 2014
 
-# NAME
-
-cb-replay - POV/Poll replay utility
+POV/Poll replay utility
 
 # SYNOPSIS
 
-cb-replay [options] --host *HOST* --port *PORT* *XML* [*XML* ...]
+cb-replay [options] \-\-host *HOST* \-\-port *PORT* *XML* [*XML* ...]
 
 # DESCRIPTION
 
@@ -45,11 +40,11 @@ cb-replay is a utility to send deterministic testing traffic to a CGC challenge 
 
 # EXAMPLE USES
 
-* cb-replay --host 127.0.0.1 --port 10000 test-1.xml
+`cb-replay --host 127.0.0.1 --port 10000 test-1.xml`
 
 This will test the challenge binary listening on port '10000' on the IP address '127.0.0.1' with the Poll/POV 'test-1.xml'.
 
-* cb-replay --host 10.10.10.10 --port 31337 test-1.xml test-2.xml test-3.xml
+`cb-replay --host 10.10.10.10 --port 31337 test-1.xml test-2.xml test-3.xml`
 
 This will test the challenge binary listening on port '31337' on the IP address '10.10.10.10' with the Poll/POVs 'test-1.xml', 'test-2.xml', 'test-3.xml'.
 

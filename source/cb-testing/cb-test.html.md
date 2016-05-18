@@ -1,17 +1,12 @@
 ---
 title: cb-test
 ---
-% CB-TEST(1) Cyber Grand Challenge Manuals
-% Brian Caswell <bmc@lungetech.com>
-% April 18, 2014
 
-# NAME
-
-cb-test - Challenge Binary testing utility
+Challenge Binary testing utility
 
 # SYNOPSIS
 
-cb-test [options] --cb *CB* [*CB* ...] --directory *DIRECTORY* (--xml *XML* [*XML* ...] | --xml_dir *DIR*)
+cb-test [options] \-\-cb *CB* [*CB* ...] \-\-directory *DIRECTORY* (\-\-xml *XML* [*XML* ...] \| \-\-xml_dir *DIR*)
 
 # DESCRIPTION
 
@@ -85,19 +80,19 @@ cb-test output is in the TAP format.
 
 # EXAMPLE USES
 
-* cb-test --port 10000 --cb echo --xml echo-test.xml --directory /bin --pcap /tmp/echo-test.pcap 
+`cb-test --port 10000 --cb echo --xml echo-test.xml --directory /bin --pcap /tmp/echo-test.pcap`
 
 This will test the challenge binary 'echo' in the directory '/bin', using the XML file 'echo-test.xml', on TCP port 10000, recording any resulting network traffic to '/tmp/echo-test.pcap'.
 
-* cb-test --cb my-service --xml test-1.xml test-2.xml --directory /usr/local/bin
+`cb-test --cb my-service --xml test-1.xml test-2.xml --directory /usr/local/bin`
 
 This will test the challenge binary 'my-service' in the directory '/usr/local/bin', using the XML files 'test-1.xml' and 'test-2.xml', on a random TCP port.  No network traffic is recorded.
 
-* cb-test --cb my-service --xml_dir . --directory /usr/local/bin
+`cb-test --cb my-service --xml_dir . --directory /usr/local/bin`
 
 This will test the challenge binary 'my-service' in the directory '/usr/local/bin', using the XML files that match the file globbing '*.xml' in the current working directory, on a random TCP port.  No network traffic is recorded.
 
-* cb-test --cb cb-1 cb-2 cb-3 --xml ipc.xml --directory /tmp --pcap /tmp/ipc.pcap
+`cb-test --cb cb-1 cb-2 cb-3 --xml ipc.xml --directory /tmp --pcap /tmp/ipc.pcap`
 
 This will test the IPC challenge binary made up of the challenge binaries 'cb-1', 'cb-2', and 'cb-3' in the directory '/tmp', using the XML file 'ipc.xml', on a random TCP port, record any resulting network traffic to '/tmp/ipc.pcap'.
 
