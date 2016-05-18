@@ -1,7 +1,6 @@
 ---
-title: CGC Newsletter 2
+title: "News Letter 2: C++"
 ---
-# CGC News Letter 2
 
 ## Introduction
 
@@ -58,18 +57,18 @@ given entries in a hidden linker array bounded by the symbols
 called in order of appearance in the array, like so:
 
     #define __hidden __attribute__((__visibility__("hidden")))
-    
+
     void *__dso_handle; /* required symbol, but not used */
-    
+
     extern "C" {
       extern void (*__init_array_start[])(int, char **, char **) __hidden;
       extern void (*__init_array_end[])(int, char **, char **) __hidden;
     };
-    
+
     void call_inits(void) {
       size_t asize;
       void (*fn)(int, char **, char **);
-  
+
       asize = __init_array_end - __init_array_start;
       for (size_t n = 0; n < asize; n++) {
         fn = __init_array_start[n];
@@ -77,7 +76,7 @@ called in order of appearance in the array, like so:
           fn(0, (char **)NULL, (char **)NULL);
       }
     }
-    
+
     int main() {
       call_inits();
       ...
@@ -100,7 +99,7 @@ implementation of `__cxa_atexit` is show below.
       void *arg;
     } exit_handlers[100];
     static int nhandlers = 0;
-    
+
     int __cxa_atexit(void (*func)(void *), void *arg, void *dso) {
       if (nhandlers == sizeof(exit_handlers)/sizeof(exit_handlers[0]))
         return (-1);
@@ -111,9 +110,9 @@ implementation of `__cxa_atexit` is show below.
     }
 
     int main() {
-    
+
       ...
-    
+
       for (int i = 0; i < nhandlers; i++)
         exit_handlers[i].func(exit_handlers[i].arg);
       return (0);
@@ -156,7 +155,7 @@ conforming to the CLANG C++ ABI version 1, e.g.:
     __cxxabiv1::__class_type_info
     __cxxabiv1::__si_class_type_info
     etc.
-	   
+
 An example implementation can be found in the CLANG C++ Runtime library.
 
 ## Example

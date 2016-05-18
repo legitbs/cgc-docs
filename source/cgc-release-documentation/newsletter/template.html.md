@@ -1,5 +1,5 @@
 ---
-title: CGC Newsletter Template
+title: "News Letter X: Template"
 ---
 # CGC News Letter N
 ## Introduction

@@ -1,14 +1,13 @@
 ---
-title: CGC Newsletter 1
+title: "News Letter 1: IPC"
 ---
-# CGC News Letter 1.0
 
 ## Introduction
 
 ## Background
 
 One of many challenges in building a representative platform for performing
-security research is mimicking real world challenges 
+security research is mimicking real world challenges
 while reducing the barrier to entry.
 
 One area of research that is oft discussed is inter-process communication
@@ -59,7 +58,7 @@ via transmit, receive, and fdwait.
 All of the allocated file descriptors, including the original sockets for
 communicating over the network and the allocated socket pairs, are available to
 all executables within the CB.  The CB author may leverage these descriptors in
-any fashion within the set of executables.  
+any fashion within the set of executables.
 
 The executables that make up an instance of the CB is only able to communicate
 via these descriptors to the other executables within the instance and over the
@@ -118,5 +117,4 @@ together.
 
 The examples provided here show how IPC within DECREE can provide a rich
 environment for modeling complex challenges within the real world, without
-drastically increasing the barrier to entry for program analysis.  
-
+drastically increasing the barrier to entry for program analysis.
