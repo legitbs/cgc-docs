@@ -13,7 +13,12 @@
         #logo
         #nav
           %ul
+            - prev_section = nil
             - sitemap.resources.select{|r| r.data[:title] }.each do |r|
+              - section = r.url.split('/')[1..-2]
+              - if section != prev_section && !section.nil?
+                - prev_section = section
+                %li.hdr= section.join('/')
               %li
                 %a{href: r.url}= r.data[:title]
 
@@ -23,6 +28,12 @@
         #content
           = yield
     %footer
-      %p Published by Legitimate Business Syndicate.
+      %div#impressum Published by Legitimate Business Syndicate.
+      %div
+        :markdown
+          * [Homepage](https://legitbs.net)
+          * [Twitter](https://twitter.com/legitbs_ctf)
+          * [GitHub](https://github.com/legitbs)
+          * [This repo](https://github.com/legitbs/cgc-docs)
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.1.min.js"
     = javascript_include_tag "application"

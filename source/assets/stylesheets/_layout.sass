@@ -17,5 +17,21 @@
 
 footer
   @include outer-container
-  p
-    @include span-columns(12)
+  margin: $small-spacing auto
+  color: $light_grey
+  background-color: $grape
+  padding: $small-spacing
+  a:link, a:visited
+    color: $light_grey
+    border: 1px solid $light_grey
+    border-radius: ($small-spacing / 2)
+    padding: 0 ($small-spacing / 2)
+  a:hover
+    color: white
+  div
+    @include span-columns(6)
+    &#impressum
+      text-align: right
+    ul
+      li
+        display: inline-block
