@@ -1,7 +1,6 @@
 ---
 title: Virtual Competition
 ---
-# Virtual Competition
 
 This walk-through will guide you in the use of a CGC CFE simulator, known as Virtual Competition
 
@@ -11,35 +10,35 @@ interactions between a CRS and the CGC infrastructure.
 
 ## About Virtual Competition
 
-At it's core, Virtual Competition is a set of DECREE virtual machines.  In fact,
+At its core, Virtual Competition is a set of DECREE virtual machines.  In fact,
 it's actually several instances of the same DECREE virtual machine assigned to 
-different roles: ti, cb, ids, pov, and crs.  Briefly reviewing each role is useful
+different roles: `ti`, `cb`, `ids`, `pov`, and `crs`.  Briefly reviewing each role is useful
 in understanding why the role is included as part of Virtual Competition:
 
-* **ti** - this is the Team Interface.  The role represents the interface that will be provided to a CRS by the CFE infrastructure.
-* **cb** - this is the Challenge Binary server.  This is the host where CBs are executed.
-* **pov** - this is the POV server.  This role has the responsibility of 'throwing' POVs (and polls) at the cb server.
-* **crs** - this is a host for simulating a CRS.  While no, simulated CRS capabilities are distributed as part of Virtual Competition, a sample client is provided to exercise the Team Interface.
-* **ids** - this is the IDS host; the network appliance.  Filters fielded by a CRS will be installed on ids.  From a network perspective, ids is in between pov and cb.
+* `ti` - this is the Team Interface.  The role represents the interface that will be provided to a CRS by the CFE infrastructure.
+* `cb` - this is the Challenge Binary server.  This is the host where CBs are executed.
+* `pov` - this is the POV server.  This role has the responsibility of 'throwing' POVs (and polls) at the cb server.
+* `crs` - this is a host for simulating a CRS.  While no, simulated CRS capabilities are distributed as part of Virtual Competition, a sample client is provided to exercise the Team Interface.
+* `ids` - this is the IDS host; the network appliance.  Filters fielded by a CRS will be installed on ids.  From a network perspective, ids is in between pov and cb.
 
 
 ## Obtaining Virtual Competition
 
 Virtual Competition requires obtaining three components: the CGC development 
 virtual machine, Vagrant, and a CGC-specific Vagrant 
-configuration file used to manipulated the various Virtual Competition roles.
+configuration file used to manipulate the various Virtual Competition roles.
 
-For more information about Vagrant, see walk-through Running the Virtual Machine (`running-the-vm.md`).
+For more information about Vagrant, see walk-through [Running the Virtual Machine (`running-the-vm.md`)][vm].
 
 The Virtual Competition Vagrant `Vagrantfile` can be obtained from the CGC repo:
 
     $ wget http://repo.cybergrandchallenge.com/boxes/Vagrantfile
 
-There is no need to manually download a DECREE .box file, Vagrant will do this automatically.
+There is no need to manually download a DECREE `.box` file, Vagrant will do this automatically.
 
 ## Starting Virtual Competition
 
-Most of the virtual machine functionality is automated by Vagrant.  To create virtual machines for each role and start each machine, issue 'vagrant up' while in the same directory as the Vagrantfile:
+Most of the virtual machine functionality is automated by Vagrant.  To create virtual machines for each role and start each machine, issue `vagrant up` while in the same directory as the Vagrantfile:
 
     $ vagrant up
 
@@ -54,7 +53,7 @@ The status of the virtual machines employing the Virtual Competition roles can b
     crs                       running (virtualbox)
     ti                        running (virtualbox)
 
-Note that most Vagrant actions are similar to those discussed in the walk-through Running the Virtual Machine (`running-the-vm.md`).  The difference is that the Vagrantfile for Virtual Competition is designed to run multiple virtual machines.  This may create some ambiguity depending on how the reader has used Vagrant in the past.  For example, when connecting to a host:
+Note that most Vagrant actions are similar to those discussed in the walk-through [Running the Virtual Machine (`running-the-vm.md`)][vm].  The difference is that the Vagrantfile for Virtual Competition is designed to run multiple virtual machines.  This may create some ambiguity depending on how the reader has used Vagrant in the past.  For example, when connecting to a host:
 
     $ vagrant ssh
 
@@ -81,7 +80,7 @@ With this invocation, `ti-rotate` will continue to simulate new CFE rounds every
     ti$ ti-server
 
 
-`ti-server` and `ti-rotate` require several configurable options.  For example, they both default to interactions as CFE team 1.  Of course, in CFE not all competitors will be identified as team 1.  Similarly, in Virtual Competition the authentication credentials are user *vagrant* and password *vagrant*, which `ti-server` will assume by default.  The situation is similar for local directory location for CBs, the directory that `ti-rotate` populates and is in-turn served by `ti-server` (e.g. webroot), and so on.
+`ti-server` and `ti-rotate` require several configurable options.  For example, they both default to interactions as CFE team 1.  Of course, in CFE not all competitors will be identified as team 1.  Similarly, in Virtual Competition the authentication credentials are user `vagrant` and password `vagrant`, which `ti-server` will assume by default.  The situation is similar for local directory location for CBs, the directory that `ti-rotate` populates and is in-turn served by `ti-server` (e.g. webroot), and so on.
 
 ## Exercising the Team Interface(Client side)
 
@@ -167,7 +166,7 @@ The reader may be familiar with testing a CB with commands similar to:
     # polls passed: 1
     # polls failed: 0
 
-Virtual Competition facilitates similar testing across relevant CFE hosts, for example, throwing a POV from the **pov** host to the **cb** host.
+Virtual Competition facilitates similar testing across relevant CFE hosts, for example, throwing a POV from the `pov` host to the `cb` host.
 
     $ cb-test --cb LUNGE_00002 --directory bin --xml pov/POV_00000.xml --enable_remote 
     ...
@@ -180,7 +179,7 @@ Virtual Competition facilitates similar testing across relevant CFE hosts, for e
     # polls passed: 1
     # polls failed: 0
 
-Additionally, the POV can be tested with the IDS role.  That is, a POV may be thrown from the **pov** host traversing the **ids** host to the **cb** host.  The previous example actually traversed the **ids** host as well, however, the **ids** had no rules to enforce on that CB.  In this case, we provide a rules file for the **ids** to enforce:
+Additionally, the POV can be tested with the IDS role.  That is, a POV may be thrown from the `pov` host traversing the `ids` host to the `cb` host.  The previous example actually traversed the `ids` host as well, however, the `ids` had no rules to enforce on that CB.  In this case, we provide a rules file for the `ids` to enforce:
 
     $ cb-test --cb LUNGE_00002 --directory bin --xml pov/POV_00000.xml --enable_remote --ids_rules /usr/share/ids/examples/LUNGE_00002.rules
 
@@ -206,7 +205,7 @@ To capture the network appliance UDP packets as part of `cb-test` utilize the --
 
 A sample Wireshark decoder for the UDP network trace format can be found in `/usr/share/ids/extra/cgc.lua`.
 
-More information about the IDS and the rules language can be found in the Using the Network Appliance walk-through (`using-the-network-appliance.md`), and the man pages for `cb-proxy` and `cb-packet-log`.
+More information about the IDS and the rules language can be found in the [Using the Network Appliance walk-through (`using-the-network-appliance.md`)][ids], and the man pages for [`cb-proxy`][cb-proxy] and [`cb-packet-log`][cb-packet-log].
 
 ## End-to-end example of Virtual Competition
 
@@ -292,10 +291,25 @@ Re-deploy Virtual Competition
 
 ## SEE ALSO
 
-For information regarding using a DECREE Virtual Machine , see the `running-the-vm.md` walk-through
-For information regarding the IDS and IDS rules, see the `using-the-network-appliance.md` walk-through.
+For information regarding using a DECREE Virtual Machine , see the [`running-the-vm.md` walk-through][vm]
+
+For information regarding the IDS and IDS rules, see the [`using-the-network-appliance.md` walk-through][ids].
 
 
-For information regarding using the components of Virtual Competition, see man ti-client(1), ti-server(2), ti-rotate(1), cb-proxy(1)
+For information regarding using the components of Virtual Competition, see man [ti-client(1)][ti-client], [ti-server(2)][ti-server], [ti-rotate(1)][ti-rotate], [cb-proxy(1)][cb-proxy]
+
+[test]: /cgc-release-documentation/walk-throughs/testing-a-cb/
+[debug]: /cgc-release-documentation/walk-throughs/debugging-a-cb/
+[povs]: /cgc-release-documentation/walk-throughs/understanding-cfe-povs/
+[build]: /cgc-release-documentation/walk-throughs/building-a-cb/
+[polls]: /cgc-release-documentation/walk-throughs/understanding-poll-generators/
+[submit]: /cgc-release-documentation/walk-throughs/submitting-a-cb/
+[vm]: /cgc-release-documentation/walk-throughs/running-the-vm/
+[ids]: /cgc-release-documentation/walk-throughs/using-the-network-appliance/
+[cb-proxy]: /network-appliance/cb-proxy/
+[cb-packet-log]: /network-appliance/cb-packet-log/
+[ti-client]: /virtual-competition/ti-client/
+[ti-server]: /virtual-competition/ti-server/
+[ti-rotate]: /virtual-competition/ti-rotate/
 
 For support please contact CyberGrandChallenge@darpa.mil
