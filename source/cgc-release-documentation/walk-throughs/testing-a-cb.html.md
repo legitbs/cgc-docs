@@ -1,13 +1,12 @@
 ---
 title: Testing a Challenge Binary
 ---
-# Testing a Challenge Binary
 
 This walk-through will guide you through testing a challenge binary.  
 
-Challenge binary authors are required to provide automated verification of their challenge binaries, verifying the functionality and vulnerabilities contained within their submissions.  In CFE, it is required that polls be generated using a poll generator capable of generating at least 1,000,000 unique polls (See understanding=poll-generators.md for more information on this specification). PoVs may be expressed using XML conforming to cfe-pov.dtd or in the form of a CGC binary.
+Challenge binary authors are required to provide automated verification of their challenge binaries, verifying the functionality and vulnerabilities contained within their submissions.  In CFE, it is required that polls be generated using a poll generator capable of generating at least 1,000,000 unique polls (See [understanding-poll-generators.md][polls] for more information on this specification). PoVs may be expressed using XML conforming to cfe-pov.dtd or in the form of a CGC binary.
 
-Each of these commands assume a CWD within a DECREE environment with the cgc-sample-challenges package installed.  Before starting, change the current working directory to the following:
+Each of these commands assume a CWD within a DECREE environment with the `cgc-sample-challenges` package installed.  Before starting, change the current working directory to the following:
 
     /usr/share/cgc-sample-challenges/templates/service-template
 
@@ -18,7 +17,7 @@ Use 'cb-test' to run the tests in the same fashion as performed by the build pro
 
     $ sudo cb-test --port 10000 --cb LUNGE_00001 --xml poller/for-release/service-1.xml --directory bin
 
-This command will test the challenge binary 'LUNGE_00001' in the directory 'bin', using the XML file 'poller/for-release/service-1.xml', on TCP port 10000.  The results of the test will be printed to STDOUT in the TAP format.  
+This command will test the challenge binary `LUNGE_00001` in the directory `bin`, using the XML file `poller/for-release/service-1.xml`, on TCP port 10000.  The results of the test will be printed to STDOUT in the TAP format.  
 
 This should result in the following output:
 
@@ -69,7 +68,7 @@ This should result in the following output:
     # terminating cb-server
 
 ## Running the tests by hand
-The 'cb-test' tool runs a number of commands under the hood that may be beneficial to run manually.
+The `cb-test` tool runs a number of commands under the hood that may be beneficial to run manually.
 
 ### Running a TCP Listener
 To run an inetd-style TCP listener for a challenge binary, use the cb-server tool.
@@ -83,7 +82,7 @@ Each connection should result in output similar to the following output:
     connection from: 127.0.0.1:33170
 
 ### Validate the syntax of a POV or Poll
-To validate a POV or Poll follows the XML DTD, use the 'poll-validate' command.
+To validate a POV or Poll follows the XML DTD, use the `poll-validate` command.
 
     $ poll-validate pov/*.xml
 
@@ -92,7 +91,7 @@ This command will validate all files ending in .xml in the pov directory follow 
 This should result in no output, provided the XML files follow the DTD specification.  Any errors should be identified and resolved.
 
 ### Test a POV or POLL against a service
-To test the efficacy of a POV or POLL against a service, use the 'cb-replay' command.
+To test the efficacy of a POV or POLL against a service, use the `cb-replay` command.
 
     From one 'vagrant ssh' window
     $ cd /usr/share/cgc-sample-challenges/templates/service-template
@@ -102,7 +101,7 @@ To test the efficacy of a POV or POLL against a service, use the 'cb-replay' com
     $ cd /usr/share/cgc-sample-challenges/templates/service-template
     $ cb-replay --host 127.0.0.1 --port 10000 poller/for-release/service-1.xml poller/for-release/service-2.xml
 
-This command will test the challenge binary listening on port '10000' on the IP address '127.0.0.1' with the Poll/POVs 'poller/for-release/service-1.xml' and 'poller/for-release/service-2.xml'.
+This command will test the challenge binary listening on port `10000` on the IP address `127.0.0.1` with the Poll/POVs `poller/for-release/service-1.xml` and `poller/for-release/service-2.xml`.
 
 This should result in the following output:
 
@@ -166,5 +165,11 @@ This should result in the following output:
 ## SEE ALSO
 
 For information regarding the TAP Format, see <http://testanything.org/>
+
+[test]: /cgc-release-documentation/walk-throughs/testing-a-cb/
+[debug]: /cgc-release-documentation/walk-throughs/debugging-a-cb/
+[povs]: /cgc-release-documentation/walk-throughs/understanding-cfe-povs/
+[build]: /cgc-release-documentation/walk-throughs/building-a-cb/
+[polls]: /cgc-release-documentation/walk-throughs/understanding-poll-generators/
 
 For support please contact CyberGrandChallenge@darpa.mil

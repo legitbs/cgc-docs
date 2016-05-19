@@ -1,7 +1,6 @@
 ---
 title: Running the Virtual Machine
 ---
-# Running the Virtual Machine
 
 This walk-through will guide you through the process of using Vagrant to automatically download, provision and run the development and testing VM.
 
@@ -13,14 +12,13 @@ This walk-through will guide you through the process of using Vagrant to automat
 
 The reader is welcomed to visit the [Vagrant documentation][2] page for more detailed information. This guide is based on that one.
 
-[1]: http://www.vagrantup.com 	"Vagrant" [2]: http://docs.vagrantup.com	"Vagrant Docs"
+[1]: http://www.vagrantup.com 	"Vagrant" 
+[2]: http://docs.vagrantup.com	"Vagrant Docs"
 
 
 ### cgc-linux-dev
 
-The development VM is known as *cgc-linux-dev* and the corresponding Vagrantfile configuration script is located at:
-
-	http://repo.cybergrandchallenge.com/boxes/Vagrantfile
+The development VM is known as *cgc-linux-dev* and the corresponding Vagrantfile configuration script is located at <http://repo.cybergrandchallenge.com/boxes/Vagrantfile>
 
 ## The Basics
 
@@ -65,9 +63,9 @@ Getting started is extremely simple, just download the Vagrant script and issue 
 	==> default: Running provisioner: shell...
 	    default: Running: inline script
 
-The output shows how vagrant detects that the *cgc-linux-dev* box does not yet exist and so retrieves it from the cgc server. After the download has completed, vagrant then goes about cloning the virtual machine, provisioning it and then starting it. After the machine has been started, it will then wait until *ssh* is up and running in the VM at which time the VM is ready to use.
+The output shows how vagrant detects that the `cgc-linux-dev` box does not yet exist and so retrieves it from the cgc server. After the download has completed, vagrant then goes about cloning the virtual machine, provisioning it and then starting it. After the machine has been started, it will then wait until *ssh* is up and running in the VM at which time the VM is ready to use.
 
-Once the VM is up and running, the *vagrant ssh* can be used to ssh into the VM. Once inside the VM, the user should see that the main configuration files (e.g. .profile) have been copied over from the host.
+Once the VM is up and running, the *vagrant ssh* can be used to ssh into the VM. Once inside the VM, the user should see that the main configuration files (e.g. `.profile`) have been copied over from the host.
 
 	$ vagrant ssh
 	Linux cgc-linux-packer 3.13.2-cgc #1 Fri May 2 18:20:50 UTC 2014 i686
@@ -91,38 +89,41 @@ enabled tools and manual pages.
 
 Several build tools have been ported and others written to work on CGC binaries. These include:
 
-	* binutils
-	* cgcef-verify
-	* libcgcef
-	* readcgcef
+* `binutils`
+* [`cgcef-verify`](/cgcef-verify/cgcef_verify/)
+* `libcgcef`
+* `readcgcef`
 
-More information is provided in the _Debugging a Challenge Binary_ and the _Testing a Challenge Binary_ walk-throughs.
+More information is provided in the [Debugging a Challenge Binary][debug] and the [Testing a Challenge Binary][test] walk-throughs.
+
+[debug]: /cgc-release-documentation/walk-throughs/debugging-a-cb/
+[test]: /cgc-release-documentation/walk-throughs/testing-a-cb/
 
 #### Man pages of interest
 
-	$ man cgcabi
-	$ man cgc_executable_format
+* [`cgcabi`](/libcgc/cgcabi/)
+* [`cgc_executable_format`](/libcgcef/cgc_executable_format/)
 
 #### System Calls
 
-	$ man _terminate
-	$ man transmit
-	$ man receive
-	$ man fdwait
-	$ man allocate
-	$ man deallocate
-	$ man random
+* `_terminate`
+* [`transmit`](/libcgc/transmit/)
+* [`receive`](/libcgc/receive/)
+* [`fdwait`](/libcgc/fdwait/)
+* [`allocate`](/libcgc/allocate/)
+* [`deallocate`](/libcgc/deallocate/)
+* [`random`](/libcgc/random/)
 
 
 ### Sharing Files
 
-Vagrant automatically sets up a shared folder for convenience. In cgc-linux-dev, the */vagrant* in the VM is **linked** directly to the directory where the Vagrantfile is located. This means that changes made to the directory or its files in the host are directly visible in the VM and vice versa. This is extremely useful since vagrant relies on ssh connections to the VM instead of a graphical UI. Thus, with direct sharing, one can simply edit the files from the host (e.g. using a graphical editor). 
+Vagrant automatically sets up a shared folder for convenience. In cgc-linux-dev, the `/vagrant` in the VM is *linked* directly to the directory where the `Vagrantfile` is located. This means that changes made to the directory or its files in the host are directly visible in the VM and vice versa. This is extremely useful since vagrant relies on ssh connections to the VM instead of a graphical UI. Thus, with direct sharing, one can simply edit the files from the host (e.g. using a graphical editor). 
 
-** WARNING: Don't forget that the Vagrantfile directory on the host *is* the /vagrant directory in the VM. **
+**WARNING:** Don't forget that the Vagrantfile directory on the host *is* the `/vagrant` directory in the VM.
 
 ### Pausing/Stopping the VM
 
-One of the first things you can do with a VM is to suspend it with *vagrant suspend*. This will save the current runtime state of the VM into the file system so you can restore it later. To restore the state, simply run *vagrant up* again. 
+One of the first things you can do with a VM is to suspend it with `vagrant suspend`. This will save the current runtime state of the VM into the file system so you can restore it later. To restore the state, simply run `vagrant up` again. 
 
 	$ vagrant suspend
 	==> default: Saving VM state and suspending execution...
@@ -138,16 +139,16 @@ One of the first things you can do with a VM is to suspend it with *vagrant susp
 	    default: Warning: Connection refused. Retrying...
 	==> default: Machine booted and ready!
 
-Use the *vagrant halt* command to shutdown or halt the machine. Once again, *vagrant up* can be used to bring the machine back up and running.
+Use the `vagrant halt` command to shutdown or halt the machine. Once again, `vagrant up` can be used to bring the machine back up and running.
 
 	$ vagrant halt
 	==> default: Attempting graceful shutdown of VM...
 
-** WARNING: All open connections will be closed when you suspend or halt the VM. Thus, make sure all of your progress is saved prior to issuing those commands **
+**WARNING:** All open connections will be closed when you suspend or halt the VM. Thus, make sure all of your progress is saved prior to issuing those commands.
 
 ### Updated VMs
 
-The CGC team will periodically update the cgc-linux-dev virtual machine. Vagrant will automatically fetch an updated VM on the next *vagrant up* after the user removes the old VM.
+The CGC team will periodically update the cgc-linux-dev virtual machine. Vagrant will automatically fetch an updated VM on the next `vagrant up` after the user removes the old VM.
 
 	$ vagrant halt -f
 	==> default: Forcing shutdown of VM...
@@ -163,20 +164,20 @@ The CGC team will periodically update the cgc-linux-dev virtual machine. Vagrant
 	$ vagrant up
 	
 
-The *vagrant destroy -f* command can be used to bypass the prompt should the user wish to script this process.
+The `vagrant destroy -f` command can be used to bypass the prompt should the user wish to script this process.
 
-## Misc.
+## Miscellaneous
 
 ### User config files
 
-In order to provide a consistent user environment, *.profile*, *.bashrc*, *.vimrc*, etc. are copied from the current user's home directory on the host into the vagrant user's home directory within the VM.
+In order to provide a consistent user environment, `.profile`, `.bashrc`, `.vimrc`, etc. are copied from the current user's home directory on the host into the vagrant user's home directory within the VM.
 
 
 ### Running the VM without Vagrant
 
-While Vagrant is the preferred way to run the virtual machines, it is possible for the user to use another virtualizaton suite aside from VirtualBox (which is what Vagrant uses). The provisioned VM images can be found inside the *~/VirtualBox VMs* directory (you can also browse for it using the "Oracle VM VirtualBox Manager".) For example you might see a directory called *provision-images_default_1234567890_12345" which will contain the *.vmdk* disk image as well as the *.vbox* configuration file. The *.vmdk* image can be imported into VMware for example; just keep in mind that the shared folders might not exist.
+While Vagrant is the preferred way to run the virtual machines, it is possible for the user to use another virtualizaton suite aside from VirtualBox (which is what Vagrant uses). The provisioned VM images can be found inside the `~/VirtualBox VMs` directory (you can also browse for it using the "Oracle VM VirtualBox Manager".) For example you might see a directory called `provision-images_default_1234567890_12345` which will contain the `.vmdk` disk image as well as the `.vbox` configuration file. The `.vmdk` image can be imported into VMware for example; just keep in mind that the shared folders might not exist.
 
-The VirtualBox image itself can be downloaded from http://repo.cybergrandchallenge.com/boxes/cgc-linux-dev.box
+The VirtualBox image itself can be downloaded from <http://repo.cybergrandchallenge.com/boxes/cgc-linux-dev.box>
 
 
 # Support

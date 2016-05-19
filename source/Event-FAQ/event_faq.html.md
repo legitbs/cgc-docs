@@ -1,7 +1,6 @@
 ---
 title: Event FAQ
 ---
-# FAQ
 
 The Cyber Grand Challenge will communicate with teams via this FAQ during the challenge events. The content will be copied into the master CGC FAQ post-event.
 
@@ -121,7 +120,7 @@ Q7: What is the decryption key to the CQE challenge bundle?
 
 A7: The key is: Ultimately, what separates a winner from a loser at the grandmaster level is the willingness to do the unthinkable. 5844659ce9891a09
 
-The challenge bundle can be decrypted with the following command as found on [github](https://github.com/CyberGrandChallenge/cgc-release-documentation/tree/master/scripts): 
+The challenge bundle can be decrypted with the following command as found on [github](https://github.com/CyberGrandChallenge/cgc-release-documentation/tree/master/scripts):
 
 ```
 cqe_unpack_event_bundle.py -e cgc_qualifier_event.ar.gz.enc -p "Ultimately, what separates a winner from a loser at the grandmaster level is the willingness to do the unthinkable. 5844659ce9891a09"
@@ -180,7 +179,7 @@ Q2: What is the decryption key to the second scored event challenge bundle?
 
 A2: The key is: The will to succeed is important, but what's more important is the will to prepare.
 
-The challenge bundle can be decrypted with the following command as found on [github](https://github.com/CyberGrandChallenge/cgc-release-documentation/tree/master/scripts): 
+The challenge bundle can be decrypted with the following command as found on [github](https://github.com/CyberGrandChallenge/cgc-release-documentation/tree/master/scripts):
 
 ```
 cqe_unpack_event_bundle.py -e scored_event_2.ar.gz.enc -p "The will to succeed is important, but what's more important is the will to prepare."
@@ -217,11 +216,11 @@ Round Two:
 
 CQE scoring is recomputed per [A59](https://cgc.darpa.mil/documents.aspx) with the following modification: file size and memory usage will be ignored when calculating Performance.
 
-Round Three: 
+Round Three:
 
 CQE scoring is recomputed per [A59](https://cgc.darpa.mil/documents.aspx) with the following modification: Performance will be ignored when calculating Availability.
 
-Round Four: 
+Round Four:
 
 CQE scoring is recomputed per [A59](https://cgc.darpa.mil/documents.aspx) with the following modification: Performance will be ignored when calculating Availability. In addition, Evaluation will be set to 1.
 
@@ -267,7 +266,7 @@ Q4: What is the decryption key to the first scored event challenge bundle?
 
 A4: The key is: who at the best knows in the end the triumph of high achievement and who at the worst fails while daring greatly
 
-The challenge bundle can be decrypted with the following command as found on [github](https://github.com/CyberGrandChallenge/cgc-release-documentation/tree/master/scripts): 
+The challenge bundle can be decrypted with the following command as found on [github](https://github.com/CyberGrandChallenge/cgc-release-documentation/tree/master/scripts):
 ```
 cqe-unpack-event-bundle.py -e scored_event_1.ar.gz.enc -p "who at the best knows in the end the triumph of high achievement and who at the worst fails while daring greatly"
 ```
@@ -285,4 +284,3 @@ A2: a7 20 cd 85 7a a4 6c a3 a3 84 8d 5b 0c 22 17 6c 64 2b 44 ea
 Q1: When will questions and answers appear here.
 
 A1: During the scored event.
-

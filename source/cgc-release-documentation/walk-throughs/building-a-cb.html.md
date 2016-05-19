@@ -13,15 +13,19 @@ of this directory.
 
 The `Makefile` included in the service-template is already configured to work properly within the CGC development virtual machine. The only changes that are required in the `Makefile` are to edit the first three lines to replace the `AUTHOR_ID`, `SERVICE_ID`, and `TCP_PORT` with values specific to your new binary. For example
 
-    AUTHOR_ID  = LUNGE
-    SERVICE_ID = 00001
-    TCP_PORT   = 10000
+~~~ make
+AUTHOR_ID  = LUNGE
+SERVICE_ID = 00001
+TCP_PORT   = 10000
+~~~
 
 might become
 
-    AUTHOR_ID  = DDTEK
-    SERVICE_ID = 00005
-    TCP_PORT   = 31336
+~~~ make
+AUTHOR_ID  = DDTEK
+SERVICE_ID = 00005
+TCP_PORT   = 31336
+~~~
 
 ## Adding source files
 
@@ -46,17 +50,19 @@ authors must test if the `PATCHED_<n>` macros are defined to determine which
 code should be included in a given build. Simple examples of the use of these
 macros are shown here
 
-    #ifdef PATCHED_1
-       fgets(buf, sizeof(buf), stdin);
-    #endif
+~~~ c
+#ifdef PATCHED_1
+   fgets(buf, sizeof(buf), stdin);
+#endif
 
-    #ifndef PATCHED_1
-       gets(buf);
-    #endif
+#ifndef PATCHED_1
+   gets(buf);
+#endif
 
-    #ifdef PATCHED_2
-       //perform some checks that ensure a vulnerability can not be triggered below
-    #endif
+#ifdef PATCHED_2
+   //perform some checks that ensure a vulnerability can not be triggered below
+#endif
+~~~
 
 ## Service Pollers
 
