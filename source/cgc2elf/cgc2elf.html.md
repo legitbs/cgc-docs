@@ -1,16 +1,12 @@
 ---
 title: cgc2elf
 ---
-% CGCEF_VERIFY(1) Cyber Grand Challenge Manuals
-% September 24, 2014
 
-# NAME
-
-cgc2elf file [... <file_N>]
+    cgc2elf file [... <file_N>]
 
 # DESCRIPTION
 
-cgc2elf is a utility to convert DECREE format executables to ELF.
+`cgc2elf` is a utility to convert DECREE format executables to ELF.
 
 ## ARGUMENTS
 
@@ -27,7 +23,9 @@ file
 
 # SEE ALSO
 
-`cgcef` (1)
+[`cgcef`][1]
+
+[1]: /libcgcef/cgc_executable_format/
 
 For more information relating to DARPA's Cyber Grand Challenge, please visit <http://www.darpa.mil/cybergrandchallenge/>
 

@@ -1,17 +1,13 @@
 ---
 title: cgcef_verify
 ---
-% CGCEF_VERIFY(1) Cyber Grand Challenge Manuals
-% April 17, 2014
 
-# NAME
-
-cgcef_verify file
+    cgcef_verify file
 
 # DESCRIPTION
 
-cgcef_verify is a utility to verify that a file is a legal Cyber Grand Challenge Executable Format file; i.e. a Challenge Binary.
-cgcef_verify will highlight incompatible portions of a CGCEF file and warn about sections which may be deprecated in the future or are optional.
+`cgcef_verify` is a utility to verify that a file is a legal Cyber Grand Challenge Executable Format file; i.e. a Challenge Binary.
+`cgcef_verify` will highlight incompatible portions of a CGCEF file and warn about sections which may be deprecated in the future or are optional.
 
 ## ARGUMENTS
 
@@ -28,7 +24,9 @@ file
 
 # SEE ALSO
 
-`cgcef` (1)
+[`cgcef`][1]
+
+[1]: /libcgcef/cgc_executable_format/
 
 For more information relating to DARPA's Cyber Grand Challenge, please visit <http://www.darpa.mil/cybergrandchallenge/>
 
