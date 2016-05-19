@@ -1,5 +1,7 @@
   WebFontConfig = {
-    google: { families: [ 'Open+Sans+Condensed:300,700:latin', 'Open+Sans:400,700,400italic,700italic:latin' ] }
+      google: { families: [ 'Open+Sans+Condensed:300,700:latin',
+                            'Open+Sans:400,700,400italic,700italic:latin',
+                            'Ubuntu+Mono:400,400italic,700,700italic:latin'] }
   };
   (function() {
     var wf = document.createElement('script');

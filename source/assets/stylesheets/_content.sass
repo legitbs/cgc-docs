@@ -7,3 +7,19 @@
     list-style-type: decimal
     margin-bottom: $small-spacing
     padding-left: $base-spacing
+
+  pre
+    $inset: 0.2em
+    margin: 1em (-$inset)
+    padding: 0 $inset
+
+  a[title]
+    vertical-align: super
+
+  code, kbd, pre, samp
+    font-family: "Ubuntu Mono", monospace
+
+  p, li
+    code
+      background-color: lighten($light_grey, 10%)
+      color: darken($crimson, 15%)
