@@ -325,7 +325,7 @@ bases with finite integer exponents.
 [random(2)](/libcgc/random/),
 [receive(2)](/libcgc/receive/),
 [_terminate(2)](/libcgc/terminate/),
-[transmit(2)](/libcgc/transmit/)
+[transmit(2)](/libcgc/transmit/),
 [cgc_executable_format(1)](/libcgcef/cgcef/),
 core(5).
 

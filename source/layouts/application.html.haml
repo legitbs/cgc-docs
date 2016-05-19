@@ -32,7 +32,8 @@
         #content
           ~ yield
     %footer
-      %div#impressum Published by Legitimate Business Syndicate.
+      %div#impressum Published by Legitimate Business Syndicate
+      %div#timestamp Built at #{Time.now.utc.xmlschema}
       %div
         :markdown
           * [Homepage](https://legitbs.net)
