@@ -8,6 +8,8 @@ set :images_dir, "assets/images"
 set :fonts_dir, "assets/fonts"
 set :layout, "layouts/application"
 
+set :markdown, syntax_highlighter: 'rouge'
+
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
