@@ -3,12 +3,21 @@ body {
   color: $dark_grey;
 }
 
+$header_inset: 0.2em;
+
 h1, h2, h3, h4, h5, h6 {
     color: $light_grey;
     background-color: $grape;
-    $inset: 0.2em;
+    $inset: $header_inset;
     margin: (-$inset) (-$inset) ($small-spacing - $inset);
     padding: $inset;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+      background-color: lighten($grape, ($i * 5%));
+      margin-right: ($header_inset * 10 * (-1 + $i) - $header_inset);
+    }
 }
 
 a:link, a:visited {
