@@ -15,3 +15,6 @@ gem "middleman-sprockets", "= 4.0.0.rc.1"
 gem "neat", "~> 1.7"
 gem "sassc", "~> 1.8"
 gem 'rouge'
+
+gem 'middleman-s3_sync'
+gem 'mime-types'
