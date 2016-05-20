@@ -43,3 +43,11 @@
           * [This repo](https://github.com/legitbs/cgc-docs)
     = javascript_include_tag "https://code.jquery.com/jquery-2.1.1.min.js"
     = javascript_include_tag "application"
+    :javascript
+      !function(l,e,g,i,t,b,s){l.GoogleAnalyticsObject=g;l[g]||(l[g]=function(){
+      (l[g].q=l[g].q||[]).push(arguments)});l[g].l=+new Date;b=e.createElement(i);
+      s=e.getElementsByTagName(i)[0];b.src=t;s.parentNode.insertBefore(b,s)}
+      (window,document,'ga','script','//www.google-analytics.com/analytics.js');
+
+      ga('create', 'UA-38870141-4', 'auto');
+      ga('send', 'pageview');
