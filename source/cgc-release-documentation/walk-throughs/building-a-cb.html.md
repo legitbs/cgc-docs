@@ -128,5 +128,3 @@ For information regarding using the cb-server, see [man cb-server][5](1)
 [3]: /cgc-release-documentation/walk-throughs/submitting-a-cb/
 [4]: /cgc-release-documentation/walk-throughs/understanding-poll-generators/
 [5]: /service-launcher/cb-server/
-
-For support please contact CyberGrandChallenge@darpa.mil

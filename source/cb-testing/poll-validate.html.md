@@ -20,7 +20,7 @@ This will validate 'test-1.xml' and 'test-2.xml' against the replay DTD.
 
 # COPYRIGHT
 
-Copyright (C) 2014, Brian Caswell <bmc@lungetech.com>
+Copyright (C) 2014, Brian Caswell
 
 # SEE ALSO
 

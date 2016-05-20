@@ -98,7 +98,7 @@ This will test the IPC challenge binary made up of the challenge binaries 'cb-1'
 
 # COPYRIGHT
 
-Copyright (C) 2014, Brian Caswell <bmc@lungetech.com>
+Copyright (C) 2014, Brian Caswell
 
 # SEE ALSO
 

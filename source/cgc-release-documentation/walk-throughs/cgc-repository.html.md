@@ -25,7 +25,3 @@ For those new to git, github is a good source of help at
 ## Repo
 
 The CGC binaries can be found at [http://repo.cybergrandchallenge.com](http://repo.cybergrandchallenge.com). These include a Vagrant Virtual Machine and the debian package files.
-
-# Support
-
-For support please contact CyberGrandChallenge@darpa.mil

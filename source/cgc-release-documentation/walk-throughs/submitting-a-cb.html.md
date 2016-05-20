@@ -280,4 +280,3 @@ See the service-template CB for an exemplar CB including, source, libraries, ide
 [build]: /cgc-release-documentation/walk-throughs/building-a-cb/
 [polls]: /cgc-release-documentation/walk-throughs/understanding-poll-generators/
 
-For support please contact CyberGrandChallenge@darpa.mil

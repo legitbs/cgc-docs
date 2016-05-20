@@ -16,7 +16,7 @@ verify-rules FILE* [... FILE]
 
 # COPYRIGHT
 
-Copyright (C) 2015, Brian Caswell <bmc@lungetech.com>
+Copyright (C) 2015, Brian Caswell
 
 # SEE ALSO
 

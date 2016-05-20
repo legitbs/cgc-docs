@@ -75,7 +75,7 @@ A sample wireshark decoder, `cgc.lua`, can be used to inspect the pcaps generate
 
 # COPYRIGHT
 
-Copyright (C) 2015, Brian Caswell <bmc@lungetech.com>
+Copyright (C) 2015, Brian Caswell
 
 # SEE ALSO
 

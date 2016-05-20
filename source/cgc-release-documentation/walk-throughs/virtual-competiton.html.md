@@ -312,4 +312,3 @@ For information regarding using the components of Virtual Competition, see man [
 [ti-server]: /virtual-competition/ti-server/
 [ti-rotate]: /virtual-competition/ti-rotate/
 
-For support please contact CyberGrandChallenge@darpa.mil

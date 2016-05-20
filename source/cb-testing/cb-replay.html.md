@@ -50,7 +50,7 @@ This will test the challenge binary listening on port '31337' on the IP address 
 
 # COPYRIGHT
 
-Copyright (C) 2014, Brian Caswell <bmc@lungetech.com>
+Copyright (C) 2014, Brian Caswell
 
 # SEE ALSO
 For the Replay DTD, see '/usr/share/cgc-docs/replay.dtd'.

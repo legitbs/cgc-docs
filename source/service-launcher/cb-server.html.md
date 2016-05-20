@@ -100,7 +100,7 @@ The TCP connection is available to the challenge binaries via the file descripto
 
 # COPYRIGHT
 
-Copyright (C) 2014, Brian Caswell <bmc@lungetech.com>
+Copyright (C) 2014, Brian Caswell
 
 # SEE ALSO
 

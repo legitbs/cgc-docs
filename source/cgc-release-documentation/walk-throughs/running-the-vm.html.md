@@ -179,7 +179,3 @@ While Vagrant is the preferred way to run the virtual machines, it is possible f
 
 The VirtualBox image itself can be downloaded from <http://repo.cybergrandchallenge.com/boxes/cgc-linux-dev.box>
 
-
-# Support
-
-For support please contact CyberGrandChallenge@darpa.mil

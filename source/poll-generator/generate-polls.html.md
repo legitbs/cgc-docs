@@ -85,7 +85,7 @@ In addition to the generated XML, the following additional content is generated:
 
 # COPYRIGHT
 
-Copyright (C) 2015, Brian Caswell <bmc@lungetech.com>
+Copyright (C) 2015, Brian Caswell
 
 # SEE ALSO
 

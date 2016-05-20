@@ -147,4 +147,3 @@ walk-through [[5]][ref5]
 
 [ref5]: https://github.com/CyberGrandChallenge/cgc-release-documentation/blob/master/walk-throughs/building-a-cb.md "Building a Challenge Binary"
 
-For support please contact CyberGrandChallenge@darpa.mil

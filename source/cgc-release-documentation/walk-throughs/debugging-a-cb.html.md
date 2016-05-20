@@ -450,4 +450,3 @@ For information regarding using the cb-server, see [man cb-server(1)][2]
 [1]: /cgc-release-documentation/walk-throughs/building-a-cb/
 [2]: /service-launcher/cb-server/
 
-For support please contact CyberGrandChallenge@darpa.mil

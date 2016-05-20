@@ -54,7 +54,7 @@ This will test the CADET_00001 binary, only verifying the static components that
 
 # COPYRIGHT
 
-Copyright (C) 2015, Brian Caswell <bmc@lungetech.com>
+Copyright (C) 2015, Brian Caswell
 
 # SEE ALSO
 

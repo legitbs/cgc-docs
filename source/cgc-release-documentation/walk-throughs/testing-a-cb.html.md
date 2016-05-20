@@ -172,4 +172,3 @@ For information regarding the TAP Format, see <http://testanything.org/>
 [build]: /cgc-release-documentation/walk-throughs/building-a-cb/
 [polls]: /cgc-release-documentation/walk-throughs/understanding-poll-generators/
 
-For support please contact CyberGrandChallenge@darpa.mil

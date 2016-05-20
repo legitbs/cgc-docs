@@ -62,7 +62,7 @@ This will test the challenge binary listening on port '31337' on the IP address 
 
 # COPYRIGHT
 
-Copyright (C) 2015, Brian Caswell <bmc@lungetech.com>
+Copyright (C) 2015, Brian Caswell
 
 # SEE ALSO
 For information regarding the TAP Format, see <http://testanything.org/>
