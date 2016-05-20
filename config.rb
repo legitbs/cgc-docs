@@ -25,6 +25,7 @@ end
 activate :deploy do |deploy|
   deploy.build_before = true
   deploy.deploy_method = :git
+  deploy.remote = 'github'
 end
 
 activate :s3_sync do |s3_sync|
