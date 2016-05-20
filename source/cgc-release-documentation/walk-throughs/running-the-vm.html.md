@@ -106,7 +106,7 @@ More information is provided in the [Debugging a Challenge Binary][debug] and th
 
 #### System Calls
 
-* `_terminate`
+* [`_terminate`](/libcgc/terminate/)
 * [`transmit`](/libcgc/transmit/)
 * [`receive`](/libcgc/receive/)
 * [`fdwait`](/libcgc/fdwait/)
