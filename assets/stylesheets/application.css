@@ -673,8 +673,6 @@ footer {
 #content pre {
   margin: 1em -0.2em;
   padding: 0 0.2em; }
-#content a[title] {
-  vertical-align: super; }
 #content code, #content kbd, #content pre, #content samp {
   font-family: "Ubuntu Mono", monospace; }
 #content p code, #content li code, #content table code, #content dt code, #content dd code {
