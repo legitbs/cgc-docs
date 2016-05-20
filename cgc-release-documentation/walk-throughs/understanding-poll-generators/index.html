@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Understanding Poll Generators</title>
+    <link href="../../../assets/stylesheets/application.css" rel="stylesheet" />
+  </head>
+  <body class='cgc-release-documentation cgc-release-documentation_walk-throughs cgc-release-documentation_walk-throughs_understanding-poll-generators cgc-release-documentation_walk-throughs_understanding-poll-generators_index'>
+    <div id='container'>
+      <div id='nav_col'>
+        <div id='logo'>
+          <a href='/'>
+            CGC Docs, published by Legitimate Business Syndicate
+          </a>
+        </div>
+        <div id='nav'>
+          <ul>
+            <li>
+              <a href='/'>CGC Docs</a>
+            </li>
+            <li class='hdr'>Event-FAQ</li>
+            <li>
+              <a href='/Event-FAQ/event_faq/'>Event FAQ</a>
+            </li>
+            <li class='hdr'>cb-testing</li>
+            <li>
+              <a href='/cb-testing/cb-acceptance/'>cb-acceptance</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay/'>cb-replay</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay-pov/'>cb-replay-pov</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-test/'>cb-test</a>
+            </li>
+            <li>
+              <a href='/cb-testing/poll-validate/'>poll-validate</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/newsletter</li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ipc/'>News Letter 1: IPC</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/cpp/'>News Letter 2: C++</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ctf/'>News Letter 3: CTF</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/template/'>News Letter X: Template</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/walk-throughs</li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/building-a-cb/'>Building a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/cgc-repository/'>CGC Repositories</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/debugging-a-cb/'>Debugging a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/pin-for-decree/'>Running Intel PIN on DECREE Challenge Binaries</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/running-the-vm/'>Running the Virtual Machine</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/scoring-cbs/'>Scoring a Challenge Binary Set</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/submitting-a-cb/'>Submitting a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/testing-a-cb/'>Testing a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-poll-generators/'>Understanding Poll Generators</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-cfe-povs/'>Understanding Proofs of Vulnerability in CFE</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/using-the-network-appliance/'>Using the Network Appliance</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/virtual-competiton/'>Virtual Competition</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/ptrace-for-decree/'>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</a>
+            </li>
+            <li class='hdr'>cgc2elf</li>
+            <li>
+              <a href='/cgc2elf/cgc2elf/'>cgc2elf</a>
+            </li>
+            <li class='hdr'>cgcef-verify</li>
+            <li>
+              <a href='/cgcef-verify/cgcef_verify/'>cgcef_verify</a>
+            </li>
+            <li class='hdr'>libcgc</li>
+            <li>
+              <a href='/libcgc/allocate/'>allocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/cgcabi/'>CGC ABI</a>
+            </li>
+            <li>
+              <a href='/libcgc/deallocate/'>deallocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/fdwait/'>fdwait</a>
+            </li>
+            <li>
+              <a href='/libcgc/random/'>random</a>
+            </li>
+            <li>
+              <a href='/libcgc/receive/'>receive</a>
+            </li>
+            <li>
+              <a href='/libcgc/terminate/'>_terminate</a>
+            </li>
+            <li>
+              <a href='/libcgc/transmit/'>transmit</a>
+            </li>
+            <li class='hdr'>libcgcef</li>
+            <li>
+              <a href='/libcgcef/cgc_executable_format/'>CGC Executable Format</a>
+            </li>
+            <li class='hdr'>libpov</li>
+            <li>
+              <a href='/libpov/libpov/'>libpov</a>
+            </li>
+            <li>
+              <a href='/libpov/type1_negotiate/'>type1_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_negotiate/'>type2_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_submit/'>type2_submit</a>
+            </li>
+            <li class='hdr'>network-appliance</li>
+            <li>
+              <a href='/network-appliance/cb-packet-log/'>cb-packet-log</a>
+            </li>
+            <li>
+              <a href='/network-appliance/cb-proxy/'>cb-proxy</a>
+            </li>
+            <li>
+              <a href='/network-appliance/verify-rules/'>verify-rules</a>
+            </li>
+            <li class='hdr'>poll-generator</li>
+            <li>
+              <a href='/poll-generator/generate-polls/'>generate-polls</a>
+            </li>
+            <li class='hdr'>pov-xml2c</li>
+            <li>
+              <a href='/pov-xml2c/pov-xml2c/'>pov-xml2c</a>
+            </li>
+            <li class='hdr'>service-launcher</li>
+            <li>
+              <a href='/service-launcher/cb-server/'>cb-server</a>
+            </li>
+            <li class='hdr'>virtual-competition</li>
+            <li>
+              <a href='/virtual-competition/ti-client/'>ti-client</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-rotate/'>ti-rotate</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-server/'>ti-server</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id='main_col'>
+        <div id='title'>
+          <h1>Understanding Poll Generators</h1>
+        </div>
+        <div id='content'>
+          <h1 id="dynamically-writing-polls">Dynamically writing polls</h1>
+          
+          <p>Challenge binary interactivity verification within the context of the DARPA Cyber
+          Grand Challenge is implemented via specialized unit tests known as "service
+          polls".  Service polls are intended to validate the performance and
+          functionality of challenge binaries in order to test the efficacy and impact of
+          reformulation performed by competitors.  Similar in ideals to unit tests,
+          service polls should be written to validate the interactivity and complex state
+          machines implemented by CBs.</p>
+          
+          <p>Due to the requirements for CB authors to deliver a large number of CB
+          validations that are both deterministic and unique, a service poll generator
+          has been provided that will be used to assist in developing these polls.</p>
+          
+          <p>Developing services polls using the generator is performed through the use of a
+          weighted directed graph, and an associated python module that implements the
+          state machine that is used to generate the polls.</p>
+          
+          <h2 id="directed-graph">Directed Graph</h2>
+          
+          <p>The Directed Graph specifies the connection between each individual components
+          within the state machine, allowing a CB author to define the polls as small
+          individual components, and explore the combinatorial permutations of between
+          the different components for CB validation.</p>
+          
+          <p>The directed graph defines individual nodes, which relate to a method in the
+          provided python class, and edges, which define which nodes could be called upon
+          completion of the execution of a given node.</p>
+          
+          <p>These components are defined in YAML, at the top level as a dictionary, <code class="highlighter-rouge">nodes</code>
+          and <code class="highlighter-rouge">edges</code> respectively.</p>
+          
+          <h3 id="nodes">Nodes</h3>
+          
+          <p>The <code class="highlighter-rouge">nodes</code> entry is composed of a list of dictionaries, each defining an
+          individual node.  Each dictionary must contain the key <code class="highlighter-rouge">name</code>, which is a
+          string that defines the name of the given node.  The value of the <code class="highlighter-rouge">name</code> entry
+          corresponds to the name of the method within the provided python module that
+          should be executed upon accessing that node during the graph traversal.</p>
+          
+          <p>Within this dictionary, two additional entries are supported: <code class="highlighter-rouge">chance</code> and
+          <code class="highlighter-rouge">continue</code>.  Both <code class="highlighter-rouge">chance</code> and <code class="highlighter-rouge">continue</code>, if provided,  are specified as
+          floats between 0.0 and 1.0.</p>
+          
+          <ul>
+            <li>
+              <p><code class="highlighter-rouge">continue</code> allows the developer to specify the likelihood that the state machine should continue processing upon execution of the node.</p>
+            </li>
+            <li>
+              <p><code class="highlighter-rouge">chance</code> allows the developer to specify the likelihood that the state machine should execute the node, or continue traversal of the graph without executing the underlying functionality of the node.</p>
+            </li>
+          </ul>
+          
+          <p>Node names must be unique.  If the node name <code class="highlighter-rouge">start</code> is provided, then
+          traversal will always begin at this node, otherwise, the traversal will start
+          at a random node in the graph.</p>
+          
+          <h3 id="edges">Edges</h3>
+          
+          <p>The <code class="highlighter-rouge">edges</code> entry is composed of a list of dictionaries, each defining an edge between two nodes.  Each dictionary can have up to two entries, with the first defining the start and end nodes for a given edge.  The key and value both refer to a node defined in the <code class="highlighter-rouge">nodes</code> entry.  Within this dictionary, two additional entries are supported: <code class="highlighter-rouge">weight</code> and <code class="highlighter-rouge">after</code>.  <code class="highlighter-rouge">weight</code>, if provided, is specified as a float between 0.0 and 1.0.  <code class="highlighter-rouge">after</code>, if provided, is specified as a float between 0.0 and 1.0.</p>
+          
+          <ul>
+            <li><code class="highlighter-rouge">weight</code> allows the developer to specify the likelihood of traversal of a given edge when a node has multiple edges leaving the node within the graph.</li>
+            <li><code class="highlighter-rouge">after</code> allows the developer to specify that a path may only be included in the traversal allows the developer enable code paths be enabled after a specified percentage of polls have been generated.</li>
+          </ul>
+          
+          <h2 id="state-machine">State Machine</h2>
+          
+          <p>The State Machine is a python class, which defines the implementations of
+          methods that perform the interactions with a service for a given state.  The
+          underlying implementation is a subclass of the generator.Actions python class
+          provided as part of the poll-generation package.</p>
+          
+          <p>This class provides a set of methods that perform specific functions that are
+          reliant for CB interactions performed via the XML DTD used by <code class="highlighter-rouge">cb-replay</code>.
+          These methods are:</p>
+          
+          <ul>
+            <li><code class="highlighter-rouge">read</code>: creates a read interaction</li>
+            <li><code class="highlighter-rouge">write</code>: creates a write interaction</li>
+            <li><code class="highlighter-rouge">xml</code>: create an XML for all of the existing interactions</li>
+            <li><code class="highlighter-rouge">chance</code>: simple to use wrapper to get a <code class="highlighter-rouge">True</code> or <code class="highlighter-rouge">False</code> value, specifying the likelihood that <code class="highlighter-rouge">True</code> will be taken via a float between 0.0 and 1.0.</li>
+            <li><code class="highlighter-rouge">reset</code>: resets the internal state of the machine, which is called per iteration of the graph traversal.</li>
+          </ul>
+          
+          <p>To create a state machine for use within the <code class="highlighter-rouge">generate-polls</code>, provide methods
+          for each node in the directed graph described above.  Each method should call
+          <code class="highlighter-rouge">self.read</code> and <code class="highlighter-rouge">self.write</code> as needed, which will implement read and write
+          interactions to the service.</p>
+          
+          <p>There is a dictionary <code class="highlighter-rouge">state</code>, that is provided by the parent class that can be
+          used for storing arbitrary intermediary values during execution of a given
+          iteration but is reset between each iteration.  The <code class="highlighter-rouge">state</code> dictionary is
+          reinitialized by the above <code class="highlighter-rouge">reset</code> method.</p>
+          
+          <p>There is also a per-poll <code class="highlighter-rouge">magic_page</code> string will be used in the challenge binary, allowing for perfect knowledge of the magic page as discussed in <a href="/cgc-release-documentation/walk-throughs/submitting-a-cb/"><code class="highlighter-rouge">submitting-a-cb.md</code></a>.</p>
+          
+          <h1 id="sample-implementation-walk-through">Sample Implementation Walk Through</h1>
+          
+          <p>A sample implementation of a poll generator, ftplite, is provided in the
+          /usr/share/poll-generator/examples/.  This generator provides a state machine
+          interaction to an FTP like protocol.</p>
+          
+          <p>The 9 unique states in the machine, defined as the following:</p>
+          
+          <ul>
+            <li><code class="highlighter-rouge">after_login</code></li>
+            <li><code class="highlighter-rouge">delete</code></li>
+            <li><code class="highlighter-rouge">fetch</code></li>
+            <li><code class="highlighter-rouge">file_list</code></li>
+            <li><code class="highlighter-rouge">login</code></li>
+            <li><code class="highlighter-rouge">logout</code></li>
+            <li><code class="highlighter-rouge">password</code></li>
+            <li><code class="highlighter-rouge">put</code></li>
+            <li><code class="highlighter-rouge">start</code></li>
+          </ul>
+          
+          <p>Each of these states have an entry in the graph as well as a method in the
+          python implementation of the state machine.</p>
+          
+          <p>Looking at the python implementation, there are a few items of note.  The methods
+          <code class="highlighter-rouge">start</code> and <code class="highlighter-rouge">after_login</code> are empty methods.  These methods are used as a common 
+          point for the directed graph to connect into.</p>
+          
+          <p>The <code class="highlighter-rouge">start</code> method is provided such that each iteration of walking the state
+          machine starts at the same location.</p>
+          
+          <p>The <code class="highlighter-rouge">after_login</code> method provides a common location in the graph that can such
+          that each of the methods intended to be run in an arbitrary combinations once
+          logins have occurred do not need to link to all of the rest of the methods.</p>
+          
+          <p>In the <code class="highlighter-rouge">state</code> dictionary, the key <code class="highlighter-rouge">login</code> is used to track if the <code class="highlighter-rouge">login</code>
+          state successfully completed.  This shows the ability to store and access
+          arbitrary information between states within the graph.</p>
+          
+          <h1 id="sample-implementation-walk-through-2">Sample Implementation Walk Through 2</h1>
+          
+          <p>This is a step-by-step walkthrough for the overly simple <code class="highlighter-rouge">CADET_00001</code> Palindrome service. The service is comprised of a banner on the initial connect, a banner requesting the user enter a possible palindrome, the user entering a palindrome, and the service returning back a response. We will build the state machine and the graph for this simple service.</p>
+          
+          <p>Starting in the CADET_00001 directory edit poller/for-release/machine.py:</p>
+          
+          <h2 id="python-module-dependancies">Python module dependancies</h2>
+          
+          <p>Service poll generators are required to import the <em>Actions</em> module. Any others are up to the author. In our example we also use the <em>random</em> and <em>string</em> modules.</p>
+          
+          <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">generator.actions</span> <span class="kn">import</span> <span class="n">Actions</span>&#x000A;<span class="kn">import</span> <span class="nn">random</span>&#x000A;<span class="kn">import</span> <span class="nn">string</span>&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="service-poll-generation-class">Service poll generation class</h2>
+          
+          <p>The service poll generator expects a class derived from the CGC <em>Actions</em> class. This class will define each individual state in a service poller state machine. This class should also contain an empty <em>start</em> member which serves as the entry to the state machine.</p>
+          
+          <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Palindrome</span><span class="p">(</span><span class="n">Actions</span><span class="p">):</span>&#x000A;    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>&#x000A;        <span class="k">pass</span>&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="banner">Banner</h2>
+          
+          <p>The palindrome service always begins with a "Welcome to Palindrome Finder" banner with an extra carriage return before it. Our state machine needs confirm the presence of this banner.</p>
+          
+          <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">banner</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>&#x000A;    <span class="c"># Confirm the initial empty line</span>&#x000A;    <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">delim</span><span class="o">=</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> <span class="n">expect</span><span class="o">=</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>&#x000A;    <span class="c"># Confirm the actual banner</span>&#x000A;    <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">delim</span><span class="o">=</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> <span class="n">expect</span><span class="o">=</span><span class="s">'Welcome to Palindrome Finder</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="state-graph">State graph</h2>
+          
+          <p>We've created our first node in the state machine, now we need to connect it in the graph. The state machine graph is constructed in the state-graph.yaml file. It is composed of two sections.
+          1. Node definitions
+          2. Node connections</p>
+          
+          <p>The format of the file looks like</p>
+          
+          <div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>&#x000A;<span class="s">nodes</span><span class="pi">:</span>&#x000A;    <span class="s">&lt;add nodes here&gt;</span>&#x000A;<span class="s">edges</span><span class="pi">:</span>&#x000A;    <span class="s">&lt;add edges here&gt;</span>&#x000A;</code></pre>
+          </div>
+          
+          <h3 id="initial-node-definitions">Initial node definitions</h3>
+          
+          <p>We created two nodes, <code class="highlighter-rouge">start</code> and <code class="highlighter-rouge">banner</code>, which must be defined in the state tree:</p>
+          
+          <div class="language-yaml highlighter-rouge"><pre class="highlight"><code>    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">start</span>&#x000A;    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">banner</span>&#x000A;</code></pre>
+          </div>
+          
+          <p>We also need to define the edge for the state machine to traverse from the fictional <code class="highlighter-rouge">start</code> node into the banner:</p>
+          
+          <div class="language-yaml highlighter-rouge"><pre class="highlight"><code>    <span class="pi">-</span> <span class="s">start</span><span class="pi">:</span> <span class="s">banner</span>&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="testing">Testing</h2>
+          
+          <p>We have a very rudimentary service poller generator that this point which can be tested. Generate one service poll via:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ generate-polls --count 1 poller/for-release/machine.py poller/for-release/state-graph.yaml poller/for-release&#x000A;</code></pre>
+          </div>
+          
+          <ul>
+            <li>Please note that the above generation example will fail with more complex graphs since a single generation won't hit all of the nodes. The count must be expanded for these more complex graphs</li>
+          </ul>
+          
+          <p>A single service poll was created in <code class="highlighter-rouge">poller/for-release/gen_000000.xml</code>
+          This service poll can be manually inspected or tested against the challenge binary with:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ cb-test --cb CADET_00001 --directory bin --xml poller/for-release/gen_000000.xml&#x000A;</code></pre>
+          </div>
+          
+          <p>The expected output indicates that strings matched:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code># service - poller/for-release/gen_000000.xml&#x000A;ok 1 - match: string&#x000A;ok 2 - match: string&#x000A;# passed: 2&#x000A;# failed: 0&#x000A;# total passed: 2&#x000A;# total failed: 0&#x000A;</code></pre>
+          </div>
+          
+          <p>An alternative testing strategy involves spawning the CB in one window while connecting to it with the <code class="highlighter-rouge">cb-test</code> utilility like so:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>Window 1: sudo cb-server --insecure --once -p 12345 -d . bin/CADET_00001&#x000A;Window 2: cb-replay --failure_ok --host 127.0.0.1 --port 12345 poller/for-release/gen_000000.xml&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="handling-palindrome-requests">Handling palindrome requests</h2>
+          
+          <p>Following the banner, the service asks the user for possible palindromes. We must parse this request and test it with palindromes and non-palindromes.</p>
+          
+          <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">request</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>&#x000A;    <span class="c"># Skip the empty line</span>&#x000A;    <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">delim</span><span class="o">=</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> <span class="n">expect</span><span class="o">=</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>&#x000A;    <span class="c"># Confirm the request</span>&#x000A;    <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">37</span><span class="p">,</span> <span class="n">expect</span><span class="o">=</span><span class="s">'</span><span class="se">\t</span><span class="s">Please enter a possible palindrome: '</span><span class="p">)</span> &#x000A;&#x000A;<span class="k">def</span> <span class="nf">palindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>&#x000A;    <span class="n">halfword</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">random_string</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">))</span>&#x000A;    <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">halfword</span> <span class="o">+</span> <span class="n">halfword</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>&#x000A;    <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">delim</span><span class="o">=</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> <span class="n">expect</span><span class="o">=</span><span class="s">'</span><span class="se">\t\t</span><span class="s">Yes, that</span><span class="se">\'</span><span class="s">s a palindrome!</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>&#x000A;&#x000A;<span class="k">def</span> <span class="nf">not_palindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>&#x000A;    <span class="n">word</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">random_string</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">))</span>&#x000A;    <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_palindrome</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>&#x000A;            <span class="n">word</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">random_string</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">))</span>&#x000A;    <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">word</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>&#x000A;    <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">delim</span><span class="o">=</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span> <span class="n">expect</span><span class="o">=</span><span class="s">'</span><span class="se">\t\t</span><span class="s">Nope, that</span><span class="se">\'</span><span class="s">s not a palindrome</span><span class="se">\n\n</span><span class="s">'</span><span class="p">)</span>&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="helper-functions">Helper functions</h2>
+          
+          <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">is_palindrome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>&#x000A;    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">):</span>&#x000A;            <span class="k">if</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>&#x000A;                    <span class="k">return</span> <span class="bp">False</span>&#x000A;    <span class="k">return</span> <span class="bp">True</span>&#x000A;&#x000A;<span class="k">def</span> <span class="nf">random_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>&#x000A;    <span class="n">chars</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">letters</span> <span class="o">+</span> <span class="n">string</span><span class="o">.</span><span class="n">digits</span>&#x000A;    <span class="k">return</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">chars</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>&#x000A;</code></pre>
+          </div>
+          
+          <h3 id="node-definitions">Node definitions</h3>
+          
+          <p>We created three nodes which must be defined in the state tree: <code class="highlighter-rouge">request</code>, <code class="highlighter-rouge">palindrome</code>, and <code class="highlighter-rouge">not_palindrome</code>.</p>
+          
+          <p>In the state tree:</p>
+          
+          <div class="language-yaml highlighter-rouge"><pre class="highlight"><code>    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">request</span>&#x000A;      <span class="s">continue</span><span class="pi">:</span> <span class="s">.9</span>&#x000A;    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">palindrome</span>&#x000A;    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">not_palindrome</span>&#x000A;</code></pre>
+          </div>
+          
+          <p>Note the <code class="highlighter-rouge">continue</code> entry. There is a 90% chance that the poll generator will continue down the state graph on every service poll and a 10% chance that the service poll will stop.</p>
+          
+          <p>We also need to define the edges for the state machine to traverse these nodes.  First we link the previous <code class="highlighter-rouge">banner</code> node into the <code class="highlighter-rouge">request</code> node and then into the <code class="highlighter-rouge">palindrome</code> and <code class="highlighter-rouge">not_palindrome</code> nodes.</p>
+          
+          <div class="language-yaml highlighter-rouge"><pre class="highlight"><code>    <span class="pi">-</span> <span class="s">banner</span><span class="pi">:</span> <span class="s">request</span>&#x000A;    <span class="pi">-</span> <span class="s">request</span><span class="pi">:</span> <span class="s">palindrome</span>&#x000A;      <span class="s">weight</span><span class="pi">:</span> <span class="s">.2</span>&#x000A;    <span class="pi">-</span> <span class="s">request</span><span class="pi">:</span> <span class="s">not_palindrome</span>&#x000A;      <span class="s">weight</span><span class="pi">:</span> <span class="s">.8</span>&#x000A;</code></pre>
+          </div>
+          
+          <p>Note that each of the request edges contains a weight. 20% of the time the request will lead to a palindrome and 80% of the time it will lead to a non-palindrom.</p>
+          
+          <p>Finally we must link both <em>palindrome</em> and <em>not_palindrome</em> back into the <em>request</em> since this is effectively a circular state graph.</p>
+          
+          <div class="language-yaml highlighter-rouge"><pre class="highlight"><code>    <span class="pi">-</span> <span class="s">palindrome</span><span class="pi">:</span> <span class="s">request</span>&#x000A;    <span class="pi">-</span> <span class="s">not_palindrome</span><span class="pi">:</span> <span class="s">request</span>&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="evaluating-the-generated-polls">Evaluating the generated polls</h2>
+          
+          <p>The poll generated creates an <code class="highlighter-rouge">edges.png</code> and a <code class="highlighter-rouge">nodes.png</code> in the output directory. These should be manually inspected to confirm the desired graph traversals and nodes are reached.</p>
+          
+          <h1 id="repeated-polls">Repeated Polls</h1>
+          
+          <p>A CRS is able to configure a submitted POV to be used more than once per round in case a POV is unreliable.  The repeated use of a POV in a given round would allow for trivial identification of POVs via traffic analysis because polls are intended to never be reused through the course of the competition.  The command line arguments <code class="highlighter-rouge">--repeat</code> and <code class="highlighter-rouge">--duplicate</code> provide the ability for the CB author to purposely reuse polls in a given round to mimic the potential of a POV being repeated used.</p>
+          
+          <p>The command line argument <code class="highlighter-rouge">--duplicate</code> specifies the number of polls that should appear multiple times in a round.
+          The command line argument <code class="highlighter-rouge">--repeat</code> specifies the maximum number of times a poll that is repeated should appear in a round, which is variable between 1 and the specified amount.</p>
+          
+          <p>The ability to repeat polls provides the CB author the ability to include repeated content, which reduces the ability of a CRS to identify POV traffic purely by content repetition.</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id='impressum'>Published by Legitimate Business Syndicate</div>
+      <div id='timestamp'>Built at 2016-05-20T17:40:31Z</div>
+      <div>
+        <ul>
+          <li><a href="https://legitbs.net">Homepage</a></li>
+          <li><a href="https://twitter.com/legitbs_ctf">Twitter</a></li>
+          <li><a href="https://github.com/legitbs">GitHub</a></li>
+          <li><a href="https://github.com/legitbs/cgc-docs">This repo</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../../assets/javascripts/application.js"></script>
+  </body>
+</html>

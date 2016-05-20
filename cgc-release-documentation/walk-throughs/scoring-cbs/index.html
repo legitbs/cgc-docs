@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Scoring a Challenge Binary Set</title>
+    <link href="../../../assets/stylesheets/application.css" rel="stylesheet" />
+  </head>
+  <body class='cgc-release-documentation cgc-release-documentation_walk-throughs cgc-release-documentation_walk-throughs_scoring-cbs cgc-release-documentation_walk-throughs_scoring-cbs_index'>
+    <div id='container'>
+      <div id='nav_col'>
+        <div id='logo'>
+          <a href='/'>
+            CGC Docs, published by Legitimate Business Syndicate
+          </a>
+        </div>
+        <div id='nav'>
+          <ul>
+            <li>
+              <a href='/'>CGC Docs</a>
+            </li>
+            <li class='hdr'>Event-FAQ</li>
+            <li>
+              <a href='/Event-FAQ/event_faq/'>Event FAQ</a>
+            </li>
+            <li class='hdr'>cb-testing</li>
+            <li>
+              <a href='/cb-testing/cb-acceptance/'>cb-acceptance</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay/'>cb-replay</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay-pov/'>cb-replay-pov</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-test/'>cb-test</a>
+            </li>
+            <li>
+              <a href='/cb-testing/poll-validate/'>poll-validate</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/newsletter</li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ipc/'>News Letter 1: IPC</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/cpp/'>News Letter 2: C++</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ctf/'>News Letter 3: CTF</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/template/'>News Letter X: Template</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/walk-throughs</li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/building-a-cb/'>Building a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/cgc-repository/'>CGC Repositories</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/debugging-a-cb/'>Debugging a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/pin-for-decree/'>Running Intel PIN on DECREE Challenge Binaries</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/running-the-vm/'>Running the Virtual Machine</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/scoring-cbs/'>Scoring a Challenge Binary Set</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/submitting-a-cb/'>Submitting a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/testing-a-cb/'>Testing a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-poll-generators/'>Understanding Poll Generators</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-cfe-povs/'>Understanding Proofs of Vulnerability in CFE</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/using-the-network-appliance/'>Using the Network Appliance</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/virtual-competiton/'>Virtual Competition</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/ptrace-for-decree/'>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</a>
+            </li>
+            <li class='hdr'>cgc2elf</li>
+            <li>
+              <a href='/cgc2elf/cgc2elf/'>cgc2elf</a>
+            </li>
+            <li class='hdr'>cgcef-verify</li>
+            <li>
+              <a href='/cgcef-verify/cgcef_verify/'>cgcef_verify</a>
+            </li>
+            <li class='hdr'>libcgc</li>
+            <li>
+              <a href='/libcgc/allocate/'>allocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/cgcabi/'>CGC ABI</a>
+            </li>
+            <li>
+              <a href='/libcgc/deallocate/'>deallocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/fdwait/'>fdwait</a>
+            </li>
+            <li>
+              <a href='/libcgc/random/'>random</a>
+            </li>
+            <li>
+              <a href='/libcgc/receive/'>receive</a>
+            </li>
+            <li>
+              <a href='/libcgc/terminate/'>_terminate</a>
+            </li>
+            <li>
+              <a href='/libcgc/transmit/'>transmit</a>
+            </li>
+            <li class='hdr'>libcgcef</li>
+            <li>
+              <a href='/libcgcef/cgc_executable_format/'>CGC Executable Format</a>
+            </li>
+            <li class='hdr'>libpov</li>
+            <li>
+              <a href='/libpov/libpov/'>libpov</a>
+            </li>
+            <li>
+              <a href='/libpov/type1_negotiate/'>type1_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_negotiate/'>type2_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_submit/'>type2_submit</a>
+            </li>
+            <li class='hdr'>network-appliance</li>
+            <li>
+              <a href='/network-appliance/cb-packet-log/'>cb-packet-log</a>
+            </li>
+            <li>
+              <a href='/network-appliance/cb-proxy/'>cb-proxy</a>
+            </li>
+            <li>
+              <a href='/network-appliance/verify-rules/'>verify-rules</a>
+            </li>
+            <li class='hdr'>poll-generator</li>
+            <li>
+              <a href='/poll-generator/generate-polls/'>generate-polls</a>
+            </li>
+            <li class='hdr'>pov-xml2c</li>
+            <li>
+              <a href='/pov-xml2c/pov-xml2c/'>pov-xml2c</a>
+            </li>
+            <li class='hdr'>service-launcher</li>
+            <li>
+              <a href='/service-launcher/cb-server/'>cb-server</a>
+            </li>
+            <li class='hdr'>virtual-competition</li>
+            <li>
+              <a href='/virtual-competition/ti-client/'>ti-client</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-rotate/'>ti-rotate</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-server/'>ti-server</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id='main_col'>
+        <div id='title'>
+          <h1>Scoring a Challenge Binary Set</h1>
+        </div>
+        <div id='content'>
+          <p>This walk-through will guide the reader through the approximate performance
+          scoring measurements of a challenge binary. This scoring is intended to allow
+          teams to compare and contrast their approaches to replacement CBs during
+          development.
+          <strong>The reader is explicitly cautioned that the DARPA Cyber Grand Challenge
+          metrics used during events are of <em>higher precision</em> than those contained herein.</strong></p>
+          
+          <p>The basic formula for scoring is:
+              score = Availability * Security * Evaluation</p>
+          
+          <p>The security and Evaluation terms are described in the Cyber Grand
+          Challenge FAQ<a href="https://github.com/CyberGrandChallenge/cgc-release-documentation/blob/master/CQE%20Scoring.pdf?raw=true" title="DARPA Cyber Grand Challenge: CQE Scoring Document">[2]</a> and CQE Scoring Document<a href="https://cgc.darpa.mil/documents.aspx" title="Cyber Grand Challenge: Frequently Asked Questions (FAQ), July 24, 2014.">[1]</a>; they
+          will not be reproduced here.  The availability score is a combination
+          of the retained functionality (number of successful polls) and the
+          performance.</p>
+          
+          <h2 id="terminology">Terminology</h2>
+          
+          <p>Cyber Reasoning System (CRS): the automated systems competing in the Cyber
+          Grand Challenge.</p>
+          
+          <p>Challenge Binary (CB): an individual binary which is a part of a Challenge
+          Binary Set.</p>
+          
+          <p>Challenge Binary Set (CB Set): the set of binaries which comprise a single
+          challenge (will not be an empty set)</p>
+          
+          <p>Unpatched Reference CB Set: the original set of binaries comprising a single
+          challenge set that are provided to all CRS.</p>
+          
+          <p>Patched Reference CB Set: a CB set containing patched for the
+          vulnerability(ies) in the Unpatched Reference CB Set.</p>
+          
+          <p>Replacement CB Set: a set of binaries provided by a CRS to the CGC
+          organizers.</p>
+          
+          <p>All metrics are computed as a comparison between a Replacement CB Set
+          and the Reference CB Set.  The CGC team will compare CRS using the
+          Patched Reference CB Set, but competitors can approximate the scoring
+          metrics using the Unpatched Reference CB Set.</p>
+          
+          <h2 id="performance">Performance</h2>
+          
+          <p>There are many methods by which the performance of a CB Set could be
+          measured. For the sake of this walkthrough, only 3 readily available
+          metrics will be considered:</p>
+          
+          <ol>
+            <li><code class="highlighter-rouge">ExecTimeOverhead</code>: user time (task clock)</li>
+            <li><code class="highlighter-rouge">MemUseOverhead</code>: maximum resident set size (maxrss) and number of minor faults (minflt)</li>
+            <li><code class="highlighter-rouge">FileSizeOverhead</code>: file size</li>
+          </ol>
+          
+          <p>Task clock is available through the Linux-specific performance monitoring
+          API (perfmon).  Maxrss, and minflt are available via wait2()'s rusage pointer
+          for an individual CB.  The <code class="highlighter-rouge">cb-server</code> program computes the task clock, maxrss,
+          and minflt for a CB set for each poll by summing the corresponding
+          measurement for each individual CB in the set for the given poll.</p>
+          
+          <p>A CRS may sum statistics from the polls for both a reference and
+          replacement binary set to compute a relative performance measure for
+          each statistic.</p>
+          
+          <p>For example, suppose a Reference CB Set contains 4 CBs and 100 polls are
+          available for testing.  <code class="highlighter-rouge">cb-test</code> <a href="https://github.com/CyberGrandChallenge/cb-testing/blob/master/cb-test.md" title="cb-test(1): Challenge Binary testing utility">[3]</a> can be called for each CB Set
+          and will produce 100 separate task clock values (one for each poll).
+          Let the <code class="highlighter-rouge">REFtaskclock = sum(the 100 task clock values from the reference&#x000A;CB set)</code>.</p>
+          
+          <p>A replacement CB set built by the CRS might be measured the same way
+          using cb-test, which will produce an additional 100 task clock values.
+          Let REPtaskclock = sum(the 100 task clock values from the replacement
+          CB set).</p>
+          
+          <p>The ExecTimeOverhead would be computed as follows:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>ExecTimeOverhead = REPtaskclock / REFtaskclock - 1.&#x000A;</code></pre>
+          </div>
+          
+          <p>The same algorithm could be used to yield a relative memory usage metric:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>MemUseOverhead = 0.5 * (REPmaxrss / REFmaxrss + REPminflt / REFminflt) - 1.&#x000A;</code></pre>
+          </div>
+          
+          <p>Similarly, the file size of a CB Set is the sum of all CBs in the set:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>FileSizeOverhead = size(replacement CB set) / size(reference CB set) - 1.&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="example">EXAMPLE</h2>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>cd /usr/share/cgc-sample-challenges/examples/LUNGE_00002&#x000A;sudo make generate-polls&#x000A;cb-test --debug --cb LUNGE_00002 --xml_dir poller/for-release/ \&#x000A;  --directory bin --log /tmp/LUNGE_00002.for-release.txt&#x000A;</code></pre>
+          </div>
+          
+          <p>When the above completes (after approx 1.5min), the log file (specified with –log) will
+          contain entries from cb-server <a href="https://github.com/CyberGrandChallenge/service-launcher/blob/master/cb-server.md" title="cb-server(1): Challenge Binary launch daemon">[4]</a> of the form:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code># cb-server: total children: 1&#x000A;# cb-server: total maxrss 3336&#x000A;# cb-server: total minflt 834&#x000A;# cb-server: total utime 0.010000&#x000A;# cb-server: total sw-cpu-clock 1820594&#x000A;# cb-server: total sw-task-clock 1820801&#x000A;...&#x000A;# cb-server: total children: 1&#x000A;# cb-server: total maxrss 3344&#x000A;# cb-server: total minflt 901&#x000A;# cb-server: total utime 0.020000&#x000A;# cb-server: total sw-cpu-clock 2543666&#x000A;# cb-server: total sw-task-clock 2592890&#x000A;</code></pre>
+          </div>
+          
+          <p>One set of records will be created for each test case showing:</p>
+          
+          <ul>
+            <li>the number of binaries in the Challenge Set (1)</li>
+            <li>the sum of all binaries in the CB Set's maxrss (3336)</li>
+            <li>the sum of all binaries in the CB Set's minflt (834)</li>
+            <li>the sum of all binaries in the CB Set's task clock values (1820801)</li>
+          </ul>
+          
+          <p>These can be aggregated and results used for low-fidelity performance
+          comparisons.</p>
+          
+          <h2 id="see-also">SEE ALSO</h2>
+          
+          <p>For information regarding the building a CB, see the building-a-cb.md
+          walk-through <a href="https://github.com/CyberGrandChallenge/cgc-release-documentation/blob/master/walk-throughs/building-a-cb.md" title="Building a Challenge Binary">[5]</a></p>
+          
+          <p>[1] <a href="https://cgc.darpa.mil/documents.aspx" title="Cyber Grand Challenge: Frequently Asked Questions (FAQ), July 24, 2014.">Cyber Grant Challenge: Frequently Asked Questions(FAQ)</a></p>
+          
+          <p>[2] <a href="https://github.com/CyberGrandChallenge/cgc-release-documentation/blob/master/CQE%20Scoring.pdf?raw=true" title="DARPA Cyber Grand Challenge: CQE Scoring Document">DARPA Cyber Grand Challenge: CQE Scoring Document</a></p>
+          
+          <p>[3] <a href="https://github.com/CyberGrandChallenge/cb-testing/blob/master/cb-test.md" title="cb-test(1): Challenge Binary testing utility">cb-test(1): Challenge Binary testing utility</a></p>
+          
+          <p>[4] <a href="https://github.com/CyberGrandChallenge/service-launcher/blob/master/cb-server.md" title="cb-server(1): Challenge Binary launch daemon">cb-server(1): Challenge Binary launch daemon</a></p>
+          
+          <p>[5] <a href="https://github.com/CyberGrandChallenge/cgc-release-documentation/blob/master/walk-throughs/building-a-cb.md" title="Building a Challenge Binary">Building a Challenge Binary</a></p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id='impressum'>Published by Legitimate Business Syndicate</div>
+      <div id='timestamp'>Built at 2016-05-20T17:40:31Z</div>
+      <div>
+        <ul>
+          <li><a href="https://legitbs.net">Homepage</a></li>
+          <li><a href="https://twitter.com/legitbs_ctf">Twitter</a></li>
+          <li><a href="https://github.com/legitbs">GitHub</a></li>
+          <li><a href="https://github.com/legitbs/cgc-docs">This repo</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../../assets/javascripts/application.js"></script>
+  </body>
+</html>

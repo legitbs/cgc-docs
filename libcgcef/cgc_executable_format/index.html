@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>CGC Executable Format</title>
+    <link href="../../assets/stylesheets/application.css" rel="stylesheet" />
+  </head>
+  <body class='libcgcef libcgcef_cgc_executable_format libcgcef_cgc_executable_format_index'>
+    <div id='container'>
+      <div id='nav_col'>
+        <div id='logo'>
+          <a href='/'>
+            CGC Docs, published by Legitimate Business Syndicate
+          </a>
+        </div>
+        <div id='nav'>
+          <ul>
+            <li>
+              <a href='/'>CGC Docs</a>
+            </li>
+            <li class='hdr'>Event-FAQ</li>
+            <li>
+              <a href='/Event-FAQ/event_faq/'>Event FAQ</a>
+            </li>
+            <li class='hdr'>cb-testing</li>
+            <li>
+              <a href='/cb-testing/cb-acceptance/'>cb-acceptance</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay/'>cb-replay</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay-pov/'>cb-replay-pov</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-test/'>cb-test</a>
+            </li>
+            <li>
+              <a href='/cb-testing/poll-validate/'>poll-validate</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/newsletter</li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ipc/'>News Letter 1: IPC</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/cpp/'>News Letter 2: C++</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ctf/'>News Letter 3: CTF</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/template/'>News Letter X: Template</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/walk-throughs</li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/building-a-cb/'>Building a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/cgc-repository/'>CGC Repositories</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/debugging-a-cb/'>Debugging a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/pin-for-decree/'>Running Intel PIN on DECREE Challenge Binaries</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/running-the-vm/'>Running the Virtual Machine</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/scoring-cbs/'>Scoring a Challenge Binary Set</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/submitting-a-cb/'>Submitting a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/testing-a-cb/'>Testing a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-poll-generators/'>Understanding Poll Generators</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-cfe-povs/'>Understanding Proofs of Vulnerability in CFE</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/using-the-network-appliance/'>Using the Network Appliance</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/virtual-competiton/'>Virtual Competition</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/ptrace-for-decree/'>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</a>
+            </li>
+            <li class='hdr'>cgc2elf</li>
+            <li>
+              <a href='/cgc2elf/cgc2elf/'>cgc2elf</a>
+            </li>
+            <li class='hdr'>cgcef-verify</li>
+            <li>
+              <a href='/cgcef-verify/cgcef_verify/'>cgcef_verify</a>
+            </li>
+            <li class='hdr'>libcgc</li>
+            <li>
+              <a href='/libcgc/allocate/'>allocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/cgcabi/'>CGC ABI</a>
+            </li>
+            <li>
+              <a href='/libcgc/deallocate/'>deallocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/fdwait/'>fdwait</a>
+            </li>
+            <li>
+              <a href='/libcgc/random/'>random</a>
+            </li>
+            <li>
+              <a href='/libcgc/receive/'>receive</a>
+            </li>
+            <li>
+              <a href='/libcgc/terminate/'>_terminate</a>
+            </li>
+            <li>
+              <a href='/libcgc/transmit/'>transmit</a>
+            </li>
+            <li class='hdr'>libcgcef</li>
+            <li>
+              <a href='/libcgcef/cgc_executable_format/'>CGC Executable Format</a>
+            </li>
+            <li class='hdr'>libpov</li>
+            <li>
+              <a href='/libpov/libpov/'>libpov</a>
+            </li>
+            <li>
+              <a href='/libpov/type1_negotiate/'>type1_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_negotiate/'>type2_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_submit/'>type2_submit</a>
+            </li>
+            <li class='hdr'>network-appliance</li>
+            <li>
+              <a href='/network-appliance/cb-packet-log/'>cb-packet-log</a>
+            </li>
+            <li>
+              <a href='/network-appliance/cb-proxy/'>cb-proxy</a>
+            </li>
+            <li>
+              <a href='/network-appliance/verify-rules/'>verify-rules</a>
+            </li>
+            <li class='hdr'>poll-generator</li>
+            <li>
+              <a href='/poll-generator/generate-polls/'>generate-polls</a>
+            </li>
+            <li class='hdr'>pov-xml2c</li>
+            <li>
+              <a href='/pov-xml2c/pov-xml2c/'>pov-xml2c</a>
+            </li>
+            <li class='hdr'>service-launcher</li>
+            <li>
+              <a href='/service-launcher/cb-server/'>cb-server</a>
+            </li>
+            <li class='hdr'>virtual-competition</li>
+            <li>
+              <a href='/virtual-competition/ti-client/'>ti-client</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-rotate/'>ti-rotate</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-server/'>ti-server</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id='main_col'>
+        <div id='title'>
+          <h1>CGC Executable Format</h1>
+        </div>
+        <div id='content'>
+          <p>CGCEF - CGC Executable Format</p>
+          
+          <h1 id="synopsis">SYNOPSIS</h1>
+          
+          <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;libcgcef.h&gt;&#x000A;</span></code></pre>
+          </div>
+          
+          <h1 id="description">DESCRIPTION</h1>
+          
+          <p>This document describes the on-disk format of CGC Challenge Binaries; also known as the executable format and the linker format.
+          The CGC Executable Format (CGCEF) has been designed with two goals in mind:</p>
+          
+          <ul>
+            <li>guaranteeing that vulnerable CGC binaries will not run outside of captivity</li>
+            <li>simplifying the cost of retargeting existing tools to the CGC platform by mimicking the ELF format</li>
+          </ul>
+          
+          <h1 id="file-components">FILE COMPONENTS</h1>
+          
+          <p>There are three parts to a CGCEF file:</p>
+          
+          <ul>
+            <li>the CGCEF File Header</li>
+            <li>optional section headers</li>
+            <li>program headers</li>
+          </ul>
+          
+          <h1 id="cgcef-file-header">CGCEF FILE HEADER</h1>
+          <p>The CGCEF file header is located at the beginning of the CGCEF file and describes the content of the file.</p>
+          
+          <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/* The CGC Executable File Header */</span>&#x000A;<span class="cp">#define CI_NIDENT   16&#x000A;</span><span class="k">typedef</span> <span class="k">struct</span><span class="p">{</span>&#x000A;    <span class="kt">unsigned</span> <span class="kt">char</span>	<span class="n">e_ident</span><span class="p">[</span><span class="n">EI_NIDENT</span><span class="p">];</span>&#x000A;<span class="cp">#define C_IDENT	"\x7fCGC\x01\x01\x01\x43\x01\x00\x00\x00\x00\x00\x00"&#x000A;</span>    <span class="cm">/* ELF vs CGC identification &#x000A;     * ELF          CGC&#x000A;     *  0x7f        0x7f&#x000A;     *  'E'         'C'&#x000A;     *  'L'         'G'&#x000A;     *  'F'         'C'&#x000A;     *  class       1       : '1' translates to 32bit ELF&#x000A;     *  data        1       : '1' translates to little endian ELF&#x000A;     *  version     1       : '1' translates to little endian ELF&#x000A;     *  osabi       \x43    : '1' CGC&#x000A;     *  abiversion  1       : '1' translates to version 1&#x000A;     *  padding     random values&#x000A;     */</span>&#x000A;    <span class="kt">uint16_t</span>	<span class="n">e_type</span><span class="p">;</span>         <span class="cm">/* Must be 2 for executable */</span>&#x000A;    <span class="kt">uint16_t</span>	<span class="n">e_machine</span><span class="p">;</span>      <span class="cm">/* Must be 3 for i386 */</span>&#x000A;    <span class="kt">uint32_t</span>	<span class="n">e_version</span><span class="p">;</span>      <span class="cm">/* Must be 1 */</span>&#x000A;    <span class="kt">uint32_t</span>	<span class="n">e_entry</span><span class="p">;</span>        <span class="cm">/* Virtual address entry point */</span>&#x000A;    <span class="kt">uint32_t</span>	<span class="n">e_phoff</span><span class="p">;</span>        <span class="cm">/* Program Header offset */</span>&#x000A;    <span class="kt">uint32_t</span>	<span class="n">e_shoff</span><span class="p">;</span>        <span class="cm">/* Section Header offset */</span>&#x000A;    <span class="kt">uint32_t</span>	<span class="n">e_flags</span><span class="p">;</span>        <span class="cm">/* Must be 0 */</span>&#x000A;    <span class="kt">uint16_t</span>	<span class="n">e_ehsize</span><span class="p">;</span>       <span class="cm">/* CGC header's size */</span>&#x000A;    <span class="kt">uint16_t</span>	<span class="n">e_phentsize</span><span class="p">;</span>    <span class="cm">/* Program header entry size */</span>&#x000A;    <span class="kt">uint16_t</span>	<span class="n">e_phnum</span><span class="p">;</span>        <span class="cm">/* # program header entries */</span>&#x000A;    <span class="kt">uint16_t</span>	<span class="n">e_shentsize</span><span class="p">;</span>    <span class="cm">/* Section header entry size */</span>&#x000A;    <span class="kt">uint16_t</span>	<span class="n">e_shnum</span><span class="p">;</span>        <span class="cm">/* # section header entries */</span>&#x000A;    <span class="kt">uint16_t</span>	<span class="n">e_shstrndx</span><span class="p">;</span>     <span class="cm">/* sect header # of str table */</span>&#x000A;<span class="p">}</span> <span class="n">CGC32_hdr</span><span class="p">;</span>&#x000A;</code></pre>
+          </div>
+          
+          <h1 id="cgcef-program-headers">CGCEF PROGRAM HEADERS</h1>
+          <p>The CGC Executable File format program headers dictate how sections of the file are mapped into process memory prior to execution.
+          Note that there are only four section types.
+          These do NOT include 'interpreter', 'dynamic loading', or 'thread-local-storage' section types.</p>
+          
+          <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/* The CGC Executable Program Header */</span>&#x000A;<span class="k">typedef</span> <span class="k">struct</span><span class="p">{</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">p_type</span><span class="p">;</span>         <span class="cm">/* Section type */</span>&#x000A;<span class="cp">#define PT_NULL     0               </span><span class="cm">/* Unused header */</span><span class="cp">&#x000A;#define PT_LOAD     1               </span><span class="cm">/* Segment loaded into mem */</span><span class="cp">&#x000A;#define PT_PHDR     6               </span><span class="cm">/* Program hdr tbl itself */</span><span class="cp">&#x000A;#define PT_CGCPOV2  0x6ccccccc      </span><span class="cm">/* CFE Type 2 PoV flag sect */</span><span class="cp">&#x000A;</span>    <span class="kt">uint32_t</span>        <span class="n">p_offset</span><span class="p">;</span>       <span class="cm">/* Offset into the file */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">p_vaddr</span><span class="p">;</span>        <span class="cm">/* Virtual program address */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">p_paddr</span><span class="p">;</span>        <span class="cm">/* Set to zero */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">p_filesz</span><span class="p">;</span>       <span class="cm">/* Section bytes in file */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">p_memsz</span><span class="p">;</span>        <span class="cm">/* Section bytes in memory */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">p_flags</span><span class="p">;</span>        <span class="cm">/* section flags */</span>&#x000A;<span class="cp">#define PF_X        (1&lt;&lt;0)          </span><span class="cm">/* Mapped executable */</span><span class="cp">&#x000A;#define PF_W        (1&lt;&lt;1)          </span><span class="cm">/* Mapped writable */</span><span class="cp">&#x000A;#define PF_R        (1&lt;&lt;2)          </span><span class="cm">/* Mapped readable */</span><span class="cp">&#x000A;</span>    <span class="cm">/* Acceptable flag combinations are:&#x000A;     *        PF_R&#x000A;     *        PF_R|PF_W&#x000A;     *        PF_R|PF_X&#x000A;     *        PF_R|PF_W|PF_X&#x000A;     */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">p_align</span><span class="p">;</span>        <span class="cm">/* Only used by core dumps */</span>&#x000A;<span class="p">}</span> <span class="n">CGC32_Phdr</span><span class="p">;</span>&#x000A;</code></pre>
+          </div>
+          
+          <h1 id="cgcef-section-headers">CGCEF SECTION HEADERS</h1>
+          <p>The CGC Executable File format support section headers in purely an
+          optional informational capacity.
+          They may be utilized for debugging but are ignored completely by the loader.
+          Teams are discouraged from relying on them in any capacity.
+          They may be stripped out prior to deployment, distribution or consensus evaluation.</p>
+          
+          <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/* The CGC Executable Section Header */</span>&#x000A;<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">sh_name</span><span class="p">;</span>        <span class="cm">/* Name (index into strtab) */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">sh_type</span><span class="p">;</span>        <span class="cm">/* Section type */</span>&#x000A;<span class="cp">#define SHT_SYMTAB  2               </span><span class="cm">/* Symbol table */</span><span class="cp">&#x000A;#define SHT_STRTAB  3               </span><span class="cm">/* String Table */</span><span class="cp">&#x000A;</span>    <span class="kt">uint32_t</span>        <span class="n">sh_flags</span><span class="p">;</span>&#x000A;<span class="cp">#define SHT_WRITE   (1&lt;&lt;0)          </span><span class="cm">/* Section is writable */</span><span class="cp">&#x000A;#define SHT_ALLOC   (1&lt;&lt;1)          </span><span class="cm">/* Section is in memory */</span><span class="cp">&#x000A;#define SHT_EXECINSTR (1&lt;&lt;2)        </span><span class="cm">/* Section contains code */</span><span class="cp">&#x000A;</span>    <span class="kt">uint32_t</span>        <span class="n">sh_addr</span><span class="p">;</span>        <span class="cm">/* Address of section */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">sh_offset</span><span class="p">;</span>      <span class="cm">/* Offset into file */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">sh_size</span><span class="p">;</span>        <span class="cm">/* Section size in file */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">sh_link</span><span class="p">;</span>&#x000A;            <span class="cm">/* When sh_type is SHT_SYMTAB, sh_link is the index of&#x000A;             * the associated SHT_STRTAB section&#x000A;             */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">sh_info</span><span class="p">;</span>&#x000A;            <span class="cm">/* When sh_type is SHT_SYMTAB, info is one greater&#x000A;             * than the symbol table index of the last local&#x000A;             * symbol.&#x000A;             */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">sh_addralign</span><span class="p">;</span>   <span class="cm">/* Alignment constraints */</span>&#x000A;    <span class="kt">uint32_t</span>        <span class="n">sh_entsize</span><span class="p">;</span>&#x000A;            <span class="cm">/* Size in bytes of each entry pointed to by this&#x000A;             * section table */</span>&#x000A;<span class="p">}</span> <span class="n">CGC32_Shdr</span><span class="p">;</span>&#x000A;</code></pre>
+          </div>
+          
+          <h1 id="see-also">SEE ALSO</h1>
+          
+          <p>Several CGCEF libraries and utilities have been provided:</p>
+          
+          <ul>
+            <li>binutils - common binary utilities including the linker</li>
+            <li><a href="/cgcef-verify/cgcef_verify/">cgcef-verify</a> - a utility to verify CGCEF binaries</li>
+            <li>libcgcef - a libelf port for reading and manipulating CGCEF files</li>
+            <li>readcgcef - a readelf port for examining CGCEF binaries</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id='impressum'>Published by Legitimate Business Syndicate</div>
+      <div id='timestamp'>Built at 2016-05-20T17:40:32Z</div>
+      <div>
+        <ul>
+          <li><a href="https://legitbs.net">Homepage</a></li>
+          <li><a href="https://twitter.com/legitbs_ctf">Twitter</a></li>
+          <li><a href="https://github.com/legitbs">GitHub</a></li>
+          <li><a href="https://github.com/legitbs/cgc-docs">This repo</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../assets/javascripts/application.js"></script>
+  </body>
+</html>

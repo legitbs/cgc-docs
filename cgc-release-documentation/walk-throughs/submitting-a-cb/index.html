@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Submitting a Challenge Binary</title>
+    <link href="../../../assets/stylesheets/application.css" rel="stylesheet" />
+  </head>
+  <body class='cgc-release-documentation cgc-release-documentation_walk-throughs cgc-release-documentation_walk-throughs_submitting-a-cb cgc-release-documentation_walk-throughs_submitting-a-cb_index'>
+    <div id='container'>
+      <div id='nav_col'>
+        <div id='logo'>
+          <a href='/'>
+            CGC Docs, published by Legitimate Business Syndicate
+          </a>
+        </div>
+        <div id='nav'>
+          <ul>
+            <li>
+              <a href='/'>CGC Docs</a>
+            </li>
+            <li class='hdr'>Event-FAQ</li>
+            <li>
+              <a href='/Event-FAQ/event_faq/'>Event FAQ</a>
+            </li>
+            <li class='hdr'>cb-testing</li>
+            <li>
+              <a href='/cb-testing/cb-acceptance/'>cb-acceptance</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay/'>cb-replay</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay-pov/'>cb-replay-pov</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-test/'>cb-test</a>
+            </li>
+            <li>
+              <a href='/cb-testing/poll-validate/'>poll-validate</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/newsletter</li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ipc/'>News Letter 1: IPC</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/cpp/'>News Letter 2: C++</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ctf/'>News Letter 3: CTF</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/template/'>News Letter X: Template</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/walk-throughs</li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/building-a-cb/'>Building a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/cgc-repository/'>CGC Repositories</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/debugging-a-cb/'>Debugging a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/pin-for-decree/'>Running Intel PIN on DECREE Challenge Binaries</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/running-the-vm/'>Running the Virtual Machine</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/scoring-cbs/'>Scoring a Challenge Binary Set</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/submitting-a-cb/'>Submitting a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/testing-a-cb/'>Testing a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-poll-generators/'>Understanding Poll Generators</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-cfe-povs/'>Understanding Proofs of Vulnerability in CFE</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/using-the-network-appliance/'>Using the Network Appliance</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/virtual-competiton/'>Virtual Competition</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/ptrace-for-decree/'>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</a>
+            </li>
+            <li class='hdr'>cgc2elf</li>
+            <li>
+              <a href='/cgc2elf/cgc2elf/'>cgc2elf</a>
+            </li>
+            <li class='hdr'>cgcef-verify</li>
+            <li>
+              <a href='/cgcef-verify/cgcef_verify/'>cgcef_verify</a>
+            </li>
+            <li class='hdr'>libcgc</li>
+            <li>
+              <a href='/libcgc/allocate/'>allocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/cgcabi/'>CGC ABI</a>
+            </li>
+            <li>
+              <a href='/libcgc/deallocate/'>deallocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/fdwait/'>fdwait</a>
+            </li>
+            <li>
+              <a href='/libcgc/random/'>random</a>
+            </li>
+            <li>
+              <a href='/libcgc/receive/'>receive</a>
+            </li>
+            <li>
+              <a href='/libcgc/terminate/'>_terminate</a>
+            </li>
+            <li>
+              <a href='/libcgc/transmit/'>transmit</a>
+            </li>
+            <li class='hdr'>libcgcef</li>
+            <li>
+              <a href='/libcgcef/cgc_executable_format/'>CGC Executable Format</a>
+            </li>
+            <li class='hdr'>libpov</li>
+            <li>
+              <a href='/libpov/libpov/'>libpov</a>
+            </li>
+            <li>
+              <a href='/libpov/type1_negotiate/'>type1_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_negotiate/'>type2_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_submit/'>type2_submit</a>
+            </li>
+            <li class='hdr'>network-appliance</li>
+            <li>
+              <a href='/network-appliance/cb-packet-log/'>cb-packet-log</a>
+            </li>
+            <li>
+              <a href='/network-appliance/cb-proxy/'>cb-proxy</a>
+            </li>
+            <li>
+              <a href='/network-appliance/verify-rules/'>verify-rules</a>
+            </li>
+            <li class='hdr'>poll-generator</li>
+            <li>
+              <a href='/poll-generator/generate-polls/'>generate-polls</a>
+            </li>
+            <li class='hdr'>pov-xml2c</li>
+            <li>
+              <a href='/pov-xml2c/pov-xml2c/'>pov-xml2c</a>
+            </li>
+            <li class='hdr'>service-launcher</li>
+            <li>
+              <a href='/service-launcher/cb-server/'>cb-server</a>
+            </li>
+            <li class='hdr'>virtual-competition</li>
+            <li>
+              <a href='/virtual-competition/ti-client/'>ti-client</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-rotate/'>ti-rotate</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-server/'>ti-server</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id='main_col'>
+        <div id='title'>
+          <h1>Submitting a Challenge Binary</h1>
+        </div>
+        <div id='content'>
+          <h1 id="submitting-a-challenge-binary">Submitting a Challenge Binary</h1>
+          
+          <p>This walk-through is targeted at the performers under contract to create Challenge Binaries (CBs) for the Cyber Grand Challenge. This walk-through will guide CB authors through submitting a completed challenge binary. Here they will also find details of the challenge binary acceptance criteria including how submissions will be assessed and feedback processes for remediation. CGC competitor teams may also be interested in this guidance to CB authors.</p>
+          
+          <h2 id="differences-between-cqe-vs-cfe">Differences between CQE vs CFE</h2>
+          
+          <ul>
+            <li>A flag page containing random contents exists at known fixed address inside address space of the CB. A type 2 memory-disclosure PoV proves vulnerability by reporting four contiguous bytes from this flag page to the CFE infrastructure. The flag page contents are generated randomly for every service poll and are made available to the service poller. Consequently, CB authors are encouraged to use the flag page as <em>external data</em> intrinsic to the functionality of the program and validated by the service poller.</li>
+            <li>The use of the random() system call shall not be used by the CB authors to manipulate control flow.</li>
+            <li>Each vulnerability must be individually enumerated in the code and the README.md as well as have their difficulty subjectively quantified.</li>
+            <li>The Makefile for the CB must define a variable <code class="highlighter-rouge">VULN_COUNT</code> with an integer that specifies the number of vulnerabilities in the CB.</li>
+            <li>The use of the service poll generator is mandatory and must be capable of generating at least one million distinct service polls. The author can now choose when code paths in the generator are enabled in the course of CFE to validate the competitor replacement binaries.  No hand written polls will be allowed.</li>
+            <li>All polls used during CFE will be seen by competitors at the time of use, as such "for-testing" service polls are no longer supported.</li>
+            <li>The use of executable code in data buffers (like for JIT) is discouraged but no longer prohibited.</li>
+            <li>The restriction that shared CB library code must be <code class="highlighter-rouge">libc</code>-style functions has been lifted. Library code shared between CBs must still be generalized library functions, must not exist outside of the DECREE universe and must be seen by competitors for the first time during the final event.</li>
+          </ul>
+          
+          <h2 id="cb-guidance">CB Guidance</h2>
+          
+          <p>CBs are network services that accept remote network connections, perform processing on network-supplied data, and interact with remote hosts over network connections. CBs will be used as analysis challenges within the CGC program; CGC teams will develop technology that will attempt to locate and mitigate flaws in CBs. Each CB will be implemented as a network service which performs some task to be determined by the CB author; examples include (but are not limited to) file transfer, remote procedure call, remote login, p2p networking. While CB tasks should mirror real world tasks, the use of real world protocols is disallowed. CBs may contain methods of operation which mirror challenging cases in real world network defense: dynamic network resource allocation, high integrity execution, dynamic execution, etc. Each CB will contain at least one security flaw hidden in the program by that CB author and reachable via network input. Flaws should focus on traditional memory corruption flaw types.</p>
+          
+          <p>Superior approaches will demonstrate knowledge of the problems involved in creating challenge software for the purpose of cybersecurity competition (e.g., binaries of excessive difficulty prevent any competitor from making progress, while binaries of limited difficulty prevent meaningful measurement). Strong CB authors will demonstrate knowledge of the current limits of automated cyber reasoning in terms of program complexity and flaw discovery difficulty; this knowledge is essential in order to create a collection of CBs that spans a difficulty range from challenging to beyond state-of-the-art. The task of creating novel hidden software flaws to challenge the leading edge of program analysis poses significant technology risk. CB authors are expected to overcome this risk with a representative corpus of Challenge Sets. Strong CB authors will cover a history of known software flaws that represent interesting analysis challenges, mapped to specific CWE categories that will be represented within the CS portfolio of the author.</p>
+          
+          <h2 id="deliverables">Deliverables</h2>
+          <p>All items required when submitting a CB are <em>source</em> not <em>binary</em>.  All binary components must be built as part of the compilation process.</p>
+          
+          <h3 id="conforming-to-submission-requirements">Conforming to Submission Requirements</h3>
+          
+          <p>Note that many of the items detailed in this document are created and instructions are followed implicitly by the tools and build process provided by the CGC dev team.</p>
+          
+          <p>Generally, if a CB author has followed the CB building guide and used the provided tools, the resulting Challenge Set should already be well-formed and simply needs to be submitted as detailed below in the "Submission" section.</p>
+          
+          <h3 id="flag-page">Flag page</h3>
+          
+          <p>A special flag page is mapped into every Challenge Binary at address <code class="highlighter-rouge">0x4347C000</code> and filled with 4096 pseudo-random bytes uniquely generated for every connection. This special flag page represents precious external data to the CB. A competitor acquiring and reporting four contiguous bytes from this flag page constitute proof of vulnerability - called a memory-disclosure type 2 PoV.</p>
+          
+          <p>Challenge Binary authors are strongly encouraged to make the use of this special flag data intrinsic to their program and service poller. To support this, the flag page data is also made available to the service poller to allow for functional verification of the contents. For example this flag page could be treated as a database of authentication credentials, a filesystem of secrets, the starting position of items in a physics simulation, a dictionary, or the description of a maze in a game. Replacement binaries which corrupt the legitimate use of this page should create a measurable failure of functionality.</p>
+          
+          <ul>
+            <li>N.B. A challenge binary leaking flag page contents out directly or indirectly is not forbidden but CB authors are reminded that any four contiguous bytes of this data will constitute proof of vulnerability.</li>
+            <li>N.B. The CB author should not assume that a vulnerability which lends itself to a register-set style type 1 PoV precludes the competitor use of a memory-disclosure style type 2 PoV against the same vulnerability or vice versa.</li>
+          </ul>
+          
+          <h3 id="cb-authors-are-required-to-deliver-the-following-items-included-in-their-challenge-sets-cs">CB authors are required to deliver the following items included in their Challenge Sets (CS):</h3>
+          
+          <ul>
+            <li>CB(s)
+              <ul>
+                <li>Must be of sufficient complexity. I.e. simple fully automated testing of all possible inputs is not possible.</li>
+                <li>Naming conventions:
+                  <ul>
+                    <li>The top level directory of a CB delivery shall be named: <code class="highlighter-rouge">AAAAA_DDDDD</code>
+          where <code class="highlighter-rouge">AAAAA</code> is an upper case sequence of 5 letters assigned by DARPA
+          that represents the company name of the author, and <code class="highlighter-rouge">DDDDD</code> is a unique
+          serial number with leading zeros if necessary, assigned by the author.
+          Serial number must begin with <code class="highlighter-rouge">00001</code> and increment by one across the
+          complete set of CBs provided by the author.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>PoVs
+              <ul>
+                <li>At least one PoV must be submitted to exercise each intentional vulnerability.</li>
+                <li>POVs must be either written in C or XML</li>
+                <li>XML POV requirements:
+                  <ul>
+                    <li>POVs must be <em>well formed</em> and match the POV DTD provided .</li>
+                    <li>XML POVs shall be stored in the <code class="highlighter-rouge">pov</code> directory.</li>
+                    <li>XML POVs shall be named: <code class="highlighter-rouge">POV_ddddd.povxml</code>, where <code class="highlighter-rouge">ddddd</code> is a unique serial integer with leading zeros as needed, incrementing by 1, starting at 1.</li>
+                    <li>XML POVs must include Type 1 or Type 2 negotiation statements as per the XML DTD.</li>
+                    <li>See the <a href="#Refs">XML template</a> below</li>
+                  </ul>
+                </li>
+                <li>C POV requirements:
+                  <ul>
+                    <li>Each C POV shall be stored in a directory named: <code class="highlighter-rouge">pov_n</code>, where <code class="highlighter-rouge">n</code> is a unique serial number without leading zeros, incrementing by 1, starting at 1.</li>
+                    <li>C POVs will be compiled as DECREE binaries, similar to CBs</li>
+                    <li>C POVs must declare if the POV is a type 1 or type 2 POV via the POV negotiation protocol on file descriptor 3.</li>
+                    <li>C POVs may determine the type (1 or 2) at runtime</li>
+                    <li>Refer to <a href="/cgc-release-documentation/walk-throughs/understanding-cfe-povs/">understanding-cfe-povs.md</a> for details on the CFE type negotiation protocols.</li>
+                    <li>C POVs must follow CB Source Code requirements</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Challenge Test module comprised of Service polls
+              <ul>
+                <li>Must have consistent input and output paired behavior</li>
+                <li>Must provide coverage for all <em>major or significant</em> aspects of binary functionality.  Code segments that are not exercised by any poll may effectively never be executed and may therefore be considered superfluous.</li>
+                <li>Should incorporate the CBs algorithm to verify the contents of the special flag page.</li>
+                <li>Each must be capable of generating at least 1,000,000 unique service polls.</li>
+                <li>Polls must be generated automatically; such polls must be named <code class="highlighter-rouge">GEN_DDDDD</code> after generation as detailed in 'Naming Convention' below.  Generated polls are not submitted as POVML, instead they are generated as part of the make process.  CB authors must submit all software required to generate polls. If using the supplied generator this means CB authors must supply the generation spec. (see understanding-poll-generators for more information)</li>
+                <li>Polls may not be dynamically created by incorporating the CB itself. The service polls are required to evaluate the correct function of replacement CBs as well as the correct function of the original CB. Dynamic generation of the service polls shall replicate the logic required to test functionality. This does not prevent the service poll generator from incorporating algorithms from the CB itself.</li>
+                <li>Each CB must include at least one identified vulnerability as detailed in the <a href="#README">README</a> section below</li>
+                <li>All polls must have a unique file name per CB</li>
+                <li>CB authors are responsible for determining when, in the course of CFE, that poll behavior will begin. For example CFE could start with polls that only exercise a small fraction of the CB functionality which can be increased over time. Or full functionality could be tested immediately.  Functional accessability can be tuned via the 'before' and 'after' attributes in the poll generator.</li>
+                <li>Naming conventions:
+                  <ul>
+                    <li>Polls shall be named: <code class="highlighter-rouge">GEN_ddddd.xml</code> where <code class="highlighter-rouge">ddddd</code>
+          is a unique serial integer with leading zeros if necessary, as
+          assigned by the author.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Source code
+              <ul>
+                <li>Building:
+                  <ul>
+                    <li>A CB shall contain no external library dependencies. Dynamic linking is
+          not supported in the CGC execution environment.</li>
+                    <li>Accordingly all CBs must be built with the following arguments or
+          their equivalents:
+                      <ul>
+                        <li><code class="highlighter-rouge">-nostdinc++</code></li>
+                        <li><code class="highlighter-rouge">-nostdinc</code></li>
+                        <li><code class="highlighter-rouge">-nostdlib</code></li>
+                        <li><code class="highlighter-rouge">-static</code></li>
+                        <li><code class="highlighter-rouge">-nostartfiles</code></li>
+                        <li><code class="highlighter-rouge">-nodefaultlibs</code></li>
+                        <li><code class="highlighter-rouge">-nostdlib</code></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>The only authorized linker for CGC challenge binaries is the CGC
+          version of <code class="highlighter-rouge">ld</code>, <code class="highlighter-rouge">i386-linux-cgc-ld</code>, as provided by DARPA. All executable
+          files used in the CGC must be valid output from <code class="highlighter-rouge">i386-linux-cgc-ld</code>.</li>
+                <li>
+                  <p>All challenge binaries must continue to function properly after all
+          <code class="highlighter-rouge">Cgc32_Shdr</code> (<code class="highlighter-rouge">Elf32_Shdr</code>) section headers have been removed from the
+          binary. In other words following an operation equivalent to:</p>
+          
+                  <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">memset</span><span class="p">(</span><span class="n">Cgc32_Ehdr</span><span class="p">.</span><span class="n">e_shoff</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Cgc32_Ehdr</span><span class="p">.</span><span class="n">e_shnum</span> <span class="o">*</span> <span class="n">Cgc32_Ehdr</span><span class="p">.</span><span class="n">e_shsize</span><span class="p">);</span>&#x000A;<span class="n">Cgc32_Ehdr</span><span class="p">.</span><span class="n">e_shnum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;</code></pre>
+                  </div>
+                </li>
+                <li>Authoring:
+                  <ul>
+                    <li>Every source file (<code class="highlighter-rouge">.c</code>, <code class="highlighter-rouge">.h</code>) created by the author shall begin with
+          the complete text of the copyright license included as a multi-line
+          (<code class="highlighter-rouge">/* */</code>) comment.</li>
+                    <li>Code reuse across CBs is severely restricted. No code may be shared
+          between separate organizations under contract to DARPA to create CFE
+          challenge binaries. Furthermore, within a given organization, the only
+          source code that may be reused across challenge binaries will be limited
+          to functionality that commonly would be found in a library.</li>
+                    <li>Authors are free to implement their own versions of the C standard
+          libraries. Alternatively authors may make use of any standard library
+          routines supplied by DARPA.</li>
+                    <li>The use of native assembly within CBs is strictly limited to <code class="highlighter-rouge">_start</code> stubs
+          and system call wrappers (e.g. no 'inline' assembly placed about CB code).
+          Specifically, assembly language may not be utilized to increase the
+          complexity/obscurity of a CB in any way.</li>
+                    <li>The use of machine-dependent instructions, 'shellcode' or JIT within
+          CBs is discouraged but not prohibited.  (e.g. calling into a data
+          buffer filled with instructions). This does not lift the ban on native
+          assembler. All instructions must originate from C or C++ source code
+          compiled during the Make process.</li>
+                    <li>The use of the <code class="highlighter-rouge">random()</code> system call shall not be used by the CB
+          authors to manipulate control flow.  DECREE will use identical seeds
+          to the pseudo random number generator when testing different
+          competitors with the same service poll. A competitor replacement
+          binary may use <code class="highlighter-rouge">random()</code> system call as part of a defensive strategy -
+          the consequence is that different competitors could accidentally have
+          divergent performance characteristics on the same poll which should
+          be avoided. DARPA would encourage authors to use the special flag
+          page when the challenge binary logic merely needs an external data
+          source without the requirement for strong pseudo randomness.</li>
+                    <li>Authors must facilitate creation of both a vulnerable and patched version
+          of the CB.  The distinction between the vulnerable and not vulnerable
+          version is identified by one or more instances of a preprocessor
+          directive <code class="highlighter-rouge">#ifdef PATCHED_&lt;n&gt;</code> where the <code class="highlighter-rouge">&lt;n&gt;</code> is the PoV number,
+          followed by an optional <code class="highlighter-rouge">#else</code> and <code class="highlighter-rouge">#endif</code>. The purpose of this
+          differentiation is to allow the visualization framework to
+          automatically distinguish between PoVs.
+          Patched CBs must <strong>not</strong> be vulnerable to associated PoVs.
+          <a id="README"></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>README that must include:
+              <ul>
+                <li>Must be in <em>markdown</em> format and follow the sample template provided</li>
+                <li>Author + contact info (i.e. <code class="highlighter-rouge">"Clint Eastwood" &lt;clint@example.com&gt;</code>)</li>
+                <li>Performer group of the Author (i.e. DARPA)</li>
+                <li>Description of service that the CB implements (i.e. A book library)</li>
+                <li>Feature list of service suitable for a play-by-play announcer during
+          CFE. i.e This is a book server populated with the Defense Federal
+          Acquisition Regulations. It supports adding new books, checking out
+          sections of the book, keyword searching, compression, and deciphering
+          contract officer speak into English.</li>
+                <li>For each vulnerability
+                  <ul>
+                    <li>The vulnerability number corresponding to the <code class="highlighter-rouge">#ifdef PATCHED_&lt;n&gt;</code> in
+          the source code</li>
+                    <li>Description of the vulnerability</li>
+                    <li>CWE classification
+                      <ul>
+                        <li>must include which CWE(s) are covered by the author's best assessment</li>
+                        <li>only documented vulnerabilities that have PoVs, mitigation and
+          service poll coverage will be considered</li>
+                      </ul>
+                    </li>
+                    <li>Generic class of the vulnerability: buffer overflow, underflow, format
+          string, use-after-free, etc.</li>
+                    <li>Description of the challenges presented with specific consideration
+          to automated binary analysis tools (i.e. complex logic to reach vuln,
+          floating point math in reachability, etc)</li>
+                    <li>A subjective quantification of "easy", "medium" or "hard" for each of
+          the three categories: discovering, proving and fixing the
+          vulnerability. A rule of thumb which the CB author may is are
+                      <ul>
+                        <li>"easy" vulnerabilities are intentionally written to be or are
+          believed to be easy for one or more categories</li>
+                        <li>"hard" vulnerabilities are intentionally written to be or are
+          believed to be hard for one or more categories</li>
+                        <li>"medium" vulnerabilities are a catch all</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          
+          <h2 id="submission">Submission:</h2>
+          
+          <h4 id="each-cb-must-be-compiled-using-the-make-file-and-process-provided-by-the-cgc-infrastructure-team-and-submitted-via-svn-using-the-submissions-branch-as-follows">Each CB must be compiled using the <em>Make</em> file and process provided by the CGC infrastructure team and submitted via SVN using the <em>Submissions</em> branch as follows:</h4>
+          
+          <p>Run <code class="highlighter-rouge">make clean</code> before to copying files to the submissions branch.</p>
+          
+          <div class="language-sh highlighter-rouge"><pre class="highlight"><code>svn copy svn+ssh://server/trunk/&lt;mypath&gt;/AAAAA_DDDDD svn+ssh://server/branches/submissions/AAAAA_DDDDD -m <span class="s2">"Submitting a new CB..."</span>&#x000A;</code></pre>
+          </div>
+          
+          <ul>
+            <li>Delivery to DARPA:
+              <ul>
+                <li>Each CB delivered to DARPA must contain a complete copy of all source code
+                  <ul>
+                    <li>Including "library" code that is required to build a working executable file for the given CB.</li>
+                    <li>Including any generation tool used to automatically create polls</li>
+                  </ul>
+                </li>
+                <li>When packaged for delivery, a CB must include all source code
+          required to successfully build the binary.
+                  <ul>
+                    <li>If a CB links to a static
+          library, that static library must be compiled as part of the CB build and
+          all source code for that library must be included in the CB delivery.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          
+          <h4 id="the-following-directory-hierarchy-must-be-utilized-when-submitting-a-completed-challenge-binary">The following directory hierarchy must be utilized when submitting a completed challenge binary:</h4>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>AAAAA_DDDDD-&#x000A;       |- src  &lt;directory&gt;&#x000A;            |- all .c, .cc source files that implement the CB behavior&#x000A;       |- include  &lt;directory&gt;&#x000A;            |- all .h header files utilized by the CB&#x000A;       |- pov  &lt;directory&gt;&#x000A;            |- One or more Proof of Vulnerability Markup Language (POVML)&#x000A;            |- files that demonstrate an appropriate "crashing event"&#x000A;            |- in the provided CB.&#x000A;            |- At least one POVML file or binary POV must be provided for each&#x000A;            |- vulnerability intentionally planted in the CB&#x000A;       |- pov_N  &lt;zero or more directories numbered from N=1&gt;&#x000A;            |- C source and headers (.c, .h) for a single POV.&#x000A;            |- The resulting binary demonstrates an appropriate "crashing event"&#x000A;            |- in the provided CB.&#x000A;            |- At least one POVML file or binary POV must be provided for each&#x000A;            |- vulnerability intentionally planted in the CB&#x000A;       |- poller  &lt;directory&gt;&#x000A;            |- contains exactly one subdirectory classifying polls into&#x000A;            |- one category only: 'for-release'&#x000A;            |- The 'for-release' directory must include all polls related to the CB.&#x000A;            |- Polls must follow the naming convention as detailed under&#x000A;            |- poll "Naming Conventions" above&#x000A;            |- for-release  &lt;directory&gt;&#x000A;                 |- State machine specification for the protocol specified&#x000A;                 |- by the CB. This specification will be utilized by DARPA to&#x000A;                 |- generate service polls used to evaluate mitigated challenge&#x000A;                 |- binaries.&#x000A;       |- lib [optional]   &lt;directory&gt;&#x000A;            |- all .c, .cc, .h files that implement any C library&#x000A;            |- functionality&#x000A;       |- README.md A markdown file as described above&#x000A;       |- Makefile  A makefile that follows the CGC service guide&#x000A;&#x000A;</code></pre>
+          </div>
+          
+          <h1 id="test-cases">Test cases:</h1>
+          <p>The following is an incomplete list of tests and validations that will be performed on the CS after it
+          is submitted. This list is intended to provide guidance for authors as to the <em>types</em> of tests that will be performed
+          but is not intended to provide a complete list. Please note that this list may be amended at any time to better address the program goals.</p>
+          
+          <ul>
+            <li>service polls vs CB - verify the correctness of the service polls</li>
+            <li>PoV vs CB - confirm the efficacy of the supplied PoVs</li>
+            <li>PoV vs RB - confirm that the PoVs are ineffective against the replacement binary</li>
+            <li>service polls vs RB - verify the correctness of the service polls</li>
+            <li>evaluate the CB against existing program analysis tools</li>
+            <li>check for code reuse</li>
+          </ul>
+          
+          <h4 id="each-cs-will-be-independently-evaluated">Each CS will be independently evaluated.</h4>
+          <p>Collated statistics will be provided on a dashboard on the submission/svn server, showing anonymized results for CWE coverage as well as how the CB fares against a variety of program analysis utilities. These statistics are intended to keep the CB authors apprised of the overall composition of CGC. These statistics are explicitly covered by the CGC NDA and not for distribution outside of the CGC team.</p>
+          
+          <h2 id="see-also">SEE ALSO</h2>
+          
+          <p>For information regarding CFE POV types, see <a href="/cgc-release-documentation/walk-throughs/understanding-cfe-povs/">understanding-cfe-povs.md</a></p>
+          
+          <p>For information regarding the testing a CB, see <a href="/cgc-release-documentation/walk-throughs/testing-a-cb/">testing-a-cb.md</a></p>
+          
+          <p>For information regarding the debugging a CB, see <a href="/cgc-release-documentation/walk-throughs/debugging-a-cb/">debugging-a-cb.md</a></p>
+          
+          <p>For information regarding the building a CB, see <a href="/cgc-release-documentation/walk-throughs/building-a-cb/">building-a-cb.md</a></p>
+          
+          <p>For information regarding automated generation of polls, see <a href="/cgc-release-documentation/walk-throughs/understanding-poll-generators/">understanding-poll-generators.md</a></p>
+          
+          <p>For information regarding POVML, see replay.dtd (DOCTYPE specified at the top of example polls</p>
+          
+          <p>See the service-template CB for an exemplar CB including, source, libraries, identified vulnerability, POVs, polls, etc</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id='impressum'>Published by Legitimate Business Syndicate</div>
+      <div id='timestamp'>Built at 2016-05-20T17:40:31Z</div>
+      <div>
+        <ul>
+          <li><a href="https://legitbs.net">Homepage</a></li>
+          <li><a href="https://twitter.com/legitbs_ctf">Twitter</a></li>
+          <li><a href="https://github.com/legitbs">GitHub</a></li>
+          <li><a href="https://github.com/legitbs/cgc-docs">This repo</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../../assets/javascripts/application.js"></script>
+  </body>
+</html>

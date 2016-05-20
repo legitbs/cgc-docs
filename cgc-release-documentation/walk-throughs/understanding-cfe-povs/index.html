@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Understanding Proofs of Vulnerability in CFE</title>
+    <link href="../../../assets/stylesheets/application.css" rel="stylesheet" />
+  </head>
+  <body class='cgc-release-documentation cgc-release-documentation_walk-throughs cgc-release-documentation_walk-throughs_understanding-cfe-povs cgc-release-documentation_walk-throughs_understanding-cfe-povs_index'>
+    <div id='container'>
+      <div id='nav_col'>
+        <div id='logo'>
+          <a href='/'>
+            CGC Docs, published by Legitimate Business Syndicate
+          </a>
+        </div>
+        <div id='nav'>
+          <ul>
+            <li>
+              <a href='/'>CGC Docs</a>
+            </li>
+            <li class='hdr'>Event-FAQ</li>
+            <li>
+              <a href='/Event-FAQ/event_faq/'>Event FAQ</a>
+            </li>
+            <li class='hdr'>cb-testing</li>
+            <li>
+              <a href='/cb-testing/cb-acceptance/'>cb-acceptance</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay/'>cb-replay</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay-pov/'>cb-replay-pov</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-test/'>cb-test</a>
+            </li>
+            <li>
+              <a href='/cb-testing/poll-validate/'>poll-validate</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/newsletter</li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ipc/'>News Letter 1: IPC</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/cpp/'>News Letter 2: C++</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ctf/'>News Letter 3: CTF</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/template/'>News Letter X: Template</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/walk-throughs</li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/building-a-cb/'>Building a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/cgc-repository/'>CGC Repositories</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/debugging-a-cb/'>Debugging a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/pin-for-decree/'>Running Intel PIN on DECREE Challenge Binaries</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/running-the-vm/'>Running the Virtual Machine</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/scoring-cbs/'>Scoring a Challenge Binary Set</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/submitting-a-cb/'>Submitting a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/testing-a-cb/'>Testing a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-poll-generators/'>Understanding Poll Generators</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-cfe-povs/'>Understanding Proofs of Vulnerability in CFE</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/using-the-network-appliance/'>Using the Network Appliance</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/virtual-competiton/'>Virtual Competition</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/ptrace-for-decree/'>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</a>
+            </li>
+            <li class='hdr'>cgc2elf</li>
+            <li>
+              <a href='/cgc2elf/cgc2elf/'>cgc2elf</a>
+            </li>
+            <li class='hdr'>cgcef-verify</li>
+            <li>
+              <a href='/cgcef-verify/cgcef_verify/'>cgcef_verify</a>
+            </li>
+            <li class='hdr'>libcgc</li>
+            <li>
+              <a href='/libcgc/allocate/'>allocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/cgcabi/'>CGC ABI</a>
+            </li>
+            <li>
+              <a href='/libcgc/deallocate/'>deallocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/fdwait/'>fdwait</a>
+            </li>
+            <li>
+              <a href='/libcgc/random/'>random</a>
+            </li>
+            <li>
+              <a href='/libcgc/receive/'>receive</a>
+            </li>
+            <li>
+              <a href='/libcgc/terminate/'>_terminate</a>
+            </li>
+            <li>
+              <a href='/libcgc/transmit/'>transmit</a>
+            </li>
+            <li class='hdr'>libcgcef</li>
+            <li>
+              <a href='/libcgcef/cgc_executable_format/'>CGC Executable Format</a>
+            </li>
+            <li class='hdr'>libpov</li>
+            <li>
+              <a href='/libpov/libpov/'>libpov</a>
+            </li>
+            <li>
+              <a href='/libpov/type1_negotiate/'>type1_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_negotiate/'>type2_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_submit/'>type2_submit</a>
+            </li>
+            <li class='hdr'>network-appliance</li>
+            <li>
+              <a href='/network-appliance/cb-packet-log/'>cb-packet-log</a>
+            </li>
+            <li>
+              <a href='/network-appliance/cb-proxy/'>cb-proxy</a>
+            </li>
+            <li>
+              <a href='/network-appliance/verify-rules/'>verify-rules</a>
+            </li>
+            <li class='hdr'>poll-generator</li>
+            <li>
+              <a href='/poll-generator/generate-polls/'>generate-polls</a>
+            </li>
+            <li class='hdr'>pov-xml2c</li>
+            <li>
+              <a href='/pov-xml2c/pov-xml2c/'>pov-xml2c</a>
+            </li>
+            <li class='hdr'>service-launcher</li>
+            <li>
+              <a href='/service-launcher/cb-server/'>cb-server</a>
+            </li>
+            <li class='hdr'>virtual-competition</li>
+            <li>
+              <a href='/virtual-competition/ti-client/'>ti-client</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-rotate/'>ti-rotate</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-server/'>ti-server</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id='main_col'>
+        <div id='title'>
+          <h1>Understanding Proofs of Vulnerability in CFE</h1>
+        </div>
+        <div id='content'>
+          <p>The DARPA CGC FAQ (see <a href="https://cgc.darpa.mil/documents.aspx">https://cgc.darpa.mil/documents.aspx</a>) in question 29, details 
+          POV methods for CFE. Two methods for demonstrating a POV are detailed, "Method 1", and
+          "Method 2" hereafter referred to as Type 1 and Type 2 POVs respectively.</p>
+          
+          <p>A Type 1 POV requires execution of the remote CB/RB to fault at an instruction pointer
+          location negotiated with the CFE Competition Framework with the requirement that
+          one additional general purpose register also contains a second value negotiated with
+          the CFE Competition Framework. This negotiation process is described below.</p>
+          
+          <p>A Type 2 POV is required to read a specific number of bytes dictated by the Competition
+          Framework from anywhere within a memory range specified by the Competition Framework.
+          The bytes retrieved by the POV are then submitted to the Competition Framework for
+          verification against the known expected values. Type 2 negotiation is described below.</p>
+          
+          <h2 id="type-1-pov-negotiation">Type 1 POV Negotiation</h2>
+          
+          <h3 id="type-1-negotiation-in-cgc-binary-style-povs">Type 1 Negotiation in CGC Binary Style POVs</h3>
+          
+          <p>File descriptor 3 shall be used to carry out POV type negotiations. A Type 1 POV
+          shall demonstrate control over a remote CB/RB's instruction pointer and one
+          additional general purpose register to a degree of precision negotiated
+          with the competition framework. A successful Type 1 POV must result in the
+          target binary faulting at the negotiated instruction pointer address with
+          one additional general purpose register containing the second negotiated value.</p>
+          
+          <p>A Type 1 negotiation is initiated by the POV by first transmitting, on file descriptor 3,
+          the 32-bit, little endian value: 1, then transmitting 3, 32-bit, little-endian
+          integers. The first of these three integers is known as the <code class="highlighter-rouge">ipmask</code> and is used
+          to specify a mask of 32 bits that the POV asserts it can control in the
+          CB/RB's instruction pointer. In order to be considered valid, at least 20 bits in the
+          mask must be set to 1. An invalid  mask will result in a failed POV attempt. A valid
+          mask will cause the competition infrastructure to return 20 (or more as specified by
+          the provided mask) bits that must appear verbatim in the instruction pointer at the
+          moment the remote binary terminates in a faulting state. This negotiated value may be
+          obtained by the POV by receiving the first available 32-bit, little endian integer
+          value from file descriptor 3.</p>
+          
+          <p>The second, 32-bit, little endian integer transmitted by the POV during a Type 1 negotiation
+          is known as the <code class="highlighter-rouge">regmask</code> and is used to specify a mask of at least 20 bits that the
+          POV asserts it can control in one of the remote CB/RB's general purpose registers.
+          An invalid mask will result in a failed POV attempt. A valid mask will cause the competition
+          infrastructure to return 20 (or more as specif ed by the provided mask) bits that must appear
+          verbatim in the general purpose register specified during the Type 1 negotiation at the time the
+          challenge/replacement binary faults at the negotiated instruction pointer location. 
+          This negotiated value may be obtained by the POV by receiving the second available
+          32-bit, little endian integer value from file descriptor 3.</p>
+          
+          <p>The third, 32-bit, little endian integer transmitted by the POV during a Type 1 negotiation is known as the
+          <code class="highlighter-rouge">regnum</code> and is used to specify the general purpose register that will contain the negotiated
+          register value at the time of the CB/RB fault. The following register mapping shall be used
+          to select one of eight general purpose registers:</p>
+          
+          <ul>
+            <li>0: <code class="highlighter-rouge">eax</code></li>
+            <li>1: <code class="highlighter-rouge">ecx</code></li>
+            <li>2: <code class="highlighter-rouge">edx</code></li>
+            <li>3: <code class="highlighter-rouge">ebx</code></li>
+            <li>4: <code class="highlighter-rouge">esp</code></li>
+            <li>5: <code class="highlighter-rouge">ebp</code></li>
+            <li>6: <code class="highlighter-rouge">esi</code></li>
+            <li>7: <code class="highlighter-rouge">edi</code></li>
+          </ul>
+          
+          <p>It is the responsibility of the POV to incorporate the negotiated <code class="highlighter-rouge">eip</code> and general purpose values
+          into the content that is exchanged with the remote CB/RB in order to cause the remote CB/RB to fault
+          in the state negotiated with the competition framework.</p>
+          
+          <h3 id="type-1-negotiation-in-xml-style-povs">Type 1 Negotiation in XML Style POVs</h3>
+          
+          <p>All POVs used during CFE shall be in the form of CGC binaries, however to assist with the 
+          transition from CQE to CFE, an XML specification for CFE POVs has been created by extending
+          the CQE POV XML dtd to allow for POV type negotiations. All XML style POVs shall be converted
+          to C source code utilizing the <code class="highlighter-rouge">pov-xml2c</code> utility after which they shall be compiled to
+          CGC binaries representing the final executable form of the POV. The libpov library exists
+          for the sole purpose of supporting this conversion process.</p>
+          
+          <p>The specific XML elements responsible for Type 1 POV negotiation are the <code class="highlighter-rouge">negotiate</code>, <code class="highlighter-rouge">type1</code>,
+          <code class="highlighter-rouge">ipmask</code>, <code class="highlighter-rouge">regmask</code>, and <code class="highlighter-rouge">regnum</code> elements. These elements specify the required components of
+          a Type 1 POV negotiation as detailed above. An example of such a negotiation follows:</p>
+          
+          <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;negotiate&gt;</span>&#x000A;   <span class="nt">&lt;type1&gt;</span>&#x000A;      <span class="c">&lt;!-- base 10 or base 16 integer. Base 16 integers must be prefixed with "0x" --&gt;</span>&#x000A;      <span class="nt">&lt;ipmask&gt;</span>0xBABABABA<span class="nt">&lt;/ipmask&gt;</span>&#x000A;      <span class="c">&lt;!-- base 10 or base 16 integer. Base 16 integers must be prefixed with "0x" --&gt;</span>&#x000A;      <span class="nt">&lt;regmask&gt;</span>0xD5D5D5D5<span class="nt">&lt;/regmask&gt;</span>&#x000A;      <span class="c">&lt;!-- 0..7 [eax,ecx,edx,ebx,esp,ebp,esi,edi] --&gt;</span>&#x000A;      <span class="nt">&lt;regnum&gt;</span>7<span class="nt">&lt;/regnum&gt;</span>&#x000A;   <span class="nt">&lt;/type1&gt;</span>&#x000A;<span class="nt">&lt;/negotiate&gt;</span>&#x000A;</code></pre>
+          </div>
+          
+          <p>Within the remaining replay elements, the negotiated instruction pointer value may be referred
+          using the variable <code class="highlighter-rouge">TYPE1_IP</code>, and the negotiated general purpose register value may be referred
+          to using the variable <code class="highlighter-rouge">TYPE1_REG</code>.</p>
+          
+          <h2 id="type-2-pov-negotiation">Type 2 POV Negotiation</h2>
+          
+          <h3 id="type-2-negotiation-in-cgc-binary-style-povs">Type 2 Negotiation in CGC Binary Style POVs</h3>
+          
+          <p>File descriptor 3 shall be used to carry out POV type negotiations.  A Type 2 POV shall
+          demonstrate the ability to read the contents of arbitrary memory locations within the
+          challenge/replacement binary as dictated by a negotiation with the competition framework.</p>
+          
+          <p>For each attempt at a Type 2 POV, the competition infrastructure shall create a private
+          region within the remote CB/RB that is the subject of the POV. The competition
+          infrastructure shall populate this region with random, secret flag data.</p>
+          
+          <p>A Type 2 negotiation is initiated by the POV by transmitting, on file descriptor 3,
+          the 32-bit little endian value: 2.  The competition framework shall respond with 3, 32-bit,
+          little-endian integers specifying details about the private memory region and the amount of
+          information to be obtained by the POV.</p>
+          
+          <p>The first of these three integers is known as the <code class="highlighter-rouge">type2_addr</code> value and specifies the base
+          address of the private memory region. The second integer transmitted to the POV is 
+          known as the <code class="highlighter-rouge">type2_size</code> value and specifies the size of the the private memory 
+          region. The private memory region shall span a contiguous block within the CB/RB
+          memory space as defined by the address range <code class="highlighter-rouge">type2_addr</code> (inclusive) to 
+          <code class="highlighter-rouge">(type2_addr + type2_size)</code> (exclusive). The third integer transmitted to the POV is 
+          known as the <code class="highlighter-rouge">type2_length</code> value and represents the number of contiguous bytes
+          that the POV must obtain from any location within the private memory region.</p>
+          
+          <p>A Type 2 POV demonstrates its success by transmitting the <code class="highlighter-rouge">type2_length</code> bytes
+          it has obtained from the CB/RB binary to the competition framework
+          on file descriptor 3. The competition framework will then judge the correctness of the 
+          submission and score the POV accordingly.</p>
+          
+          <h3 id="type-2-negotiation-in-xml-style-povs">Type 2 Negotiation in XML Style POVs</h3>
+          
+          <p>All POVs used during CFE shall be in the form of CGC binaries, however to assist with the 
+          transition from CQE to CFE, an XML specification for CFE POVs has been created by extending
+          the CQE POV XML dtd to allow for POV type negotiations. All XML style POVs shall be converted
+          to C source code utilizing the <code class="highlighter-rouge">pov-xml2c</code> utility after which they shall be compiled to
+          CGC binaries representing the final executable form of the POV. The <code class="highlighter-rouge">libpov</code> library exists
+          for the sole purpose of supporting this conversion process.</p>
+          
+          <p>The specific XML elements responsible for Type 2 POV negotiation are the <code class="highlighter-rouge">negotiate</code>, <code class="highlighter-rouge">type2</code>,
+          and <code class="highlighter-rouge">submit</code> elements. These elements specify the required components of
+          a Type 2 POV negotiation as detailed above. An example of such a negotiation follows:</p>
+          
+          <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;negotiate&gt;</span>&#x000A;   <span class="c">&lt;!-- The POV need only express its intent to perform a Type 2 --&gt;</span>&#x000A;   <span class="nt">&lt;type2</span> <span class="nt">/&gt;</span>&#x000A;<span class="nt">&lt;/negotiate&gt;</span>&#x000A;&#x000A;<span class="c">&lt;!-- Other replay elements carry out the communication Whit the CB/RB --&gt;</span>&#x000A;&#x000A;<span class="c">&lt;!-- Finally the retrieved secret flag bytes are submitted --&gt;</span>&#x000A;&#x000A;<span class="nt">&lt;submit&gt;</span>&#x000A;   <span class="c">&lt;!-- The submit element is optional, if it is omitted the value of&#x000A;        the variable TYPE2_VALUE shall be submitted to the competition &#x000A;        framework prior to terminating the POV --&gt;</span>&#x000A;   <span class="nt">&lt;var&gt;</span>MY_TYPE2_DATA<span class="nt">&lt;/var&gt;</span>&#x000A;<span class="nt">&lt;/submit&gt;</span>&#x000A;</code></pre>
+          </div>
+          
+          <p>Following the negotiate element, the negotiated <code class="highlighter-rouge">type2_addr</code>, <code class="highlighter-rouge">type2_size</code>, and <code class="highlighter-rouge">type2_length</code> values
+          may be referred using the variables <code class="highlighter-rouge">TYPE2_ADDR</code>, <code class="highlighter-rouge">TYPE2_SIZE</code>, and <code class="highlighter-rouge">TYPE2_LENGTH</code> respectively.</p>
+          
+          <p>The POV should assign the required secret flag data into the variable <code class="highlighter-rouge">TYPE2_VALUE</code> (or any other
+          variable that is then referenced in a <code class="highlighter-rouge">submit</code> element.</p>
+          
+          <h2 id="see-also">SEE ALSO</h2>
+          
+          <p>For information regarding submitting a CB, see <a href="/cgc-release-documentation/walk-throughs/submitting-a-cb/">submitting-a-cb.md</a>
+          For information regarding testing a CB, see <a href="/cgc-release-documentation/walk-throughs/testing-a-cb/">testing-a-cb.md</a>
+          For information regarding debugging a CB, see <a href="/cgc-release-documentation/walk-throughs/debugging-a-cb/">debugging-a-cb.md</a>
+          For information regarding building a CB, see <a href="/cgc-release-documentation/walk-throughs/building-a-cb/">building-a-cb.md</a>
+          For information regarding XML markup for CFE POVs, see cfe-pov-markup-spec.txt</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id='impressum'>Published by Legitimate Business Syndicate</div>
+      <div id='timestamp'>Built at 2016-05-20T17:40:31Z</div>
+      <div>
+        <ul>
+          <li><a href="https://legitbs.net">Homepage</a></li>
+          <li><a href="https://twitter.com/legitbs_ctf">Twitter</a></li>
+          <li><a href="https://github.com/legitbs">GitHub</a></li>
+          <li><a href="https://github.com/legitbs/cgc-docs">This repo</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../../assets/javascripts/application.js"></script>
+  </body>
+</html>

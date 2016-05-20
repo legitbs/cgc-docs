@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Using the Network Appliance</title>
+    <link href="../../../assets/stylesheets/application.css" rel="stylesheet" />
+  </head>
+  <body class='cgc-release-documentation cgc-release-documentation_walk-throughs cgc-release-documentation_walk-throughs_using-the-network-appliance cgc-release-documentation_walk-throughs_using-the-network-appliance_index'>
+    <div id='container'>
+      <div id='nav_col'>
+        <div id='logo'>
+          <a href='/'>
+            CGC Docs, published by Legitimate Business Syndicate
+          </a>
+        </div>
+        <div id='nav'>
+          <ul>
+            <li>
+              <a href='/'>CGC Docs</a>
+            </li>
+            <li class='hdr'>Event-FAQ</li>
+            <li>
+              <a href='/Event-FAQ/event_faq/'>Event FAQ</a>
+            </li>
+            <li class='hdr'>cb-testing</li>
+            <li>
+              <a href='/cb-testing/cb-acceptance/'>cb-acceptance</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay/'>cb-replay</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay-pov/'>cb-replay-pov</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-test/'>cb-test</a>
+            </li>
+            <li>
+              <a href='/cb-testing/poll-validate/'>poll-validate</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/newsletter</li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ipc/'>News Letter 1: IPC</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/cpp/'>News Letter 2: C++</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ctf/'>News Letter 3: CTF</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/template/'>News Letter X: Template</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/walk-throughs</li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/building-a-cb/'>Building a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/cgc-repository/'>CGC Repositories</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/debugging-a-cb/'>Debugging a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/pin-for-decree/'>Running Intel PIN on DECREE Challenge Binaries</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/running-the-vm/'>Running the Virtual Machine</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/scoring-cbs/'>Scoring a Challenge Binary Set</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/submitting-a-cb/'>Submitting a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/testing-a-cb/'>Testing a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-poll-generators/'>Understanding Poll Generators</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-cfe-povs/'>Understanding Proofs of Vulnerability in CFE</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/using-the-network-appliance/'>Using the Network Appliance</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/virtual-competiton/'>Virtual Competition</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/ptrace-for-decree/'>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</a>
+            </li>
+            <li class='hdr'>cgc2elf</li>
+            <li>
+              <a href='/cgc2elf/cgc2elf/'>cgc2elf</a>
+            </li>
+            <li class='hdr'>cgcef-verify</li>
+            <li>
+              <a href='/cgcef-verify/cgcef_verify/'>cgcef_verify</a>
+            </li>
+            <li class='hdr'>libcgc</li>
+            <li>
+              <a href='/libcgc/allocate/'>allocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/cgcabi/'>CGC ABI</a>
+            </li>
+            <li>
+              <a href='/libcgc/deallocate/'>deallocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/fdwait/'>fdwait</a>
+            </li>
+            <li>
+              <a href='/libcgc/random/'>random</a>
+            </li>
+            <li>
+              <a href='/libcgc/receive/'>receive</a>
+            </li>
+            <li>
+              <a href='/libcgc/terminate/'>_terminate</a>
+            </li>
+            <li>
+              <a href='/libcgc/transmit/'>transmit</a>
+            </li>
+            <li class='hdr'>libcgcef</li>
+            <li>
+              <a href='/libcgcef/cgc_executable_format/'>CGC Executable Format</a>
+            </li>
+            <li class='hdr'>libpov</li>
+            <li>
+              <a href='/libpov/libpov/'>libpov</a>
+            </li>
+            <li>
+              <a href='/libpov/type1_negotiate/'>type1_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_negotiate/'>type2_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_submit/'>type2_submit</a>
+            </li>
+            <li class='hdr'>network-appliance</li>
+            <li>
+              <a href='/network-appliance/cb-packet-log/'>cb-packet-log</a>
+            </li>
+            <li>
+              <a href='/network-appliance/cb-proxy/'>cb-proxy</a>
+            </li>
+            <li>
+              <a href='/network-appliance/verify-rules/'>verify-rules</a>
+            </li>
+            <li class='hdr'>poll-generator</li>
+            <li>
+              <a href='/poll-generator/generate-polls/'>generate-polls</a>
+            </li>
+            <li class='hdr'>pov-xml2c</li>
+            <li>
+              <a href='/pov-xml2c/pov-xml2c/'>pov-xml2c</a>
+            </li>
+            <li class='hdr'>service-launcher</li>
+            <li>
+              <a href='/service-launcher/cb-server/'>cb-server</a>
+            </li>
+            <li class='hdr'>virtual-competition</li>
+            <li>
+              <a href='/virtual-competition/ti-client/'>ti-client</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-rotate/'>ti-rotate</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-server/'>ti-server</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id='main_col'>
+        <div id='title'>
+          <h1>Using the Network Appliance</h1>
+        </div>
+        <div id='content'>
+          <p>The network security appliance provided within CGC, <code class="highlighter-rouge">cb-proxy</code>, is an application layer inspection and modification engine designed to sit between a client and Challenge Binary (CB).
+          <code class="highlighter-rouge">cb-proxy</code> is capable of performing bi-directional content inspection and modification akin to a Network Intrusion Detection system, without the large learning curve of handling the communication underneath the application layer.
+          Inspection and modification is performed via custom domain-specific-language similar in nature to the Snort rules language, with the ability to provide multiple rules for a CB.</p>
+          
+          <h1 id="inspection-process">Inspection Process</h1>
+          
+          <p>As a message is read, it is appended to a unique buffer for the side of the session being analyzed, then the buffer is inspected.
+          The inspection iterates over all of the provided rules until none of the rules match the remaining buffer or the buffer is empty.
+          When a rule successfully completes, the content inspected by the rule is removed from the buffer.
+          A rule is successful if all of the inspection options evaluate successfully.</p>
+          
+          <p>After the rule matching process is complete, the message is sent to the destination.</p>
+          
+          <h1 id="rule-syntax">Rule Syntax</h1>
+          
+          <p>A rule is made up of a rule type, then rule options specified in within a parenthesis, within a single line.
+          Rule options are specified as a keyword and value pair, with a unique syntax for the value depending on the keyword.
+          A rule option is specified by the keyword, a colon, the value, and a semi-colon.</p>
+          
+          <p>A basic rule looks like the following:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>alert (name:"foo"; match:"bar";)&#x000A;</code></pre>
+          </div>
+          
+          <p>The supported rule types are:</p>
+          
+          <ul>
+            <li><code class="highlighter-rouge">alert</code></li>
+            <li><code class="highlighter-rouge">admit</code></li>
+            <li><code class="highlighter-rouge">block</code></li>
+          </ul>
+          
+          <p>An <code class="highlighter-rouge">alert</code> rule will log the content for analysis upon completion.  An <code class="highlighter-rouge">admit</code> rule will pass the inspected content on to its destination without logging it.  A <code class="highlighter-rouge">block</code> rule will cause prevent any further communication from occurring.</p>
+          
+          <p>The supported rule options are:</p>
+          
+          <ul>
+            <li><code class="highlighter-rouge">name</code></li>
+            <li><code class="highlighter-rouge">match</code></li>
+            <li><code class="highlighter-rouge">skip</code></li>
+            <li><code class="highlighter-rouge">regex</code></li>
+            <li><code class="highlighter-rouge">side</code></li>
+            <li><code class="highlighter-rouge">state</code></li>
+            <li><code class="highlighter-rouge">flush</code></li>
+          </ul>
+          
+          <h1 id="name"><code class="highlighter-rouge">name</code></h1>
+          
+          <p>Each rule must have one and only one <code class="highlighter-rouge">name</code> option, which is used in associated logs generated by <code class="highlighter-rouge">block</code> and <code class="highlighter-rouge">alert</code> rules.
+          The <code class="highlighter-rouge">name</code> option must come first in the set of options.</p>
+          
+          <p>The syntax for a <code class="highlighter-rouge">name</code> option is an arbitrary string within double quotes.</p>
+          
+          <p>An example <code class="highlighter-rouge">name</code> option is:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>name:"This is a fancy rule name";&#x000A;</code></pre>
+          </div>
+          
+          <h1 id="match"><code class="highlighter-rouge">match</code></h1>
+          
+          <p>Each rule may have an arbitrary number of <code class="highlighter-rouge">match</code> options, which are used to perform string matching in the inspection buffer.</p>
+          
+          <p>The syntax for a <code class="highlighter-rouge">match</code> value is a quoted string optionally followed by a comma and then a positive integer.<br />
+          The quoted string must be made up of alphanumeric characters, space, or "\x" encoded 2 byte hex-encoded characters.
+          The optional comma and positive integer indicate that the specified string must exist within the specified amount of data.</p>
+          
+          <p>An example <code class="highlighter-rouge">match</code> option is:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>match:"foo";&#x000A;</code></pre>
+          </div>
+          
+          <p>An example <code class="highlighter-rouge">match</code> option with the optional integer, is:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>match:"bar", 3;&#x000A;</code></pre>
+          </div>
+          
+          <p>The first option would look for <code class="highlighter-rouge">foo</code> anywhere in the inspection buffer, and mark all content up to and including the first instance of <code class="highlighter-rouge">foo</code> as inspected upon identification of match.
+          The second option would look for <code class="highlighter-rouge">foo</code> in the first 3 bytes of the inspection buffer, and the 3 bytes as inspected upon match.</p>
+          
+          <h1 id="skip"><code class="highlighter-rouge">skip</code></h1>
+          
+          <p>Each rule may have any number of <code class="highlighter-rouge">skip</code> options, which are used to skip over the specified amount of content in the inspection buffer.
+          The <code class="highlighter-rouge">skip</code> option allows a rule to indicate content has been inspected without actually performing any inspection.</p>
+          
+          <p>The syntax for a <code class="highlighter-rouge">skip</code> value is a positive integer.</p>
+          
+          <p>An example <code class="highlighter-rouge">skip</code> option is:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>skip:10;&#x000A;</code></pre>
+          </div>
+          
+          <p>Any content matched by the <code class="highlighter-rouge">regex</code> option is considered inspected, and removed the beginning of the inspection buffer.</p>
+          
+          <h1 id="replace"><code class="highlighter-rouge">replace</code></h1>
+          
+          <p>Each rule may have any number of <code class="highlighter-rouge">replace</code> options, which are used to modify the matched content prior to its sending to the other side.
+          A <code class="highlighter-rouge">replace</code> option must occur immediately after a <code class="highlighter-rouge">match</code> option, and only one <code class="highlighter-rouge">replace</code> opton may occur for each <code class="highlighter-rouge">match</code> option.</p>
+          
+          <p>The syntax for a <code class="highlighter-rouge">replace</code> option is a quoted string.
+          The quoted string must be made up of alphanumeric characters, space, or "\x" encoded 2 byte hex-encoded characters.
+          The quoted string, upon decoding, must be the same length as the preceeding <code class="highlighter-rouge">match</code> string.</p>
+          
+          <p>An example <code class="highlighter-rouge">replace</code> option is:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>replace:"foo";&#x000A;</code></pre>
+          </div>
+          
+          <p>The <code class="highlighter-rouge">replace</code> keyword is a best effort replacement.
+          Only content that is modified by <code class="highlighter-rouge">replace</code> that is part of the message that triggered the current inspection will be modified as it is sent to the destination.
+          Any modified content from previous messages will have already been sent to the destination, therefor the modification is unable to occur.</p>
+          
+          <h1 id="regex"><code class="highlighter-rouge">regex</code></h1>
+          
+          <p>Each rule may have any number of <code class="highlighter-rouge">regex</code> options, which are used to search for a specified string in the inspection buffer.</p>
+          
+          <p>The syntax for a <code class="highlighter-rouge">regex</code> option is an arbitrary string within double quotes.  The string must be of a <a href="https://github.com/google/re2/wiki/Syntax">valid RE2 syntax</a>.</p>
+          
+          <p>An example <code class="highlighter-rouge">regex</code> option is:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>regex:"foo.*bar";&#x000A;</code></pre>
+          </div>
+          
+          <p>Any content matched by the <code class="highlighter-rouge">regex</code> option is considered inspected, and removed the beginning of the inspection buffer.</p>
+          
+          <h1 id="side"><code class="highlighter-rouge">side</code></h1>
+          
+          <p>Each rule may have a <code class="highlighter-rouge">side</code> option, which allow a rule to be limited to inspecting content for a specific side of the session.</p>
+          
+          <p>The syntax for a <code class="highlighter-rouge">side</code> value is either the string client or server, to indicate which side of the session the rule applies.</p>
+          
+          <p>An example <code class="highlighter-rouge">side</code> option is:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>side:server;&#x000A;</code></pre>
+          </div>
+          
+          <h1 id="state"><code class="highlighter-rouge">state</code></h1>
+          
+          <p>Each rule may have an arbitrary number <code class="highlighter-rouge">state</code> options, which allow for the creation of rudimentary state machines via setting, unsetting, and checking the state of an arbitrary number of named bits that are allocated per session.</p>
+          
+          <p>The syntax for a <code class="highlighter-rouge">state</code> value is an operation, then a comma, then a string.</p>
+          
+          <p>The operations are as follows:</p>
+          
+          <ul>
+            <li><code class="highlighter-rouge">set</code></li>
+            <li><code class="highlighter-rouge">unset</code></li>
+            <li><code class="highlighter-rouge">is</code></li>
+            <li><code class="highlighter-rouge">not</code></li>
+          </ul>
+          
+          <p>The <code class="highlighter-rouge">set</code> operation sets the specified bit to <code class="highlighter-rouge">True</code>.  The <code class="highlighter-rouge">unset</code> operation sets the specified bit to <code class="highlighter-rouge">False</code>.  The <code class="highlighter-rouge">is</code> operation only continues if the specified bit is <code class="highlighter-rouge">True</code>.  The <code class="highlighter-rouge">not</code> operation only continues if the specified bit is <code class="highlighter-rouge">False</code>.</p>
+          
+          <p>The string must be one or more characters that are alphanumeric or "_".</p>
+          
+          <p>An example <code class="highlighter-rouge">state</code> option is:</p>
+          
+          <p>state:set,foo;</p>
+          
+          <p>Note, while states may change during the processing of a rule, the states are only saved if the rule completes successfully.<br />
+          This means if a state is changed in the rule, but a later option in the rule fails, the values are not saved.</p>
+          
+          <h1 id="flush"><code class="highlighter-rouge">flush</code></h1>
+          
+          <p>Each rule may have one <code class="highlighter-rouge">flush</code> option, which empties the analysis buffer of the specified side of the communication.
+          If a <code class="highlighter-rouge">flush</code> option is used, it must come last in the set of rule options.</p>
+          
+          <p>The syntax for a <code class="highlighter-rouge">flush</code> option is either the string client or server, to indicate which buffer should be emptied.</p>
+          
+          <p>An example <code class="highlighter-rouge">flush</code> option is:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>flush:server;&#x000A;</code></pre>
+          </div>
+          
+          <h1 id="beyond-simple-inspection">Beyond Simple Inspection</h1>
+          
+          <h2 id="order-matters">Order Matters</h2>
+          
+          <p>As discussed previously, rules are processed iteratively until no additional content has been inspected.
+          As such, the order the rules are defined matters.</p>
+          
+          <p>Take the following set of rules:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>alert (name:"rule 1"; match:"foo"; replace:"bar";)&#x000A;block (name:"rule 2"; match:"foo";)&#x000A;</code></pre>
+          </div>
+          
+          <p>As is, rule 2 should never fire, as rule 1 will always replace the string "foo" with "bar".<br />
+          However, if the rules were in the opposite order, the session would drop as soon as "foo" was seen.</p>
+          
+          <h2 id="non-determinism-in-underlying-communications">Non-determinism in underlying communications</h2>
+          
+          <p>CBs within CGC communicate over TCP/IP, which does not guarantee data always arrives in the same size chunks as it is sent.
+          While testing in isolation a CB may always work in the same way, but often systems tested at load may cause edge conditions to occur.
+          One such issue, TCP segmentation, can be replicated in challenge binaries with the <code class="highlighter-rouge">--max_send</code> parameter to <code class="highlighter-rouge">cb-test</code>.</p>
+          
+          <p>This issue impacts the efficacy of traditional packet based network security appliances.
+          Traditional appliances perform reassembly at a packet layer, including attempting to handle out of order packets.
+          <code class="highlighter-rouge">cb-proxy</code>, operating at the socket layer, does not have to deal with out of order packets, but it does have to deal with reading a non-deterministic amount of traffic at a time.</p>
+          
+          <p>CB authors have no requirement to follow any known specification for messages, and as such <code class="highlighter-rouge">cb-proxy</code> must be flexible enough to handle arbitrary protocols.</p>
+          
+          <p><code class="highlighter-rouge">cb-proxy</code> handles these non-deterministic issues by using a per-connection and per side inspection buffer, with the ability to flush the buffers without inspection at any point.
+          The original <a href="https://github.com/CyberGrandChallenge/samples/blob/a9cf305ea81f8454daf9d6dcf1758b57383a189e/examples/CADET_00001/src/service.c"><code class="highlighter-rouge">CADET_00001</code> challenge binary</a>, the author received 128 bytes into a buffer that was only 64 bytes long.</p>
+          
+          <p>At first glance, a rule that says if more than 64 bytes is sent could be used to stop a POV for <code class="highlighter-rouge">CADET_00001</code> such as the following rule:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>block (name:"too much data sent"; side:client; regex:".{65}";)&#x000A;</code></pre>
+          </div>
+          
+          <p>However, depending on TCP buffering at various locations, at the client and/or the server, could cause more than 64 bytes in a single <code class="highlighter-rouge">transmit</code> to not cause the POV to fire.</p>
+          
+          <p>The server will always respond with upon receiving data.<br />
+          Using this knowledge, we can know if the server has completed a receive early due to buffering.</p>
+          
+          <p>As such, the only reliable way to detect a POV is to look for more than 64 bytes of data, but as soon as the server has sent data, flush the inspection buffer for the client.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>block (name:"too much data sent"; side:client; regex:".{65}";)&#x000A;admit (name:"whenever we see server data, flush the client stream"; side:server; regex:".*"; flush:client;)&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="memory--cpu-consumption">Memory &amp; CPU Consumption</h2>
+          
+          <p>There are some drawbacks to this buffering.
+          There is a performance impact to the buffering.
+          Data is always appended to the analysis buffer.
+          The analysis buffer is always stored for the duration of the session until successful inspection of the data by a rule or a 'flush'.</p>
+          
+          <p>If data is never inspected or flushed, then the analysis buffer could become large, consuming excessive computing resources.</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id='impressum'>Published by Legitimate Business Syndicate</div>
+      <div id='timestamp'>Built at 2016-05-20T17:40:31Z</div>
+      <div>
+        <ul>
+          <li><a href="https://legitbs.net">Homepage</a></li>
+          <li><a href="https://twitter.com/legitbs_ctf">Twitter</a></li>
+          <li><a href="https://github.com/legitbs">GitHub</a></li>
+          <li><a href="https://github.com/legitbs/cgc-docs">This repo</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../../assets/javascripts/application.js"></script>
+  </body>
+</html>

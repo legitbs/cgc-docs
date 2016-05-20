@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Debugging a Challenge Binary</title>
+    <link href="../../../assets/stylesheets/application.css" rel="stylesheet" />
+  </head>
+  <body class='cgc-release-documentation cgc-release-documentation_walk-throughs cgc-release-documentation_walk-throughs_debugging-a-cb cgc-release-documentation_walk-throughs_debugging-a-cb_index'>
+    <div id='container'>
+      <div id='nav_col'>
+        <div id='logo'>
+          <a href='/'>
+            CGC Docs, published by Legitimate Business Syndicate
+          </a>
+        </div>
+        <div id='nav'>
+          <ul>
+            <li>
+              <a href='/'>CGC Docs</a>
+            </li>
+            <li class='hdr'>Event-FAQ</li>
+            <li>
+              <a href='/Event-FAQ/event_faq/'>Event FAQ</a>
+            </li>
+            <li class='hdr'>cb-testing</li>
+            <li>
+              <a href='/cb-testing/cb-acceptance/'>cb-acceptance</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay/'>cb-replay</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay-pov/'>cb-replay-pov</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-test/'>cb-test</a>
+            </li>
+            <li>
+              <a href='/cb-testing/poll-validate/'>poll-validate</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/newsletter</li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ipc/'>News Letter 1: IPC</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/cpp/'>News Letter 2: C++</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ctf/'>News Letter 3: CTF</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/template/'>News Letter X: Template</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/walk-throughs</li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/building-a-cb/'>Building a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/cgc-repository/'>CGC Repositories</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/debugging-a-cb/'>Debugging a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/pin-for-decree/'>Running Intel PIN on DECREE Challenge Binaries</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/running-the-vm/'>Running the Virtual Machine</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/scoring-cbs/'>Scoring a Challenge Binary Set</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/submitting-a-cb/'>Submitting a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/testing-a-cb/'>Testing a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-poll-generators/'>Understanding Poll Generators</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-cfe-povs/'>Understanding Proofs of Vulnerability in CFE</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/using-the-network-appliance/'>Using the Network Appliance</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/virtual-competiton/'>Virtual Competition</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/ptrace-for-decree/'>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</a>
+            </li>
+            <li class='hdr'>cgc2elf</li>
+            <li>
+              <a href='/cgc2elf/cgc2elf/'>cgc2elf</a>
+            </li>
+            <li class='hdr'>cgcef-verify</li>
+            <li>
+              <a href='/cgcef-verify/cgcef_verify/'>cgcef_verify</a>
+            </li>
+            <li class='hdr'>libcgc</li>
+            <li>
+              <a href='/libcgc/allocate/'>allocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/cgcabi/'>CGC ABI</a>
+            </li>
+            <li>
+              <a href='/libcgc/deallocate/'>deallocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/fdwait/'>fdwait</a>
+            </li>
+            <li>
+              <a href='/libcgc/random/'>random</a>
+            </li>
+            <li>
+              <a href='/libcgc/receive/'>receive</a>
+            </li>
+            <li>
+              <a href='/libcgc/terminate/'>_terminate</a>
+            </li>
+            <li>
+              <a href='/libcgc/transmit/'>transmit</a>
+            </li>
+            <li class='hdr'>libcgcef</li>
+            <li>
+              <a href='/libcgcef/cgc_executable_format/'>CGC Executable Format</a>
+            </li>
+            <li class='hdr'>libpov</li>
+            <li>
+              <a href='/libpov/libpov/'>libpov</a>
+            </li>
+            <li>
+              <a href='/libpov/type1_negotiate/'>type1_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_negotiate/'>type2_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_submit/'>type2_submit</a>
+            </li>
+            <li class='hdr'>network-appliance</li>
+            <li>
+              <a href='/network-appliance/cb-packet-log/'>cb-packet-log</a>
+            </li>
+            <li>
+              <a href='/network-appliance/cb-proxy/'>cb-proxy</a>
+            </li>
+            <li>
+              <a href='/network-appliance/verify-rules/'>verify-rules</a>
+            </li>
+            <li class='hdr'>poll-generator</li>
+            <li>
+              <a href='/poll-generator/generate-polls/'>generate-polls</a>
+            </li>
+            <li class='hdr'>pov-xml2c</li>
+            <li>
+              <a href='/pov-xml2c/pov-xml2c/'>pov-xml2c</a>
+            </li>
+            <li class='hdr'>service-launcher</li>
+            <li>
+              <a href='/service-launcher/cb-server/'>cb-server</a>
+            </li>
+            <li class='hdr'>virtual-competition</li>
+            <li>
+              <a href='/virtual-competition/ti-client/'>ti-client</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-rotate/'>ti-rotate</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-server/'>ti-server</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id='main_col'>
+        <div id='title'>
+          <h1>Debugging a Challenge Binary</h1>
+        </div>
+        <div id='content'>
+          <p>This walk-through will guide you through debugging a challenge binary.</p>
+          
+          <p>During the creation of of Challenge Binaries (CBs), an author may need to use tools to inspect and debug various built binaries.</p>
+          
+          <h2 id="inspecting-a-cb">Inspecting a CB</h2>
+          
+          <p>The unix <code class="highlighter-rouge">file</code> command can be used as a quick, high-level test that a file in question is a CGC binary.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ file LUNGE_00001&#x000A;LUNGE_00001: CGC 32-bit LSB executable, (CGC/Linux)&#x000A;</code></pre>
+          </div>
+          
+          <p>CGC tool-chain items intended to be  specifically used with CBs can be found in standard cross-build locations for <code class="highlighter-rouge">i386-linux-cgc</code>.  Specifically:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>/usr/i386-linux-cgc/bin/&#x000A;/usr/bin/i386-linux-cgc-*&#x000A;</code></pre>
+          </div>
+          
+          <p>When wishing to use these tools, you must specify the full path to the tool, use the 'long name' for the specific tool in <code class="highlighter-rouge">/usr/bin</code>, or prepend the <code class="highlighter-rouge">/usr/i386-linux-cgc/bin</code> directory to your path. For instance, <code class="highlighter-rouge">objdump</code> can be used in these ways.</p>
+          
+          <p>The full path for either location of <code class="highlighter-rouge">objdump</code>:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ /usr/bin/i386-linux-cgc-objdump -f LUNGE_00001&#x000A;$ /usr/i386-linux-cgc/bin/objdump -f LUNGE_00001&#x000A;</code></pre>
+          </div>
+          
+          <p>Using the 'long name' which, because it is in <code class="highlighter-rouge">/usr/bin</code>, is already in <code class="highlighter-rouge">PATH</code>:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ i386-linux-cgc-objdump -f LUNGE_00001&#x000A;</code></pre>
+          </div>
+          
+          <p>Prepending the location of the <code class="highlighter-rouge">i386-linux-cgc</code> tools to <code class="highlighter-rouge">PATH</code>:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ which objdump&#x000A;/usr/bin/objdump&#x000A;$ PATH=/usr/i386-linux-cgc/bin:$PATH&#x000A;$ which objdump&#x000A;/usr/i386-linux-cgc/bin/objdump&#x000A;$ objdump -f LUNGE_00001&#x000A;</code></pre>
+          </div>
+          
+          <p>In any of these cases, the output of <code class="highlighter-rouge">objdump -f</code> should be similar to:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ objdump -f LUNGE_00001&#x000A;&#x000A;LUNGE_00001:     file format cgc32-i386&#x000A;architecture: i386, flags 0x00000112:&#x000A;EXEC_P, HAS_SYMS, D_PAGED&#x000A;start address 0x08048074&#x000A;</code></pre>
+          </div>
+          
+          <p>The CGC version of <code class="highlighter-rouge">objdump</code> can be used to perform many inspection functions, such as observing section headers, or observing symbols:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ objdump -h LUNGE_00001&#x000A;&#x000A;LUNGE_00001:     file format cgc32-i386&#x000A;&#x000A;Sections:&#x000A;Idx Name          Size      VMA       LMA       File off  Algn&#x000A;  0 .text         00000255  08048074  08048074  00000074  2**0&#x000A;                  CONTENTS, ALLOC, LOAD, READONLY, CODE&#x000A;  1 .rodata       00000027  080482cc  080482cc  000002cc  2**2&#x000A;                  CONTENTS, ALLOC, LOAD, READONLY, DATA&#x000A;  2 .eh_frame     00000054  080482f4  080482f4  000002f4  2**2&#x000A;                  CONTENTS, ALLOC, LOAD, READONLY, DATA&#x000A;  3 .comment      0000001c  00000000  00000000  00000348  2**0&#x000A;                  CONTENTS, READONLY&#x000A;  4 .debug_aranges 00000040  00000000  00000000  00000364  2**0&#x000A;                  CONTENTS, READONLY, DEBUGGING&#x000A;  5 .debug_info   000001a2  00000000  00000000  000003a4  2**0&#x000A;                  CONTENTS, READONLY, DEBUGGING&#x000A;  6 .debug_abbrev 00000134  00000000  00000000  00000546  2**0&#x000A;                  CONTENTS, READONLY, DEBUGGING&#x000A;  7 .debug_line   000000da  00000000  00000000  0000067a  2**0&#x000A;                  CONTENTS, READONLY, DEBUGGING&#x000A;  8 .debug_str    000000ba  00000000  00000000  00000754  2**0&#x000A;                  CONTENTS, READONLY, DEBUGGING&#x000A;  9 .debug_loc    00000064  00000000  00000000  0000080e  2**0&#x000A;                  CONTENTS, READONLY, DEBUGGING&#x000A;&#x000A;$ objdump -t LUNGE_00001&#x000A;&#x000A;LUNGE_00001:     file format cgc32-i386&#x000A;&#x000A;SYMBOL TABLE:&#x000A;08048074 l    d  .text	00000000 .text&#x000A;080482cc l    d  .rodata	00000000 .rodata&#x000A;080482f4 l    d  .eh_frame	00000000 .eh_frame&#x000A;00000000 l    d  .comment	00000000 .comment&#x000A;00000000 l    d  .debug_aranges	00000000 .debug_aranges&#x000A;00000000 l    d  .debug_info	00000000 .debug_info&#x000A;00000000 l    d  .debug_abbrev	00000000 .debug_abbrev&#x000A;00000000 l    d  .debug_line	00000000 .debug_line&#x000A;00000000 l    d  .debug_str	00000000 .debug_str&#x000A;00000000 l    d  .debug_loc	00000000 .debug_loc&#x000A;00000000 l    df *ABS*	00000000 service.c&#x000A;00000000 l    df *ABS*	00000000 libc.c&#x000A;00000000 l    df *ABS*	00000000&#x000A;08048121 g       .text	00000000 random&#x000A;0804807f g       .text	00000000 _terminate&#x000A;0804810d g       .text	00000000 deallocate&#x000A;08048074 g       .text	00000000 _start&#x000A;08049348 g       .eh_frame	00000000 __bss_start&#x000A;0804813b g     F .text	0000010f main&#x000A;0804808d g       .text	00000000 transmit&#x000A;080480cd g       .text	00000000 fdwait&#x000A;080480ad g       .text	00000000 receive&#x000A;08049348 g       .eh_frame	00000000 _edata&#x000A;08049348 g       .eh_frame	00000000 _end&#x000A;0804824a g     F .text	0000007f transmit_all&#x000A;080480f3 g       .text	00000000 allocate&#x000A;</code></pre>
+          </div>
+          
+          <p>A stripped CB would exhibit less information in the case of symbols:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ strip LUNGE_00001&#x000A;$ objdump -t LUNGE_00001&#x000A;&#x000A;LUNGE_00001:     file format cgc32-i386&#x000A;&#x000A;SYMBOL TABLE:&#x000A;no symbols&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="using-stderr-to-debug-a-cb">Using <code class="highlighter-rouge">STDERR</code> to debug a CB</h2>
+          
+          <p>The age-old method of inserting additional output into a program in order to track flow can certainly be used to debug a CB.  For example, preprocessor directives (specifically <code class="highlighter-rouge">#ifdef PATCHED_N</code>) are used to indicated what should or should not be included in the PATCHED version of a CB.  Suppose, you want to test that code associated with such a preprocessor is reachable, and therefore a vulnerable condition is reachable. A simple way to do this is by adding additional <code class="highlighter-rouge">transmit</code> calls in order to create output to <code class="highlighter-rouge">STDERR</code>.</p>
+          
+          <p>Consider inserting the following lines into the example <code class="highlighter-rouge">service.c</code> beginning with the <code class="highlighter-rouge">ifdef</code> on line 24:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>#ifdef PATCHED_1&#x000A;    transmit(STDERR, "Reached point 4\n", 16, 0);&#x000A;    _terminate(4);&#x000A;#else&#x000A;    transmit(STDERR, "Reached point 5\n", 16, 0);&#x000A;    _terminate(5);&#x000A;&#x000A;    if (buf[0] == 0x41 &amp;&amp; buf[1] == 0x42) {&#x000A;        char *p = 0;&#x000A;        p[0] = 10;&#x000A;    }&#x000A;#endif&#x000A;</code></pre>
+          </div>
+          
+          <p>By inserting additional calls to <code class="highlighter-rouge">transmit</code> the output of the CB will clearly indicate if compilation process included the <code class="highlighter-rouge">#ifdef PATCHED_&lt;n&gt;</code> block or the <code class="highlighter-rouge">else</code> block.  Similarly, by inserting additional <code class="highlighter-rouge">_terminate</code> calls, the CB will exit when this debugging error condition is met, and the CB return code can be tested to determine which of the <code class="highlighter-rouge">_terminate</code> calls was reached.  In fact, <code class="highlighter-rouge">_terminate</code> can be used in this fashion to debug without using <code class="highlighter-rouge">transmit</code> at all.</p>
+          
+          <p>After building the CB with the two additional <code class="highlighter-rouge">transmit</code> and <code class="highlighter-rouge">_terminate</code> calls, we can observe the effects via output and via return code:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ ./bin/LUNGE_00001 &gt; /dev/null&#x000A;Reached point 5&#x000A;$ echo $?&#x000A;5&#x000A;$ ./bin/LUNGE_00001_patched &gt; /dev/null&#x000A;Reached point 4&#x000A;$ echo $?&#x000A;4&#x000A;</code></pre>
+          </div>
+          
+          <p>In the unpatched version of the CB, we reach the <code class="highlighter-rouge">transmit</code> indicating we 'Reached point 5' and the error code stemming from the <code class="highlighter-rouge">_terminate</code> is also 5 (as reported by <code class="highlighter-rouge">$?</code>).  Similarly, we see point 4 and code 4 for the patched version of the CB.</p>
+          
+          <p>Note:  If you already have pollers or PoVs in place, altering the output of a CB might cause these to no longer work.  Since the debugging output is temporary code that will later be removed, it is probably not worth altering pollers and PoVs to match the additional debugging output.  For this reason, instead of issuing a generic <code class="highlighter-rouge">make</code> CB authors might consider using the <code class="highlighter-rouge">build</code> make target: <code class="highlighter-rouge">make build</code>.  The <code class="highlighter-rouge">build</code> target will compile the unpatched and patched CBs, but will not perform additional steps required prior to submission of the final CB.</p>
+          
+          <h2 id="using-gdb-to-debug-a-cb">Using GDB to debug a CB</h2>
+          
+          <p>GDB has been modified to work with CBs.  Simply load a CB into GDB by starting GDB with the CB as a command line argument.  The code listing below demonstrates loading a CB, setting a breakpoint by name, executing the CB and then single-stepping after GDB encounters the breakpoint.  Since the CB has not been stripped, symbols are loaded from the CB and the breakpoint can be set by name (<code class="highlighter-rouge">main</code>) and line source information is provided while single stepping.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ gdb LUNGE_00001&#x000A;GNU gdb (GDB) 7.4.1&#x000A;Copyright (C) 2012 Free Software Foundation, Inc.&#x000A;License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;&#x000A;This is free software: you are free to change and redistribute it.&#x000A;There is NO WARRANTY, to the extent permitted by law.  Type "show copying"&#x000A;and "show warranty" for details.&#x000A;This GDB was configured as "i686-pc-linux-gnu".&#x000A;For bug reporting instructions, please see:&#x000A;&lt;http://www.gnu.org/software/gdb/bugs/&gt;...&#x000A;Reading symbols from bin/LUNGE_00001...done.&#x000A;(gdb) break main&#x000A;Breakpoint 1 at 0x8048147: file src/service.c, line 11.&#x000A;(gdb) r&#x000A;Starting program: bin/LUNGE_00001&#x000A;&#x000A;Breakpoint 1, main () at src/service.c:11&#x000A;11      ret = transmit_all(STDOUT, STR1, sizeof(STR1) - 1);&#x000A;(gdb) s&#x000A;transmit_all (fd=1, buf=0x80482cc "This implements a simple echo service\n", size=38) at lib/libc.c:5&#x000A;5       size_t sent = 0;&#x000A;(gdb) s&#x000A;6       size_t sent_now = 0;&#x000A;(gdb) s&#x000A;9       if (!buf)&#x000A;</code></pre>
+          </div>
+          
+          <p>This sample service has a conditional, intentional bug at line 26:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ head -n 29 src/service.c | tail -n 4&#x000A;  if (buf[0] == 0x41 &amp;&amp; buf[1] == 0x42) {&#x000A;      char *p = 0;&#x000A;      p[0] = 10;&#x000A;  }&#x000A;</code></pre>
+          </div>
+          
+          <p>The CB can be executed from GDB, and the write of <code class="highlighter-rouge">AB</code> to reach the bug can be provided interactively.  Here we set a breakpoint on the condition around the basic block containing the bug (by line number - 'line 25').  First we provide input that fails the condition (<code class="highlighter-rouge">afd</code>), then we provide input that passes the condition (<code class="highlighter-rouge">AB</code>).  When GDB encounters the null pointer assignment, GDB catches <code class="highlighter-rouge">SIGSEGV</code> and prompts the user about the signal.  When debugging a CB during development, a binary with debugging symbols is available in the directory <code class="highlighter-rouge">build/release/bin/</code>.  If this binary is used, GDB can show the source code surrounding the line that caused the <code class="highlighter-rouge">SIGSEGV</code>.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ gdb LUNGE_00001&#x000A;GNU gdb (GDB) 7.4.1&#x000A;...&#x000A;Reading symbols from bin/LUNGE_00001...done.&#x000A;(gdb) break 25&#x000A;Breakpoint 1 at 0x80481e1: file src/service.c, line 25.&#x000A;&#x000A;(gdb) run&#x000A;Starting program: bin/LUNGE_00001&#x000A;This implements a simple echo service&#x000A;afd&#x000A;&#x000A;Breakpoint 1, main () at src/service.c:26&#x000A;26          if (buf[0] == 0x41 &amp;&amp; buf[1] == 0x42) {&#x000A;(gdb) disp buf&#x000A;1: buf = "afd\n", '\000' &lt;repeats 1019 times&gt;&#x000A;(gdb) c&#x000A;Continuing.&#x000A;afd&#x000A;AB&#x000A;&#x000A;Breakpoint 1, main () at src/service.c:26&#x000A;26          if (buf[0] == 0x41 &amp;&amp; buf[1] == 0x42) {&#x000A;1: buf = "AB\n", '\000' &lt;repeats 1020 times&gt;&#x000A;(gdb) c&#x000A;Continuing.&#x000A;&#x000A;Program received signal SIGSEGV, Segmentation fault.&#x000A;0x08048205 in main () at src/service.c:28&#x000A;28              p[0] = 10;&#x000A;1: buf = "AB\n", '\000' &lt;repeats 1020 times&gt;&#x000A;&#x000A;(gdb) list src/service.c:28&#x000A;23&#x000A;24	#ifdef PATCHED_1&#x000A;25	#else&#x000A;26          if (buf[0] == 0x41 &amp;&amp; buf[1] == 0x42) {&#x000A;27              char *p = 0;&#x000A;28              p[0] = 10;&#x000A;29          }&#x000A;30	#endif&#x000A;31&#x000A;32          ret = transmit_all(STDOUT, buf, size);&#x000A;(gdb)&#x000A;</code></pre>
+          </div>
+          
+          <p>The sample service is purposefully simple, but we can still observe a simple backtrace by pausing execution at <code class="highlighter-rouge">transmit</code> which will be called via the library function <code class="highlighter-rouge">transmit_all</code>:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ gdb LUNGE_00001&#x000A;GNU gdb (GDB) 7.4.1&#x000A;...&#x000A;Reading symbols from bin/LUNGE_00001...done.&#x000A;(gdb) break transmit&#x000A;Breakpoint 1 at 0x804808d&#x000A;(gdb) run&#x000A;Starting program: bin/LUNGE_00001&#x000A;&#x000A;Breakpoint 1, 0x0804808d in transmit ()&#x000A;(gdb) bt&#x000A;#0  0x0804808d in transmit ()&#x000A;#1  0x080482a4 in transmit_all (fd=1, buf=0x80482cc "This implements a simple echo service\n", size=38) at lib/libc.c:16&#x000A;#2  0x08048163 in main () at src/service.c:11&#x000A;</code></pre>
+          </div>
+          
+          <p>GDB can also show a disassembly of the function:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>(gdb) disassemble transmit_all&#x000A;Dump of assembler code for function transmit_all:&#x000A;   0x0804824a &lt;+0&gt;:	push   %ebp&#x000A;   0x0804824b &lt;+1&gt;:	mov    %esp,%ebp&#x000A;   0x0804824d &lt;+3&gt;:	sub    $0x28,%esp&#x000A;=&gt; 0x08048250 &lt;+6&gt;:	movl   $0x0,-0xc(%ebp)&#x000A;   0x08048257 &lt;+13&gt;:	movl   $0x0,-0x14(%ebp)&#x000A;   0x0804825e &lt;+20&gt;:	cmpl   $0x0,0xc(%ebp)&#x000A;   0x08048262 &lt;+24&gt;:	jne    0x804826b &lt;transmit_all+33&gt;&#x000A;   0x08048264 &lt;+26&gt;:	mov    $0x1,%eax&#x000A;   0x08048269 &lt;+31&gt;:	jmp    0x80482c7 &lt;transmit_all+125&gt;&#x000A;   ...&#x000A;</code></pre>
+          </div>
+          
+          <p>GDB may also be used to view the contents of the secret flag page</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ gdb -q bin/CADET_00003&#x000A;Reading symbols from bin/CADET_00003...(no debugging symbols found)...done.&#x000A;(gdb) info files&#x000A;Symbols from "/home/vagrant/CADET_00003/bin/CADET_00003".&#x000A;Local exec file:&#x000A;       `/home/vagrant/CADET_00003/bin/CADET_00003', file type elf32-i386.&#x000A;       Entry point: 0x80485fc&#x000A;       0x080480a0 - 0x08048700 is .text&#x000A;       0x08048700 - 0x08048796 is .rodata&#x000A;       0x08049798 - 0x0805d98c is .data&#x000A;(gdb) b *0x80485fc&#x000A;Breakpoint 1 at 0x80485fc&#x000A;(gdb) run&#x000A;Starting program: /home/vagrant/CADET_00003/bin/CADET_00003&#x000A;&#x000A;Breakpoint 1, 0x080485fc in ?? ()&#x000A;(gdb) info proc map&#x000A;process 5714&#x000A;Mapped address spaces:&#x000A;&#x000A;       Start Addr   End Addr       Size     Offset objfile&#x000A;        0x8048000  0x8049000     0x1000        0x0 /home/vagrant/CADET_00003/bin/CADET_00003&#x000A;        0x8049000  0x805e000    0x15000        0x0 /home/vagrant/CADET_00003/bin/CADET_00003&#x000A;       0x4347c000 0x4347d000     0x1000        0x0  &lt;== This is the secret page (only anonymous page at start)&#x000A;       0xbaa8b000 0xbaaab000    0x20000        0x0 [stack]&#x000A;(gdb) x /16xb 0x4347c000&#x000A;0x4347c000:     0x4c    0xf5    0x57    0x33    0xa1    0xb0    0xd3    0x5f&#x000A;0x4347c008:     0x5f    0x0c    0xf2    0xca    0x5e    0x93    0x29    0x0c&#x000A;(gdb) run&#x000A;The program being debugged has been started already.&#x000A;Start it from the beginning? (y or n) y&#x000A;Starting program: /home/vagrant/CADET_00003/bin/CADET_00003&#x000A;&#x000A;Breakpoint 1, 0x080485fc in ?? ()&#x000A;(gdb) info proc map&#x000A;process 5718&#x000A;Mapped address spaces:&#x000A;&#x000A;       Start Addr   End Addr       Size     Offset objfile&#x000A;        0x8048000  0x8049000     0x1000        0x0 /home/vagrant/CADET_00003/bin/CADET_00003&#x000A;        0x8049000  0x805e000    0x15000        0x0 /home/vagrant/CADET_00003/bin/CADET_00003&#x000A;       0x4347c000 0x4347d000     0x1000        0x0  &lt;== This is the secret page (only anonymous page at start)&#x000A;       0xbaa8b000 0xbaaab000    0x20000        0x0 [stack]&#x000A;(gdb) x /16xb 0x4347c000&#x000A;0x4347c000:     0xa1    0x94    0x0e    0x63    0xf1    0xf5    0xf9    0x62&#x000A;0x4347c008:     0xcd    0x5c    0x8c    0x87    0x06    0xc9    0xec    0xfa&#x000A;(gdb)&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="using-core-files-with-gdb">Using core files with GDB</h2>
+          
+          <p>The CGC kernel is capable of creating CGC core files when a CB crashes.  ulimit for core files is typically set to 0, to enable core dumps this ulimit must be non-zero (recommend: <code class="highlighter-rouge">unlimited</code>).  Valid core dumps cannot be created on folders shared with the host using VirtualBox. The core file will be created, but will have a zero length (use <code class="highlighter-rouge">-d</code> option to <code class="highlighter-rouge">cb-server</code> as below).</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ ulimit -c&#x000A;0&#x000A;$ ulimit -c unlimited&#x000A;$ ulimit&#x000A;unlimited&#x000A;</code></pre>
+          </div>
+          
+          <p>If a CB crashes (and the ulimit for core files is non-zero), a file named <code class="highlighter-rouge">core</code> will be created (e.g. core will be dumped).</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ ./LUNGE_00001&#x000A;This implements a simple echo service&#x000A;AB&#x000A;Segmentation fault (core dumped)&#x000A;$ file core&#x000A;core: CGC 32-bit LSB core file (CGC/Linux)&#x000A;</code></pre>
+          </div>
+          
+          <p>Such a CGC core file can be supplied to GDB along with the binary (as a second argument or via the <code class="highlighter-rouge">-c</code> option).</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ gdb LUNGE_00001 core&#x000A;GNU gdb (GDB) 7.4.1&#x000A;...&#x000A;Reading symbols from /vagrant/cgc/trunk/challenge-sets/cqe/examples/service-template/bin/LUNGE_00001...done.&#x000A;[New LWP 7512]&#x000A;Core was generated by ''.&#x000A;Program terminated with signal 11, Segmentation fault.&#x000A;#0  0x08048205 in main () at src/service.c:28&#x000A;28              p[0] = 10;&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="using-gdb-to-attach-to-a-running-process">Using GDB to attach to a running process</h2>
+          
+          <p>Locate the PID of the already running process.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ ps -ef | grep LUNGE_00001&#x000A;root      7621  7586  0 03:53 pts/0    00:00:00 [LUNGE_00001]&#x000A;</code></pre>
+          </div>
+          
+          <p>Then use GDB to attach to the process</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ gdb&#x000A;GNU gdb (GDB) 7.4.1&#x000A;...&#x000A;(gdb) attach 7621&#x000A;Attaching to process 7621&#x000A;Reading symbols from bin/LUNGE_00001...done.&#x000A;0x080480c6 in receive ()&#x000A;</code></pre>
+          </div>
+          
+          <p>Similarly, GDB can attach to processes launched via the cb-server as long as <code class="highlighter-rouge">--debug</code> is added to the command line as to disable the internal ptracing of CBs.  In this example, port <code class="highlighter-rouge">5555</code> is specified.  Note, the CB timeout should be set to an exceedingly long time for debugging purposes. In this example, a full year has been specified.  <code class="highlighter-rouge">netstat</code> can be used to verify the CB is listening.</p>
+          
+          <p>console 1:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ cb-server -t 31536000 -p 5555 --insecure -d bin --debug LUNGE_00001&#x000A;</code></pre>
+          </div>
+          
+          <p>console 2:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ netstat -ano | grep 5555&#x000A;tcp        0      0 0.0.0.0:5555            0.0.0.0:*               LISTEN      off (0.00/0/0)&#x000A;$ nc localhost 5555&#x000A;This implements a simple echo service&#x000A;</code></pre>
+          </div>
+          
+          <p>console 3:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ ps -ef | grep LUNGE_00001&#x000A;vagrant   7653  3356  0 04:02 pts/0    00:00:00 cb-server -t 5000 -p 5555 --insecure -d /tmp/test LUNGE_00001&#x000A;vagrant   7657  7653  0 04:04 pts/0    00:00:00 [LUNGE_00001]&#x000A;$ gdb&#x000A;GNU gdb (GDB) 7.4.1&#x000A;...&#x000A;(gdb) attach 7657&#x000A;Attaching to process 7657&#x000A;Reading symbols from /tmp/test/LUNGE_00001...done.&#x000A;0x080480c6 in receive ()&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="debugging-a-cfe-pov">Debugging a CFE POV</h2>
+          
+          <p>Launch the challenge binary without timing out the CB:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ cb-server -d bin CADET_00003 --insecure -p 5535 -t 0&#x000A;</code></pre>
+          </div>
+          
+          <p>In another terminal, launch the POV with the</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ cb-replay-pov --host 127.0.0.1 --port 5535 pov/pov_1.pov --attach_port 2601&#x000A;</code></pre>
+          </div>
+          
+          <p>In another terminal, launch gdb and issue the command <code class="highlighter-rouge">target :remote 2601</code></p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ gdb -q pov/pov_1.pov&#x000A;(gdb) target remote :2601&#x000A;Remote debugging using :2601&#x000A;Remote debugging using :2601&#x000A;Reading symbols from /lib/i386-linux-gnu/libpthread.so.0...(no debugging symbols found)...done.&#x000A;Reading symbols from /lib/i386-linux-gnu/libdl.so.2...(no debugging symbols found)...done.&#x000A;Reading symbols from /lib/i386-linux-gnu/libutil.so.1...(no debugging symbols found)...done.&#x000A;Reading symbols from /lib/i386-linux-gnu/libz.so.1...(no debugging symbols found)...done.&#x000A;Reading symbols from /lib/i386-linux-gnu/libm.so.6...(no debugging symbols found)...done.&#x000A;Reading symbols from /lib/i386-linux-gnu/libc.so.6...(no debugging symbols found)...done.&#x000A;Reading symbols from /lib/i386-linux-gnu/libgcc_s.so.1...(no debugging symbols found)...done.&#x000A;Reading symbols from /lib/ld-linux.so.2...(no debugging symbols found)...done.&#x000A;Reading symbols from /usr/lib/python2.7/lib-dynload/_multiprocessing.so...(no debugging symbols found)...done.&#x000A;Reading symbols from /usr/lib/python2.7/lib-dynload/_hashlib.so...(no debugging symbols found)...done.&#x000A;Reading symbols from /usr/lib/i386-linux-gnu/i686/cmov/libssl.so.1.0.0...(no debugging symbols found)...done.&#x000A;Reading symbols from /usr/lib/i386-linux-gnu/i686/cmov/libcrypto.so.1.0.0...(no debugging symbols found)...done.&#x000A;Reading symbols from /usr/lib/python2.7/lib-dynload/_ssl.so...(no debugging symbols found)...done.&#x000A;0xb768267e in open () from /lib/i386-linux-gnu/libc.so.6&#x000A;(gdb)&#x000A;</code></pre>
+          </div>
+          
+          <p>At this point, <code class="highlighter-rouge">cb-replay-pov</code> was waiting for <code class="highlighter-rouge">gdb</code> to attach to the process.  Use <code class="highlighter-rouge">c</code> to continue once.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>(gdb) c&#x000A;Continuing.&#x000A;&#x000A;Program received signal SIGTRAP, Trace/breakpoint trap.&#x000A;0x080487a3 in _start ()&#x000A;(gdb)&#x000A;</code></pre>
+          </div>
+          
+          <p>At this point, the POV has been loaded, but execution has not begun.  You can debug the POV from here.</p>
+          
+          <h2 id="see-also">SEE ALSO</h2>
+          
+          <p>For information regarding the building a CB, see the <a href="/cgc-release-documentation/walk-throughs/building-a-cb/">building-a-cb.md</a> walk-through</p>
+          
+          <p>For information regarding using the cb-server, see <a href="/service-launcher/cb-server/">man cb-server(1)</a></p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id='impressum'>Published by Legitimate Business Syndicate</div>
+      <div id='timestamp'>Built at 2016-05-20T17:40:31Z</div>
+      <div>
+        <ul>
+          <li><a href="https://legitbs.net">Homepage</a></li>
+          <li><a href="https://twitter.com/legitbs_ctf">Twitter</a></li>
+          <li><a href="https://github.com/legitbs">GitHub</a></li>
+          <li><a href="https://github.com/legitbs/cgc-docs">This repo</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../../assets/javascripts/application.js"></script>
+  </body>
+</html>

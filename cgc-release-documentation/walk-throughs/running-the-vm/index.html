@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Running the Virtual Machine</title>
+    <link href="../../../assets/stylesheets/application.css" rel="stylesheet" />
+  </head>
+  <body class='cgc-release-documentation cgc-release-documentation_walk-throughs cgc-release-documentation_walk-throughs_running-the-vm cgc-release-documentation_walk-throughs_running-the-vm_index'>
+    <div id='container'>
+      <div id='nav_col'>
+        <div id='logo'>
+          <a href='/'>
+            CGC Docs, published by Legitimate Business Syndicate
+          </a>
+        </div>
+        <div id='nav'>
+          <ul>
+            <li>
+              <a href='/'>CGC Docs</a>
+            </li>
+            <li class='hdr'>Event-FAQ</li>
+            <li>
+              <a href='/Event-FAQ/event_faq/'>Event FAQ</a>
+            </li>
+            <li class='hdr'>cb-testing</li>
+            <li>
+              <a href='/cb-testing/cb-acceptance/'>cb-acceptance</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay/'>cb-replay</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay-pov/'>cb-replay-pov</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-test/'>cb-test</a>
+            </li>
+            <li>
+              <a href='/cb-testing/poll-validate/'>poll-validate</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/newsletter</li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ipc/'>News Letter 1: IPC</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/cpp/'>News Letter 2: C++</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ctf/'>News Letter 3: CTF</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/template/'>News Letter X: Template</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/walk-throughs</li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/building-a-cb/'>Building a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/cgc-repository/'>CGC Repositories</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/debugging-a-cb/'>Debugging a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/pin-for-decree/'>Running Intel PIN on DECREE Challenge Binaries</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/running-the-vm/'>Running the Virtual Machine</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/scoring-cbs/'>Scoring a Challenge Binary Set</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/submitting-a-cb/'>Submitting a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/testing-a-cb/'>Testing a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-poll-generators/'>Understanding Poll Generators</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-cfe-povs/'>Understanding Proofs of Vulnerability in CFE</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/using-the-network-appliance/'>Using the Network Appliance</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/virtual-competiton/'>Virtual Competition</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/ptrace-for-decree/'>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</a>
+            </li>
+            <li class='hdr'>cgc2elf</li>
+            <li>
+              <a href='/cgc2elf/cgc2elf/'>cgc2elf</a>
+            </li>
+            <li class='hdr'>cgcef-verify</li>
+            <li>
+              <a href='/cgcef-verify/cgcef_verify/'>cgcef_verify</a>
+            </li>
+            <li class='hdr'>libcgc</li>
+            <li>
+              <a href='/libcgc/allocate/'>allocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/cgcabi/'>CGC ABI</a>
+            </li>
+            <li>
+              <a href='/libcgc/deallocate/'>deallocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/fdwait/'>fdwait</a>
+            </li>
+            <li>
+              <a href='/libcgc/random/'>random</a>
+            </li>
+            <li>
+              <a href='/libcgc/receive/'>receive</a>
+            </li>
+            <li>
+              <a href='/libcgc/terminate/'>_terminate</a>
+            </li>
+            <li>
+              <a href='/libcgc/transmit/'>transmit</a>
+            </li>
+            <li class='hdr'>libcgcef</li>
+            <li>
+              <a href='/libcgcef/cgc_executable_format/'>CGC Executable Format</a>
+            </li>
+            <li class='hdr'>libpov</li>
+            <li>
+              <a href='/libpov/libpov/'>libpov</a>
+            </li>
+            <li>
+              <a href='/libpov/type1_negotiate/'>type1_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_negotiate/'>type2_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_submit/'>type2_submit</a>
+            </li>
+            <li class='hdr'>network-appliance</li>
+            <li>
+              <a href='/network-appliance/cb-packet-log/'>cb-packet-log</a>
+            </li>
+            <li>
+              <a href='/network-appliance/cb-proxy/'>cb-proxy</a>
+            </li>
+            <li>
+              <a href='/network-appliance/verify-rules/'>verify-rules</a>
+            </li>
+            <li class='hdr'>poll-generator</li>
+            <li>
+              <a href='/poll-generator/generate-polls/'>generate-polls</a>
+            </li>
+            <li class='hdr'>pov-xml2c</li>
+            <li>
+              <a href='/pov-xml2c/pov-xml2c/'>pov-xml2c</a>
+            </li>
+            <li class='hdr'>service-launcher</li>
+            <li>
+              <a href='/service-launcher/cb-server/'>cb-server</a>
+            </li>
+            <li class='hdr'>virtual-competition</li>
+            <li>
+              <a href='/virtual-competition/ti-client/'>ti-client</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-rotate/'>ti-rotate</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-server/'>ti-server</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id='main_col'>
+        <div id='title'>
+          <h1>Running the Virtual Machine</h1>
+        </div>
+        <div id='content'>
+          <p>This walk-through will guide you through the process of using Vagrant to automatically download, provision and run the development and testing VM.</p>
+          
+          <h2 id="basic-background-information">Basic Background Information</h2>
+          
+          <h3 id="vagrant">Vagrant</h3>
+          
+          <p><a href="http://www.vagrantup.com" title="Vagrant">Vagrant</a> is a tool for automating the process of distributing, setting up (provisioning) and tearing down virtual machine images. The basic idea is for the cgc-team to make updates to a single master or base virtual machine image (known as a <em>box</em> in Vagrant parlance) and let Vagrant handle the task of downloading the box (if it hasn't already been downloaded,) cloning it (so that the original box remains unaltered) and then provisioning the clone (we will call this a VM) for use by the end user. All of this is configured in <em>Vagrantfile</em> script, which we will discuss next.</p>
+          
+          <p>The reader is welcomed to visit the <a href="http://docs.vagrantup.com" title="Vagrant Docs">Vagrant documentation</a> page for more detailed information. This guide is based on that one.</p>
+          
+          <h3 id="cgc-linux-dev">cgc-linux-dev</h3>
+          
+          <p>The development VM is known as <em>cgc-linux-dev</em> and the corresponding Vagrantfile configuration script is located at <a href="http://repo.cybergrandchallenge.com/boxes/Vagrantfile">http://repo.cybergrandchallenge.com/boxes/Vagrantfile</a></p>
+          
+          <h2 id="the-basics">The Basics</h2>
+          
+          <h3 id="getting-started">Getting started</h3>
+          
+          <p>Getting started is extremely simple, just download the Vagrant script and issue the <em>vagrant up</em> command. Some sample output can be seen below:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir cgc&#x000A;$ cd cgc&#x000A;$ wget http://repo.cybergrandchallenge.com/boxes/Vagrantfile&#x000A;$ vagrant up&#x000A;Bringing machine 'default' up with 'virtualbox' provider...&#x000A;==&gt; default: Box 'cgc-linux-dev' could not be found. Attempting to find and install...&#x000A;    default: Box Provider: virtualbox&#x000A;    default: Box Version: &gt;= 0&#x000A;==&gt; default: Adding box 'cgc-linux-dev' (v0) for provider: virtualbox&#x000A;    default: Downloading: http://repo.cybergrandchallenge.com/boxes/cgc-linux-dev.box&#x000A;==&gt; default: Successfully added box 'cgc-linux-dev' (v0) for 'virtualbox'!&#x000A;==&gt; default: Importing base box 'cgc-linux-dev'...&#x000A;==&gt; default: Matching MAC address for NAT networking...&#x000A;==&gt; default: Setting the name of the VM: provision-images_default_1399661463923_1981&#x000A;==&gt; default: Clearing any previously set network interfaces...&#x000A;==&gt; default: Preparing network interfaces based on configuration...&#x000A;    default: Adapter 1: nat&#x000A;==&gt; default: Forwarding ports...&#x000A;    default: 22 =&gt; 2222 (adapter 1)&#x000A;==&gt; default: Running 'pre-boot' VM customizations...&#x000A;==&gt; default: Booting VM...&#x000A;==&gt; default: Waiting for machine to boot. This may take a few minutes...&#x000A;    default: SSH address: 127.0.0.1:2222&#x000A;    default: SSH username: vagrant&#x000A;    default: SSH auth method: private key&#x000A;    default: Warning: Connection timeout. Retrying...&#x000A;==&gt; default: Machine booted and ready!&#x000A;==&gt; default: Checking for guest additions in VM...&#x000A;==&gt; default: Mounting shared folders...&#x000A;    default: /vagrant =&gt; /private/tmp/cgc&#x000A;==&gt; default: Running provisioner: file...&#x000A;==&gt; default: Running provisioner: file...&#x000A;==&gt; default: Running provisioner: shell...&#x000A;    default: Running: inline script&#x000A;==&gt; default: Running provisioner: shell...&#x000A;    default: Running: inline script&#x000A;</code></pre>
+          </div>
+          
+          <p>The output shows how vagrant detects that the <code class="highlighter-rouge">cgc-linux-dev</code> box does not yet exist and so retrieves it from the cgc server. After the download has completed, vagrant then goes about cloning the virtual machine, provisioning it and then starting it. After the machine has been started, it will then wait until <em>ssh</em> is up and running in the VM at which time the VM is ready to use.</p>
+          
+          <p>Once the VM is up and running, the <em>vagrant ssh</em> can be used to ssh into the VM. Once inside the VM, the user should see that the main configuration files (e.g. <code class="highlighter-rouge">.profile</code>) have been copied over from the host.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ vagrant ssh&#x000A;Linux cgc-linux-packer 3.13.2-cgc #1 Fri May 2 18:20:50 UTC 2014 i686&#x000A;&#x000A;The programs included with the Debian GNU/Linux system are free software;&#x000A;the exact distribution terms for each program are described in the&#x000A;individual files in /usr/share/doc/*/copyright.&#x000A;&#x000A;Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent&#x000A;permitted by applicable law.&#x000A;Last login: XXXXXXXXXXXXXXXXXXXXXXXXXXXX &#x000A;vagrant@cgc-linux-packer:~$ &#x000A;</code></pre>
+          </div>
+          
+          <h3 id="on-the-vm">On the VM</h3>
+          
+          <p>The CGC Virtual machine has been pre-installed with all of the CGC
+          enabled tools and manual pages.</p>
+          
+          <h4 id="cgc-enabled-tools">CGC Enabled tools</h4>
+          
+          <p>Several build tools have been ported and others written to work on CGC binaries. These include:</p>
+          
+          <ul>
+            <li><code class="highlighter-rouge">binutils</code></li>
+            <li><a href="/cgcef-verify/cgcef_verify/"><code class="highlighter-rouge">cgcef-verify</code></a></li>
+            <li><code class="highlighter-rouge">libcgcef</code></li>
+            <li><code class="highlighter-rouge">readcgcef</code></li>
+          </ul>
+          
+          <p>More information is provided in the <a href="/cgc-release-documentation/walk-throughs/debugging-a-cb/">Debugging a Challenge Binary</a> and the <a href="/cgc-release-documentation/walk-throughs/testing-a-cb/">Testing a Challenge Binary</a> walk-throughs.</p>
+          
+          <h4 id="man-pages-of-interest">Man pages of interest</h4>
+          
+          <ul>
+            <li><a href="/libcgc/cgcabi/"><code class="highlighter-rouge">cgcabi</code></a></li>
+            <li><a href="/libcgcef/cgc_executable_format/"><code class="highlighter-rouge">cgc_executable_format</code></a></li>
+          </ul>
+          
+          <h4 id="system-calls">System Calls</h4>
+          
+          <ul>
+            <li><a href="/libcgc/terminate/"><code class="highlighter-rouge">_terminate</code></a></li>
+            <li><a href="/libcgc/transmit/"><code class="highlighter-rouge">transmit</code></a></li>
+            <li><a href="/libcgc/receive/"><code class="highlighter-rouge">receive</code></a></li>
+            <li><a href="/libcgc/fdwait/"><code class="highlighter-rouge">fdwait</code></a></li>
+            <li><a href="/libcgc/allocate/"><code class="highlighter-rouge">allocate</code></a></li>
+            <li><a href="/libcgc/deallocate/"><code class="highlighter-rouge">deallocate</code></a></li>
+            <li><a href="/libcgc/random/"><code class="highlighter-rouge">random</code></a></li>
+          </ul>
+          
+          <h3 id="sharing-files">Sharing Files</h3>
+          
+          <p>Vagrant automatically sets up a shared folder for convenience. In cgc-linux-dev, the <code class="highlighter-rouge">/vagrant</code> in the VM is <em>linked</em> directly to the directory where the <code class="highlighter-rouge">Vagrantfile</code> is located. This means that changes made to the directory or its files in the host are directly visible in the VM and vice versa. This is extremely useful since vagrant relies on ssh connections to the VM instead of a graphical UI. Thus, with direct sharing, one can simply edit the files from the host (e.g. using a graphical editor).</p>
+          
+          <p><strong>WARNING:</strong> Don't forget that the Vagrantfile directory on the host <em>is</em> the <code class="highlighter-rouge">/vagrant</code> directory in the VM.</p>
+          
+          <h3 id="pausingstopping-the-vm">Pausing/Stopping the VM</h3>
+          
+          <p>One of the first things you can do with a VM is to suspend it with <code class="highlighter-rouge">vagrant suspend</code>. This will save the current runtime state of the VM into the file system so you can restore it later. To restore the state, simply run <code class="highlighter-rouge">vagrant up</code> again.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ vagrant suspend&#x000A;==&gt; default: Saving VM state and suspending execution...&#x000A;&#x000A;$ vagrant up&#x000A;Bringing machine 'default' up with 'virtualbox' provider...&#x000A;==&gt; default: Resuming suspended VM...&#x000A;==&gt; default: Booting VM...&#x000A;==&gt; default: Waiting for machine to boot. This may take a few minutes...&#x000A;    default: SSH address: 127.0.0.1:2222&#x000A;    default: SSH username: vagrant&#x000A;    default: SSH auth method: private key&#x000A;    default: Warning: Connection refused. Retrying...&#x000A;==&gt; default: Machine booted and ready!&#x000A;</code></pre>
+          </div>
+          
+          <p>Use the <code class="highlighter-rouge">vagrant halt</code> command to shutdown or halt the machine. Once again, <code class="highlighter-rouge">vagrant up</code> can be used to bring the machine back up and running.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ vagrant halt&#x000A;==&gt; default: Attempting graceful shutdown of VM...&#x000A;</code></pre>
+          </div>
+          
+          <p><strong>WARNING:</strong> All open connections will be closed when you suspend or halt the VM. Thus, make sure all of your progress is saved prior to issuing those commands.</p>
+          
+          <h3 id="updated-vms">Updated VMs</h3>
+          
+          <p>The CGC team will periodically update the cgc-linux-dev virtual machine. Vagrant will automatically fetch an updated VM on the next <code class="highlighter-rouge">vagrant up</code> after the user removes the old VM.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ vagrant halt -f&#x000A;==&gt; default: Forcing shutdown of VM...&#x000A;$ vagrant destroy&#x000A;    default: Are you sure you want to destroy the 'default' VM? [y/N] y&#x000A;==&gt; default: Destroying VM and associated drives...&#x000A;==&gt; default: Running cleanup tasks for 'file' provisioner...&#x000A;==&gt; default: Running cleanup tasks for 'file' provisioner...&#x000A;==&gt; default: Running cleanup tasks for 'shell' provisioner...&#x000A;==&gt; default: Running cleanup tasks for 'shell' provisioner...&#x000A;$ vagrant box remove cgc-linux-dev&#x000A;Removing box 'cgc-linux-dev' (v0) with provider 'virtualbox'...&#x000A;$ vagrant up&#x000A;</code></pre>
+          </div>
+          
+          <p>The <code class="highlighter-rouge">vagrant destroy -f</code> command can be used to bypass the prompt should the user wish to script this process.</p>
+          
+          <h2 id="miscellaneous">Miscellaneous</h2>
+          
+          <h3 id="user-config-files">User config files</h3>
+          
+          <p>In order to provide a consistent user environment, <code class="highlighter-rouge">.profile</code>, <code class="highlighter-rouge">.bashrc</code>, <code class="highlighter-rouge">.vimrc</code>, etc. are copied from the current user's home directory on the host into the vagrant user's home directory within the VM.</p>
+          
+          <h3 id="running-the-vm-without-vagrant">Running the VM without Vagrant</h3>
+          
+          <p>While Vagrant is the preferred way to run the virtual machines, it is possible for the user to use another virtualizaton suite aside from VirtualBox (which is what Vagrant uses). The provisioned VM images can be found inside the <code class="highlighter-rouge">~/VirtualBox VMs</code> directory (you can also browse for it using the "Oracle VM VirtualBox Manager".) For example you might see a directory called <code class="highlighter-rouge">provision-images_default_1234567890_12345</code> which will contain the <code class="highlighter-rouge">.vmdk</code> disk image as well as the <code class="highlighter-rouge">.vbox</code> configuration file. The <code class="highlighter-rouge">.vmdk</code> image can be imported into VMware for example; just keep in mind that the shared folders might not exist.</p>
+          
+          <p>The VirtualBox image itself can be downloaded from <a href="http://repo.cybergrandchallenge.com/boxes/cgc-linux-dev.box">http://repo.cybergrandchallenge.com/boxes/cgc-linux-dev.box</a></p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id='impressum'>Published by Legitimate Business Syndicate</div>
+      <div id='timestamp'>Built at 2016-05-20T17:40:31Z</div>
+      <div>
+        <ul>
+          <li><a href="https://legitbs.net">Homepage</a></li>
+          <li><a href="https://twitter.com/legitbs_ctf">Twitter</a></li>
+          <li><a href="https://github.com/legitbs">GitHub</a></li>
+          <li><a href="https://github.com/legitbs/cgc-docs">This repo</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../../assets/javascripts/application.js"></script>
+  </body>
+</html>

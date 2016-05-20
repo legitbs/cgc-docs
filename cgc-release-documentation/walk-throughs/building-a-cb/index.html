@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Building a Challenge Binary</title>
+    <link href="../../../assets/stylesheets/application.css" rel="stylesheet" />
+  </head>
+  <body class='cgc-release-documentation cgc-release-documentation_walk-throughs cgc-release-documentation_walk-throughs_building-a-cb cgc-release-documentation_walk-throughs_building-a-cb_index'>
+    <div id='container'>
+      <div id='nav_col'>
+        <div id='logo'>
+          <a href='/'>
+            CGC Docs, published by Legitimate Business Syndicate
+          </a>
+        </div>
+        <div id='nav'>
+          <ul>
+            <li>
+              <a href='/'>CGC Docs</a>
+            </li>
+            <li class='hdr'>Event-FAQ</li>
+            <li>
+              <a href='/Event-FAQ/event_faq/'>Event FAQ</a>
+            </li>
+            <li class='hdr'>cb-testing</li>
+            <li>
+              <a href='/cb-testing/cb-acceptance/'>cb-acceptance</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay/'>cb-replay</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay-pov/'>cb-replay-pov</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-test/'>cb-test</a>
+            </li>
+            <li>
+              <a href='/cb-testing/poll-validate/'>poll-validate</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/newsletter</li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ipc/'>News Letter 1: IPC</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/cpp/'>News Letter 2: C++</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ctf/'>News Letter 3: CTF</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/template/'>News Letter X: Template</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/walk-throughs</li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/building-a-cb/'>Building a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/cgc-repository/'>CGC Repositories</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/debugging-a-cb/'>Debugging a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/pin-for-decree/'>Running Intel PIN on DECREE Challenge Binaries</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/running-the-vm/'>Running the Virtual Machine</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/scoring-cbs/'>Scoring a Challenge Binary Set</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/submitting-a-cb/'>Submitting a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/testing-a-cb/'>Testing a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-poll-generators/'>Understanding Poll Generators</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-cfe-povs/'>Understanding Proofs of Vulnerability in CFE</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/using-the-network-appliance/'>Using the Network Appliance</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/virtual-competiton/'>Virtual Competition</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/ptrace-for-decree/'>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</a>
+            </li>
+            <li class='hdr'>cgc2elf</li>
+            <li>
+              <a href='/cgc2elf/cgc2elf/'>cgc2elf</a>
+            </li>
+            <li class='hdr'>cgcef-verify</li>
+            <li>
+              <a href='/cgcef-verify/cgcef_verify/'>cgcef_verify</a>
+            </li>
+            <li class='hdr'>libcgc</li>
+            <li>
+              <a href='/libcgc/allocate/'>allocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/cgcabi/'>CGC ABI</a>
+            </li>
+            <li>
+              <a href='/libcgc/deallocate/'>deallocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/fdwait/'>fdwait</a>
+            </li>
+            <li>
+              <a href='/libcgc/random/'>random</a>
+            </li>
+            <li>
+              <a href='/libcgc/receive/'>receive</a>
+            </li>
+            <li>
+              <a href='/libcgc/terminate/'>_terminate</a>
+            </li>
+            <li>
+              <a href='/libcgc/transmit/'>transmit</a>
+            </li>
+            <li class='hdr'>libcgcef</li>
+            <li>
+              <a href='/libcgcef/cgc_executable_format/'>CGC Executable Format</a>
+            </li>
+            <li class='hdr'>libpov</li>
+            <li>
+              <a href='/libpov/libpov/'>libpov</a>
+            </li>
+            <li>
+              <a href='/libpov/type1_negotiate/'>type1_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_negotiate/'>type2_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_submit/'>type2_submit</a>
+            </li>
+            <li class='hdr'>network-appliance</li>
+            <li>
+              <a href='/network-appliance/cb-packet-log/'>cb-packet-log</a>
+            </li>
+            <li>
+              <a href='/network-appliance/cb-proxy/'>cb-proxy</a>
+            </li>
+            <li>
+              <a href='/network-appliance/verify-rules/'>verify-rules</a>
+            </li>
+            <li class='hdr'>poll-generator</li>
+            <li>
+              <a href='/poll-generator/generate-polls/'>generate-polls</a>
+            </li>
+            <li class='hdr'>pov-xml2c</li>
+            <li>
+              <a href='/pov-xml2c/pov-xml2c/'>pov-xml2c</a>
+            </li>
+            <li class='hdr'>service-launcher</li>
+            <li>
+              <a href='/service-launcher/cb-server/'>cb-server</a>
+            </li>
+            <li class='hdr'>virtual-competition</li>
+            <li>
+              <a href='/virtual-competition/ti-client/'>ti-client</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-rotate/'>ti-rotate</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-server/'>ti-server</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id='main_col'>
+        <div id='title'>
+          <h1>Building a Challenge Binary</h1>
+        </div>
+        <div id='content'>
+          <p>This walk-through will guide you through building a challenge binary.</p>
+          
+          <p>All challenge binaries should derive from the service template found in on the
+          CGC VM at <code class="highlighter-rouge">/usr/share/cgc-cb/templates/service-template</code>. Begin by making a copy
+          of this directory.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ cp -r /usr/share/cgc-sample-challenges/templates/service-template/ /vagrant/my-cb&#x000A;$ cd /vagrant/my-cb&#x000A;</code></pre>
+          </div>
+          
+          <p>The <code class="highlighter-rouge">Makefile</code> included in the service-template is already configured to work properly within the CGC development virtual machine. The only changes that are required in the <code class="highlighter-rouge">Makefile</code> are to edit the first three lines to replace the <code class="highlighter-rouge">AUTHOR_ID</code>, <code class="highlighter-rouge">SERVICE_ID</code>, and <code class="highlighter-rouge">TCP_PORT</code> with values specific to your new binary. For example</p>
+          
+          <div class="language-make highlighter-rouge"><pre class="highlight"><code><span class="nv">AUTHOR_ID</span>  <span class="o">=</span> LUNGE&#x000A;<span class="nv">SERVICE_ID</span> <span class="o">=</span> 00001&#x000A;<span class="nv">TCP_PORT</span>   <span class="o">=</span> 10000&#x000A;</code></pre>
+          </div>
+          
+          <p>might become</p>
+          
+          <div class="language-make highlighter-rouge"><pre class="highlight"><code><span class="nv">AUTHOR_ID</span>  <span class="o">=</span> DDTEK&#x000A;<span class="nv">SERVICE_ID</span> <span class="o">=</span> 00005&#x000A;<span class="nv">TCP_PORT</span>   <span class="o">=</span> 31336&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="adding-source-files">Adding source files</h2>
+          
+          <p>The Makefile is pre-configured to compile all .c files found in both the src and lib sub directories. These directories are also added to the include file path to locate any .h header files that are part of the challenge binary. The recommended division of files is to place boiler plate code such as system call wrappers and standard library functions into the lib directory and files that implement service specific behaviors, including any vulnerabilities, into the src directory.</p>
+          
+          <h2 id="patchedn-macros">PATCHED_<n> macros</n></h2>
+          
+          <p>Authors must facilitate creation of both a vulnerable and patched version of the
+          CB. The distinction between the vulnerable and not vulnerable version is
+          identified by one or more instances of a preprocessor directive
+          <code class="highlighter-rouge">#ifdef PATCHED_&lt;n&gt;</code> where the <code class="highlighter-rouge">&lt;n&gt;</code> is the PoV number (beginning with 1),
+          followed by an optional <code class="highlighter-rouge">#else</code> and <code class="highlighter-rouge">#endif</code>. The purpose of this
+          differentiation is to allow the visualization framework to automatically
+          distinguish between PoVs. Patched CBs must be <em>not</em> be vulnerable to
+          associated PoVs.</p>
+          
+          <p>The Make process will create both an unpatched, vulnerable binary and a patched,
+          secure binary from a single set of source files.  When building the patched,
+          secure CB, the <code class="highlighter-rouge">PATCHED_&lt;n&gt;</code> macros will be defined.  When building the
+          vulnerable, for-release CB, the <code class="highlighter-rouge">PATCHED_&lt;n&gt;</code> macros will not be defined.  CB
+          authors must test if the <code class="highlighter-rouge">PATCHED_&lt;n&gt;</code> macros are defined to determine which
+          code should be included in a given build. Simple examples of the use of these
+          macros are shown here</p>
+          
+          <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#ifdef PATCHED_1&#x000A;</span>   <span class="n">fgets</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">),</span> <span class="n">stdin</span><span class="p">);</span>&#x000A;<span class="cp">#endif&#x000A;</span>&#x000A;<span class="cp">#ifndef PATCHED_1&#x000A;</span>   <span class="n">gets</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>&#x000A;<span class="cp">#endif&#x000A;</span>&#x000A;<span class="cp">#ifdef PATCHED_2&#x000A;</span>   <span class="c1">//perform some checks that ensure a vulnerability can not be triggered below&#x000A;</span><span class="cp">#endif&#x000A;</span></code></pre>
+          </div>
+          
+          <h2 id="service-pollers">Service Pollers</h2>
+          
+          <p>All challenge binaries must include a service poller generator specification
+          designed to exercise the normal functionality of the challenge binary. Pollers
+          must be designated as "for-release" (<code class="highlighter-rouge">poller/for-release</code> directory) for CFE
+          there is no "for-testing" distinction. Note that both the unpatched and patched
+          challenge binary must pass all provided service polls.</p>
+          
+          <p>A poll generator must be capable of generating at least 1,000,000 unique service polls. All service polls must conform to replay.dtd. NOTE: <code class="highlighter-rouge">replay.dtd</code> differs from <code class="highlighter-rouge">cfe-pov.dtd</code> primarily in that <code class="highlighter-rouge">cfe-pov.dtd</code> requires a negotiate element and supports submitting Type 2 PoV results.</p>
+          
+          <h2 id="proofs-of-vulnerability">Proofs of Vulnerability</h2>
+          
+          <p>All challenge binaries must include at least one proof of vulnerability (PoV) for each vulnerability contained in the CB. Each PoV must demonstrate that a Type 1 or Type 2 vulnerability may be triggered in a deterministic manner. If a CB contains more than one injected flaw, then PoVs that trigger each flaw must be provided.</p>
+          
+          <p>XML PoVs conforming to to cfe-pov.dtd must be placed in the pov subdirectory. Source code for binary PoVs must be placed in <code class="highlighter-rouge">pov_&lt;n&gt;</code> directories (numbered from <code class="highlighter-rouge">n = 1</code>). Refer to <a href="/cgc-release-documentation/walk-throughs/submitting-a-cb/">submitting-a-cb.md</a> for PoV naming conventions.</p>
+          
+          <h2 id="building-the-challenge-binaries">Building the challenge binaries</h2>
+          
+          <p>The default (all) target in the <code class="highlighter-rouge">Makefile</code> will cause the <code class="highlighter-rouge">build</code>, <code class="highlighter-rouge">test</code>, and <code class="highlighter-rouge">package</code> targets to be built. The <code class="highlighter-rouge">build</code> target will compile and link both a patched and an unpatched version of the CB, placing the <code class="highlighter-rouge">bin</code> directory (which is created if missing). The <code class="highlighter-rouge">test</code> target will invoke the <a href="/cb-testing/cb-replay/"><code class="highlighter-rouge">cb-replay</code></a> utility once for each service poller and once for each pov. In order to successfully build the <code class="highlighter-rouge">test</code> target, the patched and unpatched binaries must successfully pass all service polls, the unpatched CB must generate a core file when replayed with each pov, and the patched binary must not generate a core file when replayed with each pov.  Additionally, the <code class="highlighter-rouge">test</code> target will cause network traffic to be captured for a replay of any poller in the for-release directory. All generated <code class="highlighter-rouge">pcap</code> files will be placed into a <code class="highlighter-rouge">pcap</code> directory (which is created if missing).</p>
+          
+          <p>The provided <code class="highlighter-rouge">Makefile</code> is properly configured to utilize the CGC specific tool chain. CGC tool chain items intended to be specifically used with CBs can be found in standard cross-build locations for <code class="highlighter-rouge">i386-linux-cgc</code>.  Specifically:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>/usr/i386-linux-cgc/bin/&#x000A;/usr/bin/i386-linux-cgc-*&#x000A;</code></pre>
+          </div>
+          
+          <p>When wishing to use these tools, you must specify the full path to the tool, use the 'long name' for the specific tool in <code class="highlighter-rouge">/usr/bin</code>, or prepend the <code class="highlighter-rouge">/usr/i386-linux-cgc/bin</code> directory to your path. For instance, <code class="highlighter-rouge">objdump</code> can be used in these ways.</p>
+          
+          <p>The full path for either location of <code class="highlighter-rouge">objdump</code>:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ /usr/bin/i386-linux-cgc-objdump -f bin/DDTEK_00005&#x000A;$ /usr/i386-linux-cgc/bin/objdump -f bin/DDTEK_00005&#x000A;</code></pre>
+          </div>
+          
+          <p>Using the 'long name' which, because it is in <code class="highlighter-rouge">/usr/bin</code>, is already in <code class="highlighter-rouge">PATH</code>:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ i386-linux-cgc-objdump -f bin/DDTEK_00005&#x000A;</code></pre>
+          </div>
+          
+          <p>Prepending the location of the <code class="highlighter-rouge">i386-linux-cgc</code> tools to <code class="highlighter-rouge">PATH</code>:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>$ which objdump&#x000A;/usr/bin/objdump&#x000A;$ PATH=/usr/i386-linux-cgc/bin:$PATH&#x000A;$ which objdump&#x000A;/usr/i386-linux-cgc/bin/objdump&#x000A;$ objdump -f bin/DDTEK_00005&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="see-also">SEE ALSO</h2>
+          
+          <p>For information regarding the testing a CB, see <a href="/cgc-release-documentation/walk-throughs/testing-a-cb/">testing-a-cb.md</a></p>
+          
+          <p>For information regarding the debugging a CB, see <a href="/cgc-release-documentation/walk-throughs/debugging-a-cb/">debugging-a-cb.md</a></p>
+          
+          <p>For information regarding submitting a CB, see <a href="/cgc-release-documentation/walk-throughs/submitting-a-cb/">submitting-a-cb.md</a></p>
+          
+          <p>For information regarding automated generation of polls, see <a href="/cgc-release-documentation/walk-throughs/understanding-poll-generators/">understanding-poll-generators.md</a></p>
+          
+          <p>For information regarding using the cb-server, see <a href="/service-launcher/cb-server/">man cb-server</a>(1)</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id='impressum'>Published by Legitimate Business Syndicate</div>
+      <div id='timestamp'>Built at 2016-05-20T17:40:30Z</div>
+      <div>
+        <ul>
+          <li><a href="https://legitbs.net">Homepage</a></li>
+          <li><a href="https://twitter.com/legitbs_ctf">Twitter</a></li>
+          <li><a href="https://github.com/legitbs">GitHub</a></li>
+          <li><a href="https://github.com/legitbs/cgc-docs">This repo</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../../assets/javascripts/application.js"></script>
+  </body>
+</html>

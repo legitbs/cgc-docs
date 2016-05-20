@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>CGC ABI</title>
+    <link href="../../assets/stylesheets/application.css" rel="stylesheet" />
+  </head>
+  <body class='libcgc libcgc_cgcabi libcgc_cgcabi_index'>
+    <div id='container'>
+      <div id='nav_col'>
+        <div id='logo'>
+          <a href='/'>
+            CGC Docs, published by Legitimate Business Syndicate
+          </a>
+        </div>
+        <div id='nav'>
+          <ul>
+            <li>
+              <a href='/'>CGC Docs</a>
+            </li>
+            <li class='hdr'>Event-FAQ</li>
+            <li>
+              <a href='/Event-FAQ/event_faq/'>Event FAQ</a>
+            </li>
+            <li class='hdr'>cb-testing</li>
+            <li>
+              <a href='/cb-testing/cb-acceptance/'>cb-acceptance</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay/'>cb-replay</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay-pov/'>cb-replay-pov</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-test/'>cb-test</a>
+            </li>
+            <li>
+              <a href='/cb-testing/poll-validate/'>poll-validate</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/newsletter</li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ipc/'>News Letter 1: IPC</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/cpp/'>News Letter 2: C++</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ctf/'>News Letter 3: CTF</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/template/'>News Letter X: Template</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/walk-throughs</li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/building-a-cb/'>Building a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/cgc-repository/'>CGC Repositories</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/debugging-a-cb/'>Debugging a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/pin-for-decree/'>Running Intel PIN on DECREE Challenge Binaries</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/running-the-vm/'>Running the Virtual Machine</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/scoring-cbs/'>Scoring a Challenge Binary Set</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/submitting-a-cb/'>Submitting a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/testing-a-cb/'>Testing a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-poll-generators/'>Understanding Poll Generators</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-cfe-povs/'>Understanding Proofs of Vulnerability in CFE</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/using-the-network-appliance/'>Using the Network Appliance</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/virtual-competiton/'>Virtual Competition</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/ptrace-for-decree/'>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</a>
+            </li>
+            <li class='hdr'>cgc2elf</li>
+            <li>
+              <a href='/cgc2elf/cgc2elf/'>cgc2elf</a>
+            </li>
+            <li class='hdr'>cgcef-verify</li>
+            <li>
+              <a href='/cgcef-verify/cgcef_verify/'>cgcef_verify</a>
+            </li>
+            <li class='hdr'>libcgc</li>
+            <li>
+              <a href='/libcgc/allocate/'>allocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/cgcabi/'>CGC ABI</a>
+            </li>
+            <li>
+              <a href='/libcgc/deallocate/'>deallocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/fdwait/'>fdwait</a>
+            </li>
+            <li>
+              <a href='/libcgc/random/'>random</a>
+            </li>
+            <li>
+              <a href='/libcgc/receive/'>receive</a>
+            </li>
+            <li>
+              <a href='/libcgc/terminate/'>_terminate</a>
+            </li>
+            <li>
+              <a href='/libcgc/transmit/'>transmit</a>
+            </li>
+            <li class='hdr'>libcgcef</li>
+            <li>
+              <a href='/libcgcef/cgc_executable_format/'>CGC Executable Format</a>
+            </li>
+            <li class='hdr'>libpov</li>
+            <li>
+              <a href='/libpov/libpov/'>libpov</a>
+            </li>
+            <li>
+              <a href='/libpov/type1_negotiate/'>type1_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_negotiate/'>type2_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_submit/'>type2_submit</a>
+            </li>
+            <li class='hdr'>network-appliance</li>
+            <li>
+              <a href='/network-appliance/cb-packet-log/'>cb-packet-log</a>
+            </li>
+            <li>
+              <a href='/network-appliance/cb-proxy/'>cb-proxy</a>
+            </li>
+            <li>
+              <a href='/network-appliance/verify-rules/'>verify-rules</a>
+            </li>
+            <li class='hdr'>poll-generator</li>
+            <li>
+              <a href='/poll-generator/generate-polls/'>generate-polls</a>
+            </li>
+            <li class='hdr'>pov-xml2c</li>
+            <li>
+              <a href='/pov-xml2c/pov-xml2c/'>pov-xml2c</a>
+            </li>
+            <li class='hdr'>service-launcher</li>
+            <li>
+              <a href='/service-launcher/cb-server/'>cb-server</a>
+            </li>
+            <li class='hdr'>virtual-competition</li>
+            <li>
+              <a href='/virtual-competition/ti-client/'>ti-client</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-rotate/'>ti-rotate</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-server/'>ti-server</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id='main_col'>
+        <div id='title'>
+          <h1>CGC ABI</h1>
+        </div>
+        <div id='content'>
+          <h1 id="name">NAME</h1>
+          <p>CGCABI - CGC Application Binary Interface</p>
+          
+          <h1 id="synopsis">SYNOPSIS</h1>
+          <p>#include &lt;libcgc.h&gt;</p>
+          
+          <h1 id="description">DESCRIPTION</h1>
+          
+          <p>This document details the Application Binary Interface (ABI) interface
+          used by to CGC Challenge binaries to access system calls and the initial
+          state of registers when a binary is loaded.</p>
+          
+          <p>The ABI and system calls have been designed to create a minimal number of
+          system entry points that allows for the creation of CGC Challenge Binaries
+          that reflect real world services and allow authors to inject memory corruption
+          vulnerabilities consistent with the stated goals of the CGC program.</p>
+          
+          <p>Challenge binaries are run in an Intel 32bit Architecture (IA32) protected
+          mode, flat memory model execution environment.</p>
+          
+          <h1 id="system-calls">System Calls</h1>
+          
+          <p>The following system calls may be present in a CGC binary execution
+          environment. With few exceptions, these system calls adhere to the POSIX
+          semantics associated with each corresponding system call as implemented on
+          the Linux operating system.  Each system call below is fully described in its
+          own manual page.</p>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="/libcgc/terminate/"><code class="highlighter-rouge">_terminate</code></a></td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td><a href="/libcgc/transmit/"><code class="highlighter-rouge">transmit</code></a></td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td><a href="/libcgc/receive/"><code class="highlighter-rouge">receive</code></a></td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td><a href="/libcgc/fdwait/"><code class="highlighter-rouge">fdwait</code></a></td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td><a href="/libcgc/allocate/"><code class="highlighter-rouge">allocate</code></a></td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td><a href="/libcgc/deallocate/"><code class="highlighter-rouge">deallocate</code></a></td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td><a href="/libcgc/random/"><code class="highlighter-rouge">random</code></a></td>
+                <td>7</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <p>A prototype for each system call is given in <code class="highlighter-rouge">libcgc.h</code> and a reference
+          implementation can be found in <code class="highlighter-rouge">libcgc.a</code>.</p>
+          
+          <h1 id="system-call-abi">System Call ABI</h1>
+          
+          <p>The CGC application binary interface is specific to compatible x86-32 bit
+          CGC execution environments.  In order to invoke a CGC system call, the
+          system call number must be placed in the eax register. Arguments to a
+          system call function are passed via registers ebx, ecx, edx, esi, edi,
+          and ebp as summarized in the following table:</p>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Register</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code class="highlighter-rouge">eax</code></td>
+                <td>Contains system call number</td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">ebx</code></td>
+                <td>First argument to function</td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">ecx</code></td>
+                <td>Second argument to function (if required)</td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">edx</code></td>
+                <td>Third argument to function (if required)</td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">esi</code></td>
+                <td>Fourth argument to function (if required)</td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">edi</code></td>
+                <td>Fifth argument to function (if required)</td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">ebp</code></td>
+                <td>Sixth argument to function (if required)</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <p>Invocation of a system call function is accomplished through the use of
+          the <code class="highlighter-rouge">int 0x80</code> instruction. All system calls that return, return a
+          status code in the eax register. A zero status indicates a successful
+          system call. A non-zero status indicates an error and the specific
+          error number is contained in the <code class="highlighter-rouge">eax</code> register. For system calls that
+          return a value, the return value is provided to the caller via a caller
+          supplied pointer parameter. See descriptions of individual system calls
+          for more detailed information on both status codes and required
+          parameters. If <code class="highlighter-rouge">eax</code> contains an invalid system call number upon entry to
+          the kernel, the status <code class="highlighter-rouge">ENOSYS</code> shall be returned.</p>
+          
+          <h1 id="invalid-instructions">Invalid Instructions</h1>
+          
+          <p>The following instructions have undefined behavior if used in a CGC
+          Challenge Binary: <code class="highlighter-rouge">rdpmc</code>, <code class="highlighter-rouge">rdrand</code>, <code class="highlighter-rouge">rdtsc</code>, and <code class="highlighter-rouge">rdtscp</code>, and <code class="highlighter-rouge">sysenter</code>.</p>
+          
+          <h1 id="signals">Signals</h1>
+          
+          <p>Traditional POSIX signals are not supported by CGC Challenge Binaries.
+          A CB process receiving a signal is killed by the kernel and a <code class="highlighter-rouge">core</code>
+          file may be produced. An exception to this rule is <code class="highlighter-rouge">SIGPIPE</code>. Normally,
+          <code class="highlighter-rouge">SIGPIPE</code> sent to a process kills the process. A <code class="highlighter-rouge">SIGPIPE</code> results in a
+          system call returning <code class="highlighter-rouge">EPIPE</code>.</p>
+          
+          <h1 id="constants--defines">Constants / Defines</h1>
+          
+          <p>Several constants, structures, and macros are defined in <code class="highlighter-rouge">libcgc.h</code>
+          for use by CBs. The definitions of these symbols may not be the
+          same as the host operating system.</p>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Symbol</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code class="highlighter-rouge">EBADF</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">EFAULT</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">EINVAL</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">ENOMEM</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">ENOSYS</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">EPIPE</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">FD_CLR</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">FD_ISSET</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">_fd_mask</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">fd_set</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">FD_SET</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">FD_SETSIZE</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">FD_ZERO</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">_NFDBITS</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">NULL</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">SIZE_MAX</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">size_t</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">SSIZE_MAX</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">ssize_t</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">STDERR</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">STDIN</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">STDOUT</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">timeval</code></td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <h1 id="initial-state">Initial State</h1>
+          
+          <p>The initial state of the various processor and coprocessor registers are
+          given below.</p>
+          
+          <h2 id="initial-general-purpose-register-state">Initial General Purpose Register State</h2>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Register</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code class="highlighter-rouge">EAX</code></td>
+                <td><code class="highlighter-rouge">0</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">EBX</code></td>
+                <td><code class="highlighter-rouge">0</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">ECX</code></td>
+                <td>The <code class="highlighter-rouge">ECX</code> register contains a pointer to a page-aligned address filled with random data.  The special flag page is read-only and it is not permitted to be deallocated.</td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">EDX</code></td>
+                <td><code class="highlighter-rouge">0</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">EDI</code></td>
+                <td><code class="highlighter-rouge">0</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">ESI</code></td>
+                <td><code class="highlighter-rouge">0</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">ESP</code></td>
+                <td><code class="highlighter-rouge">0xbaaaaffc</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">EBP</code></td>
+                <td><code class="highlighter-rouge">0</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">EIP</code></td>
+                <td><code class="highlighter-rouge">EIP</code> is set to the value of `c_entry" specified in the header of the CGC binary being loaded.</td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">EFLAGS</code></td>
+                <td><code class="highlighter-rouge">0x202</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">CS</code></td>
+                <td>The values of the segment registers are not specified; however, the <code class="highlighter-rouge">CS</code>, <code class="highlighter-rouge">DS</code>, and <code class="highlighter-rouge">SS</code> registers will be set to correctly execute the <code class="highlighter-rouge">CB</code> and <code class="highlighter-rouge">DS = ES = FS = GS = SS</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">DS</code></td>
+                <td>The values of the segment registers are not specified; however, the <code class="highlighter-rouge">CS</code>, <code class="highlighter-rouge">DS</code>, and <code class="highlighter-rouge">SS</code> registers will be set to correctly execute the <code class="highlighter-rouge">CB</code> and <code class="highlighter-rouge">DS = ES = FS = GS = SS</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">ES</code></td>
+                <td><code class="highlighter-rouge">DS</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">FS</code></td>
+                <td><code class="highlighter-rouge">DS</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">GS</code></td>
+                <td><code class="highlighter-rouge">DS</code></td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">SS</code></td>
+                <td><code class="highlighter-rouge">DS</code></td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <p>The value of the <code class="highlighter-rouge">EFLAGS</code> register means that interrupts are enabled
+          (bit 9 set).  Bit 1 is always set.</p>
+          
+          <h2 id="initial-floating-point-unit-register-state">Initial Floating Point Unit Register State</h2>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Register</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Control</td>
+                <td>0x037f</td>
+              </tr>
+              <tr>
+                <td>Status</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Tag</td>
+                <td>0xffff</td>
+              </tr>
+              <tr>
+                <td>Opcode</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Instruction Pointer</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Data Pointer</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">R0</code>, <code class="highlighter-rouge">R1</code>, <code class="highlighter-rouge">R2</code>, <code class="highlighter-rouge">R3</code></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><code class="highlighter-rouge">R4</code>, <code class="highlighter-rouge">R5</code>, <code class="highlighter-rouge">R6</code>, <code class="highlighter-rouge">R7</code></td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <p>The Control register value is decoded as follows:</p>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Bits</th>
+                <th>Value</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>rounding control</td>
+                <td>0</td>
+                <td>round closes to infinitely precise result, if equal, round to even least significant bit</td>
+              </tr>
+              <tr>
+                <td>precision control</td>
+                <td>3</td>
+                <td>double extended precision</td>
+              </tr>
+              <tr>
+                <td>all exceptions</td>
+                <td>0</td>
+                <td>masked</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <p>The tag register encoding just states that all fpu stack positions are
+          empty (b'11 for all eight registers).</p>
+          
+          <h2 id="initial-mmx-register-state">Initial MMX register state</h2>
+          
+          <p>The initial MMX register state is the same as the state of FPU since
+          the registers are aliased to the same storage.</p>
+          
+          <h2 id="initial-xmm-register-state-sse">Initial XMM Register State (SSE)</h2>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Register</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>MXCSR</td>
+                <td>0x1f80</td>
+              </tr>
+              <tr>
+                <td>XMM0 … XMM15</td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <p>The MXCSR is decoded as follows:
+          flush to zero: disabled,
+          rounding control = 0 (same as FPU, above),
+          all exceptions masked,
+          no exceptions currently flagged</p>
+          
+          <h1 id="memory-layout">Memory Layout</h1>
+          
+          <p>When a CB is loaded, the <code class="highlighter-rouge">PT_LOAD</code> sections of the binary describe the
+          layout of the binary in the 32bit virtual address space.  The permissions
+          of pages loaded by the binary are as specified (all pages are readable,
+          but may also be executable and/or writeable).</p>
+          
+          <p>An initial stack is allocated for the process beginning from 0xbaaaaffc
+          and going down.  Stack pages are automatically allocated by the kernel
+          on behalf of the process.  All stack pages are readable, writable, and
+          executable.  Processes are allowed a maximum stack size of 8MB.</p>
+          
+          <p>The data segment (program text section, readonly section, bss, and
+          read/write section), is limited to 1GB. This does not include memory
+          allocated by the <a href="/libcgc/allocate/"><code class="highlighter-rouge">allocate(2)</code></a> system call.</p>
+          
+          <p>There is no equivalent of <code class="highlighter-rouge">argc</code>, <code class="highlighter-rouge">argv</code>, <code class="highlighter-rouge">envp</code> normally provided by the
+          kernel to a process. The stack region is filled with zeroes as it
+          is allocated and when execution begins at <code class="highlighter-rouge">%eip, (%esp) = 0</code>.</p>
+          
+          <h1 id="math-functions">Math Functions</h1>
+          
+          <p>The CGC library contains definitions for a variety of math functions
+          for which acceleration is available on the processor but would require
+          assembly language to access.  Those functions are as follows.</p>
+          
+          <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/* sine(x), where x is in radians */</span>&#x000A;<span class="kt">float</span> <span class="n">sinf</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">sin</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">sinl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* cosine(x), where x is in radians */</span>&#x000A;<span class="kt">float</span> <span class="n">cosf</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">cos</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">cosl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* tangent(x), where x is in radians */</span>&#x000A;<span class="kt">float</span> <span class="n">tanf</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">tan</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">tanl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* arctangent(y, x): arctangent of y/x in radians */</span>&#x000A;<span class="kt">float</span> <span class="n">atan2f</span><span class="p">(</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">atan2</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">atan2l</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* square root */</span>&#x000A;<span class="kt">float</span> <span class="n">sqrtf</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">sqrt</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">sqrtl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* round to integral value */</span>&#x000A;<span class="kt">float</span> <span class="n">rintf</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">rint</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">rintl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* absolute value */</span>&#x000A;<span class="kt">float</span> <span class="n">fabsf</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">fabs</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">fabsl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* remainder(x,y): returns r = x - n * y where */</span>&#x000A;<span class="cm">/* n is the integer closest to x/y */</span>&#x000A;<span class="kt">float</span> <span class="n">remainderf</span><span class="p">(</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">remainder</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">remainderl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* scalbn(x,y): scale x by power of 2**y: x * (2**y) */</span>&#x000A;<span class="kt">float</span> <span class="n">scalbnf</span><span class="p">(</span><span class="kt">float</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">scalbn</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">scalbnl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>&#x000A;<span class="kt">float</span> <span class="n">scalblnf</span><span class="p">(</span><span class="kt">float</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">int</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">scalbln</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">int</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">scalblnl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">int</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* significand(x): mantissa of x */</span>&#x000A;<span class="kt">float</span> <span class="n">significandf</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">significand</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">significandl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* base 2 logarithm */</span>&#x000A;<span class="kt">float</span> <span class="n">log2f</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">log2</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">log2l</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* natural logarithm */</span>&#x000A;<span class="kt">float</span> <span class="n">logf</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">log</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">logl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* base 10 logarithm */</span>&#x000A;<span class="kt">float</span> <span class="n">log10f</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">log10</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">log10l</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* base 2 exponential */</span>&#x000A;<span class="kt">float</span> <span class="n">exp2f</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">exp2</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">exp2l</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* natural (base e) exponential */</span>&#x000A;<span class="kt">float</span> <span class="n">expf</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">exp</span><span class="p">(</span><span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">expl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;&#x000A;<span class="cm">/* pow(x,y) = x**y */</span>&#x000A;<span class="kt">float</span> <span class="n">powf</span><span class="p">(</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">);</span>&#x000A;<span class="kt">double</span> <span class="n">pow</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="p">);</span>&#x000A;<span class="kt">long</span> <span class="kt">double</span> <span class="n">powl</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">double</span><span class="p">);</span>&#x000A;</code></pre>
+          </div>
+          
+          <h1 id="other-functions">Other Functions</h1>
+          
+          <p>In addition to the system calls and math functions, two additional
+          functions are provided by the CGC ABI: <code class="highlighter-rouge">setjmp()</code> and <code class="highlighter-rouge">longjmp()</code>. These
+          functions allow for saving processor state and restoring it at some
+          point in the future.  Their behavior is meant to mimic the behavior
+          of these functions available in other operating systems.</p>
+          
+          <h1 id="caveats">CAVEATS</h1>
+          
+          <p>The <code class="highlighter-rouge">pow()</code> functions are not conformant with C99.  For instance,
+          they return <code class="highlighter-rouge">NaN</code> for infinite exponents and for finite negative
+          bases with finite integer exponents.</p>
+          
+          <h1 id="see-also">SEE ALSO</h1>
+          
+          <p><a href="/libcgc/allocate/">allocate(2)</a>,
+          <a href="/libcgc/deallocate/">deallocate(2)</a>,
+          <a href="/libcgc/fdwait/">fdwait(2)</a>,
+          <a href="/libcgc/random/">random(2)</a>,
+          <a href="/libcgc/receive/">receive(2)</a>,
+          <a href="/libcgc/terminate/">_terminate(2)</a>,
+          <a href="/libcgc/transmit/">transmit(2)</a>,
+          <a href="/libcgcef/cgcef/">cgc_executable_format(1)</a>,
+          core(5).</p>
+          
+          <h1 id="files">FILES</h1>
+          
+          <p><code class="highlighter-rouge">/usr/include/libcgc.h</code>
+          <code class="highlighter-rouge">/usr/lib/libcgc.a</code></p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id='impressum'>Published by Legitimate Business Syndicate</div>
+      <div id='timestamp'>Built at 2016-05-20T17:40:32Z</div>
+      <div>
+        <ul>
+          <li><a href="https://legitbs.net">Homepage</a></li>
+          <li><a href="https://twitter.com/legitbs_ctf">Twitter</a></li>
+          <li><a href="https://github.com/legitbs">GitHub</a></li>
+          <li><a href="https://github.com/legitbs/cgc-docs">This repo</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../assets/javascripts/application.js"></script>
+  </body>
+</html>

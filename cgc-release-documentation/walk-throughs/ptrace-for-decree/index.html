@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <title>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</title>
+    <link href="../../../assets/stylesheets/application.css" rel="stylesheet" />
+  </head>
+  <body class='cgc-release-documentation cgc-release-documentation_walk-throughs cgc-release-documentation_walk-throughs_ptrace-for-decree cgc-release-documentation_walk-throughs_ptrace-for-decree_index'>
+    <div id='container'>
+      <div id='nav_col'>
+        <div id='logo'>
+          <a href='/'>
+            CGC Docs, published by Legitimate Business Syndicate
+          </a>
+        </div>
+        <div id='nav'>
+          <ul>
+            <li>
+              <a href='/'>CGC Docs</a>
+            </li>
+            <li class='hdr'>Event-FAQ</li>
+            <li>
+              <a href='/Event-FAQ/event_faq/'>Event FAQ</a>
+            </li>
+            <li class='hdr'>cb-testing</li>
+            <li>
+              <a href='/cb-testing/cb-acceptance/'>cb-acceptance</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay/'>cb-replay</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-replay-pov/'>cb-replay-pov</a>
+            </li>
+            <li>
+              <a href='/cb-testing/cb-test/'>cb-test</a>
+            </li>
+            <li>
+              <a href='/cb-testing/poll-validate/'>poll-validate</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/newsletter</li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ipc/'>News Letter 1: IPC</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/cpp/'>News Letter 2: C++</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/ctf/'>News Letter 3: CTF</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/newsletter/template/'>News Letter X: Template</a>
+            </li>
+            <li class='hdr'>cgc-release-documentation/walk-throughs</li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/building-a-cb/'>Building a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/cgc-repository/'>CGC Repositories</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/debugging-a-cb/'>Debugging a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/pin-for-decree/'>Running Intel PIN on DECREE Challenge Binaries</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/running-the-vm/'>Running the Virtual Machine</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/scoring-cbs/'>Scoring a Challenge Binary Set</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/submitting-a-cb/'>Submitting a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/testing-a-cb/'>Testing a Challenge Binary</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-poll-generators/'>Understanding Poll Generators</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/understanding-cfe-povs/'>Understanding Proofs of Vulnerability in CFE</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/using-the-network-appliance/'>Using the Network Appliance</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/virtual-competiton/'>Virtual Competition</a>
+            </li>
+            <li>
+              <a href='/cgc-release-documentation/walk-throughs/ptrace-for-decree/'>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</a>
+            </li>
+            <li class='hdr'>cgc2elf</li>
+            <li>
+              <a href='/cgc2elf/cgc2elf/'>cgc2elf</a>
+            </li>
+            <li class='hdr'>cgcef-verify</li>
+            <li>
+              <a href='/cgcef-verify/cgcef_verify/'>cgcef_verify</a>
+            </li>
+            <li class='hdr'>libcgc</li>
+            <li>
+              <a href='/libcgc/allocate/'>allocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/cgcabi/'>CGC ABI</a>
+            </li>
+            <li>
+              <a href='/libcgc/deallocate/'>deallocate</a>
+            </li>
+            <li>
+              <a href='/libcgc/fdwait/'>fdwait</a>
+            </li>
+            <li>
+              <a href='/libcgc/random/'>random</a>
+            </li>
+            <li>
+              <a href='/libcgc/receive/'>receive</a>
+            </li>
+            <li>
+              <a href='/libcgc/terminate/'>_terminate</a>
+            </li>
+            <li>
+              <a href='/libcgc/transmit/'>transmit</a>
+            </li>
+            <li class='hdr'>libcgcef</li>
+            <li>
+              <a href='/libcgcef/cgc_executable_format/'>CGC Executable Format</a>
+            </li>
+            <li class='hdr'>libpov</li>
+            <li>
+              <a href='/libpov/libpov/'>libpov</a>
+            </li>
+            <li>
+              <a href='/libpov/type1_negotiate/'>type1_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_negotiate/'>type2_negotiate</a>
+            </li>
+            <li>
+              <a href='/libpov/type2_submit/'>type2_submit</a>
+            </li>
+            <li class='hdr'>network-appliance</li>
+            <li>
+              <a href='/network-appliance/cb-packet-log/'>cb-packet-log</a>
+            </li>
+            <li>
+              <a href='/network-appliance/cb-proxy/'>cb-proxy</a>
+            </li>
+            <li>
+              <a href='/network-appliance/verify-rules/'>verify-rules</a>
+            </li>
+            <li class='hdr'>poll-generator</li>
+            <li>
+              <a href='/poll-generator/generate-polls/'>generate-polls</a>
+            </li>
+            <li class='hdr'>pov-xml2c</li>
+            <li>
+              <a href='/pov-xml2c/pov-xml2c/'>pov-xml2c</a>
+            </li>
+            <li class='hdr'>service-launcher</li>
+            <li>
+              <a href='/service-launcher/cb-server/'>cb-server</a>
+            </li>
+            <li class='hdr'>virtual-competition</li>
+            <li>
+              <a href='/virtual-competition/ti-client/'>ti-client</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-rotate/'>ti-rotate</a>
+            </li>
+            <li>
+              <a href='/virtual-competition/ti-server/'>ti-server</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id='main_col'>
+        <div id='title'>
+          <h1>Writing an Instruction Tracer for DECREE Challenge Binaries Using ptrace</h1>
+        </div>
+        <div id='content'>
+          <p>This walk-through illustrates how <em>ptrace</em> can be used to obtain a simple instruction trace for DECREE Challenge Binaries. This walk-through is related to the <a href="/cgc-release-documentation/walk-throughs/pin-for-decree/">Running Intel PIN on DECREE Challenge Binaries</a> walk-through and also makes use of the <em>wrapper</em> capability in <a href="/cb-testing/cb-test/"><code class="highlighter-rouge">cb-test</code></a>.</p>
+          
+          <h2 id="prerequisites">Prerequisites</h2>
+          
+          <ol>
+            <li>The latest DECREE virtual machine.</li>
+            <li>The source code at the end of this walk-through</li>
+            <li>A CB to test</li>
+          </ol>
+          
+          <h2 id="ptrace"><code class="highlighter-rouge">ptrace</code></h2>
+          
+          <p><code class="highlighter-rouge">ptrace</code> is a ***nix system call that can be used to trace and debug processes. It is used by debuggers such as <code class="highlighter-rouge">gdb</code>, which is already supported by DECREE. The goal of this walk-through is to illustrate how it can be used to obtain an instruction trace of a DECREE CB. The basic idea behind ptrace is to allow the <em>tracer</em> process to issue different <code class="highlighter-rouge">ptrace</code> syscalls (supported <code class="highlighter-rouge">ptrace</code> operations can be found in the <code class="highlighter-rouge">ptrace</code> manpages,) to start, stop and continue execution of the <em>tracee</em> process as well as analyze and change the tracee state.</p>
+          
+          <p>In this walk-through, we will primarily be using the <code class="highlighter-rouge">PTRACE_SINGLESTEP</code> option, which allows the tracee to execute one single instruction before returning to a <code class="highlighter-rouge">STOPPED</code> state. Once in the <code class="highlighter-rouge">STOPPED</code> state, the tracer can perform its analysis and then allow the tracee to continue execution of another instruction. This process repeats until all instructions are executed, a signal is raised, or ptracing stops.</p>
+          
+          <h2 id="the-instruction-tracer">The instruction tracer</h2>
+          
+          <p>Since this instruction tracer is designed to be used along with the <em>wrapper</em> functionality in <a href="/cb-testing/cb-test/"><code class="highlighter-rouge">cb-test</code></a>, it will only take one single argument - the name of the CB. Additionally, since <code class="highlighter-rouge">cb-test</code> (and <code class="highlighter-rouge">cb-server</code>) expects the wrapper process to still raise <code class="highlighter-rouge">SIGINT</code> and <code class="highlighter-rouge">SIGILL</code> to indicate a successful POV, the tracer process must identify these signals from the tracee process and then kill itself using the same signal. The execution flow of the instruction tracer is as follows:</p>
+          
+          <ol>
+            <li>
+              <p>The instruction tracer will receive the name of the CB to execute as the first and only argument.</p>
+            </li>
+            <li>
+              <p>The tracer will set a default log filename by appending ".log" to the end of the CB name.</p>
+            </li>
+            <li>
+              <p>The tracer will then fork itself.</p>
+            </li>
+            <li>
+              <p>The child process will be used to execute the CB while the parent process will be used to trace the CB. This is a standard tracing configuration where the parent process is the tracer and the child process is the tracee. In this design, the first thing that a child process does is to call ptrace with the <em>PTRACE_TRACEME</em> request to indicate that it is ready for tracing (i.e., it is now a tracee). Once that call is completed, the child will proceed to call <em>execve</em> to execute the desired CB.</p>
+          
+              <div class="highlighter-rouge"><pre class="highlight"><code> //Child says trace me please - the other parameters are ignored&#x000A; ptrace(PTRACE_TRACEME, 0, NULL, NULL);&#x000A; execve(child_argv[0], child_argv, NULL);&#x000A;</code></pre>
+              </div>
+            </li>
+            <li>
+              <p>The first thing the parent process does is call ptrace with the <code class="highlighter-rouge">PTRACE_ATTACH</code> request to attach to the waiting child process. This will setup the parent process as the tracer and the child (the one executing the CB) as the tracee. Once ptrace attach is completed, the parent process must now close the <code class="highlighter-rouge">STDIN</code> (0) and <code class="highlighter-rouge">STDOUT</code> (1) file descriptors. This is important since all file descriptors are retained after the call to fork, and cb-test expects <code class="highlighter-rouge">STDIN</code> and <code class="highlighter-rouge">STDOUT</code> to be read from and written to by the CB. Note that more file descriptors can also be used by the CB in the case of IPC challenge binaries, but cb-test (and cb-server) only expects the child to communicate through <code class="highlighter-rouge">STDIN</code> and <code class="highlighter-rouge">STDOUT</code> (<code class="highlighter-rouge">STDERR</code> can also be used).</p>
+          
+              <div class="highlighter-rouge"><pre class="highlight"><code> ptrace(PTRACE_ATTACH, childpid, NULL, NULL);&#x000A; close(0);&#x000A; close(1); &#x000A;</code></pre>
+              </div>
+          
+              <p>Once <code class="highlighter-rouge">STDIN</code> and <code class="highlighter-rouge">STDOUT</code> are closed in the parent, the parent can then proceed to open the log file as well as the CB. Note that we open the files after the call to fork so that the child process will not share this particular file descriptor.</p>
+          
+              <div class="highlighter-rouge"><pre class="highlight"><code> gMsgLog = fopen(msgFilename, "w+");&#x000A;</code></pre>
+              </div>
+          
+              <p>Once the CB has been opened successfully, the parent process simply single steps the child (using the <code class="highlighter-rouge">PTRACE_SINGLESTEP</code> request) and for each instruction (each step): read the child's register values using <code class="highlighter-rouge">PTRACE_GETREGS</code> to obtain the value of the <code class="highlighter-rouge">eip</code> register; retrive 15 bytes of memory from the tracee starting from the program counter using <code class="highlighter-rouge">PTRACE_PEEKTEXT</code>. The value of <code class="highlighter-rouge">eip</code> and the raw bytes are logged to the file.</p>
+          
+              <div class="highlighter-rouge"><pre class="highlight"><code> while (waitpid(childpid, &amp;status, 0) == childpid)&#x000A; {&#x000A;   ...&#x000A;   ptrace(PTRACE_SINGLESTEP, childpid, NULL, NULL);&#x000A; }&#x000A;</code></pre>
+              </div>
+          
+              <p>There are two ways that a tracee can exit. First is a normal exit and second is an exit due to a signal. We detect the first case by checking the status from waitpid using the built-in macros.</p>
+          
+              <div class="highlighter-rouge"><pre class="highlight"><code> if (WIFEXITED(status)) ...&#x000A;</code></pre>
+              </div>
+          
+              <p>Then, for the second case, the signal could have been trapped by the tracer and thus not received by the tracee yet (which is what we expect since we are singlestepping) or the signal was not trapped and was sent to the tracee directly. This latter case can be determined using the <code class="highlighter-rouge">WIFSIGNALED()</code> and <code class="highlighter-rouge">WTERMSIG()</code> macros and the prior case with <code class="highlighter-rouge">WIFSTOPPED()</code> and <code class="highlighter-rouge">WSTOPSIG()</code> macros. In either case we need to check if the signal is either <code class="highlighter-rouge">SIGSEGV</code> or <code class="highlighter-rouge">SIGILL</code> and if so, kill the tracer process using the same signal so cb-test can detect it.</p>
+            </li>
+          </ol>
+          
+          <h2 id="building-and-running-the-instruction-tracer">Building and Running the Instruction Tracer</h2>
+          
+          <p>Building the instruction tracer is straight forward, copy the Makefile and tracer.c source code from the end of this walk-through and issue the make command.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>guest$ mkdir ptracer&#x000A;guest$ cd ptracer&#x000A;guest$ #COPY THE FILES OVER HERE&#x000A;guest$ make&#x000A;</code></pre>
+          </div>
+          
+          <p>We will reuse the same CBs and test POVs from the pin-for-decree walk-through here. The CB is <code class="highlighter-rouge">YAN01_00001</code> and the sample generated poll (<code class="highlighter-rouge">TESTINPUT.xml</code>) is as follows.</p>
+          
+          <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" standalone="no" ?&gt;</span>&#x000A;<span class="cp">&lt;!DOCTYPE pov SYSTEM "/usr/share/cgc-replay/replay.dtd"&gt;</span>&#x000A;<span class="nt">&lt;pov&gt;</span>&#x000A;<span class="nt">&lt;cbid&gt;</span>service<span class="nt">&lt;/cbid&gt;</span>&#x000A;<span class="nt">&lt;replay&gt;</span>&#x000A;    <span class="nt">&lt;read&gt;&lt;length&gt;</span>10<span class="nt">&lt;/length&gt;&lt;match&gt;&lt;data&gt;</span>Player1:\x24 <span class="nt">&lt;/data&gt;&lt;/match&gt;&lt;/read&gt;</span>&#x000A;    <span class="nt">&lt;write&gt;&lt;data&gt;</span>P4IR2\x0a<span class="nt">&lt;/data&gt;&lt;/write&gt;</span>&#x000A;    <span class="nt">&lt;read&gt;&lt;length&gt;</span>10<span class="nt">&lt;/length&gt;&lt;match&gt;&lt;data&gt;</span>Player2:\x24 <span class="nt">&lt;/data&gt;&lt;/match&gt;&lt;/read&gt;</span>&#x000A;    <span class="nt">&lt;write&gt;&lt;data&gt;</span>E\x0a<span class="nt">&lt;/data&gt;&lt;/write&gt;</span>&#x000A;    <span class="nt">&lt;read&gt;&lt;delim&gt;</span>\x0a<span class="nt">&lt;/delim&gt;&lt;match&gt;&lt;data&gt;</span>You are stuck...\x0a<span class="nt">&lt;/data&gt;&lt;/match&gt;&lt;/read&gt;</span>&#x000A;    <span class="nt">&lt;read&gt;&lt;length&gt;</span>10<span class="nt">&lt;/length&gt;&lt;match&gt;&lt;data&gt;</span>Player2:\x24 <span class="nt">&lt;/data&gt;&lt;/match&gt;&lt;/read&gt;</span>&#x000A;    <span class="nt">&lt;write&gt;&lt;data&gt;</span>N\x0a<span class="nt">&lt;/data&gt;&lt;/write&gt;</span>&#x000A;    <span class="nt">&lt;read&gt;&lt;length&gt;</span>10<span class="nt">&lt;/length&gt;&lt;match&gt;&lt;data&gt;</span>Player1:\x24 <span class="nt">&lt;/data&gt;&lt;/match&gt;&lt;/read&gt;</span>&#x000A;    <span class="nt">&lt;write&gt;&lt;data&gt;</span>S\x0a<span class="nt">&lt;/data&gt;&lt;/write&gt;</span>&#x000A;    <span class="nt">&lt;read&gt;&lt;length&gt;</span>10<span class="nt">&lt;/length&gt;&lt;match&gt;&lt;data&gt;</span>Player1:\x24 <span class="nt">&lt;/data&gt;&lt;/match&gt;&lt;/read&gt;</span>&#x000A;<span class="nt">&lt;/replay&gt;</span>&#x000A;<span class="nt">&lt;/pov&gt;</span>&#x000A;</code></pre>
+          </div>
+          
+          <p>The corresponding input file is:</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>P4IR2&#x000A;E&#x000A;N&#x000A;S&#x000A;</code></pre>
+          </div>
+          
+          <p>Test this by issuing the following commands from within the <code class="highlighter-rouge">YAN01_00001</code> parent directory.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>guest$ echo P4IR2 &gt;&gt; TESTINPUT&#x000A;guest$ echo E &gt;&gt; TESTINPUT&#x000A;guest$ echo N &gt;&gt; TESTINPUT&#x000A;guest$ echo S &gt;&gt; TESTINPUT&#x000A;guest$ /vagrant/ptracer/tracer bin/YAN01_00001 &lt; TESTINPUT&#x000A;Player1:$ Player2:$ You are stuck...&#x000A;Player2:$ Player1:$ Player1:$ ERROR reading from user -- time to die&#x000A;guest$ tail bin/YAN01_00001.log &#x000A;    0804a5de : 81 c4 14 02 00 00 5e 5d c3 66 0f 1f 84 00 00&#x000A;0804a5e4 : 5e 5d c3 66 0f 1f 84 00 00 00 00 00 55 89 e5&#x000A;0804a5e5 : 5d c3 66 0f 1f 84 00 00 00 00 00 55 89 e5 83&#x000A;0804a5e6 : c3 66 0f 1f 84 00 00 00 00 00 55 89 e5 83 ec&#x000A;0804a8ec : 50 e8 00 00 00 00 b8 01 00 00 00 53 8b 5c 24&#x000A;0804a8ed : e8 00 00 00 00 b8 01 00 00 00 53 8b 5c 24 08&#x000A;0804a8f2 : b8 01 00 00 00 53 8b 5c 24 08 cd 80 5b c3 b8&#x000A;0804a8f7 : 53 8b 5c 24 08 cd 80 5b c3 b8 02 00 00 00 53&#x000A;0804a8f8 : 8b 5c 24 08 cd 80 5b c3 b8 02 00 00 00 53 51&#x000A;0804a8fc : cd 80 5b c3 b8 02 00 00 00 53 51 52 56 8b 5c&#x000A;</code></pre>
+          </div>
+          
+          <p>As the instruction log shows, the last thing that <code class="highlighter-rouge">YAN01_00001</code> did is call <code class="highlighter-rouge">_terminate</code> which is <code class="highlighter-rouge">%cd 80</code></p>
+          
+          <p>We can achieve the same thing by using cb-test in wrapper mode.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>guest$ cb-test --directory bin --xml TESTINPUT.xml --wrapper /vagrant/ptracer/tracer --cb YAN01_00001&#x000A;# service - TESTINPUT.xml&#x000A;ok 1 - bytes received&#x000A;ok 2 - match: string&#x000A;ok 3 - write: sent 6 bytes&#x000A;ok 4 - bytes received&#x000A;ok 5 - match: string&#x000A;ok 6 - write: sent 2 bytes&#x000A;ok 7 - match: string&#x000A;ok 8 - bytes received&#x000A;ok 9 - match: string&#x000A;ok 10 - write: sent 2 bytes&#x000A;ok 11 - bytes received&#x000A;ok 12 - match: string&#x000A;ok 13 - write: sent 2 bytes&#x000A;ok 14 - bytes received&#x000A;ok 15 - match: string&#x000A;# passed: 15&#x000A;# failed: 0&#x000A;# total passed: 15&#x000A;# total failed: 0&#x000A;&#x000A;guest$ tail bin/YAN01_00001.log &#x000A;0804a5de : 81 c4 14 02 00 00 5e 5d c3 66 0f 1f 84 00 00&#x000A;0804a5e4 : 5e 5d c3 66 0f 1f 84 00 00 00 00 00 55 89 e5&#x000A;0804a5e5 : 5d c3 66 0f 1f 84 00 00 00 00 00 55 89 e5 83&#x000A;0804a5e6 : c3 66 0f 1f 84 00 00 00 00 00 55 89 e5 83 ec&#x000A;0804a8ec : 50 e8 00 00 00 00 b8 01 00 00 00 53 8b 5c 24&#x000A;0804a8ed : e8 00 00 00 00 b8 01 00 00 00 53 8b 5c 24 08&#x000A;0804a8f2 : b8 01 00 00 00 53 8b 5c 24 08 cd 80 5b c3 b8&#x000A;0804a8f7 : 53 8b 5c 24 08 cd 80 5b c3 b8 02 00 00 00 53&#x000A;0804a8f8 : 8b 5c 24 08 cd 80 5b c3 b8 02 00 00 00 53 51&#x000A;0804a8fc : cd 80 5b c3 b8 02 00 00 00 53 51 52 56 8b 5c&#x000A;</code></pre>
+          </div>
+          
+          <p>We can execute <code class="highlighter-rouge">YAN01_00001</code> using a POV and we see a SIGSEGV as expected.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>guest$ cb-test --directory bin --xml pov/sample_shipgame_pov.xml --wrapper /vagrant/ptracer/tracer --cb YAN01_00001 &#x000A;# sample_shipgame - pov/sample_shipgame_pov.xml&#x000A;ok 1 - slept 0.025000&#x000A;ok 2 - write: sent 532 bytes&#x000A;ok 3 - slept 0.025000&#x000A;# passed: 3&#x000A;# failed: 0&#x000A;# total passed: 3&#x000A;# total failed: 0&#x000A;# core identified&#x000A;# process cored.  (signal 11: SIGSEGV)&#x000A;guest$ tail bin/YAN01_00001.log&#x000A;080481c9 : 3d 45 00 00 00 0f 85 0b 00 00 00 8b 45 f8 c6&#x000A;080481ce : 0f 85 0b 00 00 00 8b 45 f8 c6 00 45 e9 56 00&#x000A;080481df : 0f be 85 f4 fd ff ff 3d 48 00 00 00 0f 85 0b&#x000A;080481e6 : 3d 48 00 00 00 0f 85 0b 00 00 00 8b 45 f8 c6&#x000A;080481eb : 0f 85 0b 00 00 00 8b 45 f8 c6 00 48 e9 34 00&#x000A;080481fc : 0f be 85 f4 fd ff ff 3d 53 00 00 00 0f 85 0b&#x000A;08048203 : 3d 53 00 00 00 0f 85 0b 00 00 00 8b 45 f8 c6&#x000A;08048208 : 0f 85 0b 00 00 00 8b 45 f8 c6 00 53 e9 12 00&#x000A;08048219 : 8b 45 f8 c6 00 55 c7 45 fc ff ff ff ff e9 25&#x000A;0804821c : c6 00 55 c7 45 fc ff ff ff ff e9 25 00 00 00&#x000A;</code></pre>
+          </div>
+          
+          <p>We can also execute the <code class="highlighter-rouge">EAGLE_00004</code> IPC cb using cb-test in wrapper mode.</p>
+          
+          <div class="highlighter-rouge"><pre class="highlight"><code>guest$ cb-test --debug --directory bin --xml poller/for-release/poller-1.xml --wrapper /vagrant/ptracer/tracer --cb EAGLE_00004_1 EAGLE_00004_2 EAGLE_00004_3&#x000A;# EAGLE_00004 - poller/for-release/poller-1.xml&#x000A;ok 1 - write: sent 1905 bytes&#x000A;# received 'OUT: 0x2b15a909\n'&#x000A;ok 2 - match: string&#x000A;# received 'OUT: 0x9c369091\n'&#x000A;ok 3 - match: string&#x000A;# received 'OUT: 0xd1013543\n'&#x000A;...&#x000A;ok 83 - match: string&#x000A;# passed: 83&#x000A;# failed: 0&#x000A;# total passed: 83&#x000A;# total failed: 0&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="source-for-makefile">Source for Makefile</h2>
+          
+          <div class="language-make highlighter-rouge"><pre class="highlight"><code><span class="nv">CC</span><span class="o">=</span>gcc&#x000A;&#x000A;<span class="nv">OBJS</span><span class="o">=</span>tracer.o&#x000A;&#x000A;<span class="nl">%.o</span><span class="o">:</span> <span class="nf">%.c </span>&#x000A;	<span class="nv">$(CC)</span> -g -c <span class="nv">$^</span> -o <span class="nv">$@</span> <span class="nv">$(CFLAGS)</span>&#x000A;&#x000A;<span class="nl">tracer</span><span class="o">:</span> <span class="nf">$(OBJS)</span>&#x000A;	<span class="nv">$(CC)</span> -g <span class="nv">$^</span> -o <span class="nv">$@</span> <span class="nv">$(CFLAGS)</span>&#x000A;&#x000A;<span class="nl">clean</span><span class="o">:</span>&#x000A;	rm -f <span class="k">*</span>.o tracer&#x000A;</code></pre>
+          </div>
+          
+          <h2 id="source-for-tracerc">Source for tracer.c</h2>
+          
+          <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cm">/** CGC Instruction Tracer Example &#x000A; *  @author Lok Yan&#x000A; *  @date 20 Jan 2015&#x000A;**/</span>&#x000A;&#x000A;<span class="cp">#include &lt;sys/ptrace.h&gt;&#x000A;#include &lt;unistd.h&gt;&#x000A;#include &lt;stdio.h&gt;&#x000A;#include &lt;stdlib.h&gt;&#x000A;#include &lt;string.h&gt;&#x000A;#include &lt;sys/user.h&gt;&#x000A;#include &lt;errno.h&gt;&#x000A;#include &lt;signal.h&gt;&#x000A;</span>&#x000A;<span class="k">typedef</span> <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">byte</span><span class="p">;</span>&#x000A;&#x000A;<span class="kt">FILE</span><span class="o">*</span> <span class="n">gMsgLog</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>&#x000A;<span class="n">pid_t</span> <span class="n">gChildPid</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>&#x000A;<span class="kt">int</span> <span class="n">gbAttached</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">cleanup</span><span class="p">()</span>&#x000A;<span class="p">{</span>&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">gMsgLog</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">fflush</span><span class="p">(</span><span class="n">gMsgLog</span><span class="p">);</span>&#x000A;    <span class="n">fclose</span><span class="p">(</span><span class="n">gMsgLog</span><span class="p">);</span>&#x000A;    <span class="n">gMsgLog</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="cm">/**&#x000A; *  A signal handler for flushing the contents and closing out&#x000A; *  the log file.&#x000A; *  NOTE: This is a signal handler for signals that are targetted&#x000A; *    at the tracing (parent) process&#x000A;**/</span>&#x000A;<span class="kt">void</span> <span class="nf">signal_handler</span><span class="p">(</span><span class="kt">int</span> <span class="n">sig</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;&#x000A;  <span class="c1">//SIGALARM is raised when the time for execution is up (set by cb-server)&#x000A;</span>  <span class="c1">//SIGINT is if the user decides to interrupt this process&#x000A;</span>  <span class="c1">//So if the signal is not either of those, then just continue&#x000A;</span>  <span class="k">if</span> <span class="p">(</span><span class="n">sig</span> <span class="o">!=</span> <span class="n">SIGALRM</span> <span class="o">&amp;&amp;</span> <span class="n">sig</span> <span class="o">!=</span> <span class="n">SIGINT</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="k">return</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">gbAttached</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">gChildPid</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">))</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="c1">//kill the child and then cleanup&#x000A;</span>    <span class="n">ptrace</span><span class="p">(</span><span class="n">PTRACE_DETACH</span><span class="p">,</span> <span class="n">gChildPid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>&#x000A;    <span class="n">kill</span><span class="p">(</span><span class="n">gChildPid</span><span class="p">,</span> <span class="n">SIGKILL</span><span class="p">);</span>&#x000A;    <span class="n">gChildPid</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>&#x000A;    <span class="n">gbAttached</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="n">cleanup</span><span class="p">();</span>&#x000A;  <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>  &#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">void</span> <span class="nf">handle_child_signals</span><span class="p">(</span><span class="kt">int</span> <span class="n">sig</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;  <span class="c1">//cb-server uses the following signals to detect&#x000A;</span>  <span class="c1">// a POV and therefore we must replicate them here&#x000A;</span>  <span class="c1">// by killing ourself (the wrapper tracer process)&#x000A;</span>  <span class="c1">// with the same signal&#x000A;</span>&#x000A;  <span class="c1">//SIGSEGV - if the child has segfaulted&#x000A;</span>  <span class="c1">//SIGILL - trying to execute an illegal instruction&#x000A;</span>  <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="n">sig</span> <span class="o">==</span> <span class="n">SIGSEGV</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">sig</span> <span class="o">==</span> <span class="n">SIGILL</span><span class="p">)</span> <span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="c1">//NOTE: If the child has stopped due to signal&#x000A;</span>    <span class="c1">// the signal hasn't actually been delivered to the &#x000A;</span>    <span class="c1">// child yet. The handle_child_signal function should&#x000A;</span>    <span class="c1">// still pass the signal through to the child &#x000A;</span>    <span class="k">if</span> <span class="p">(</span><span class="n">gbAttached</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">gChildPid</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">))</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">ptrace</span><span class="p">(</span><span class="n">PTRACE_DETACH</span><span class="p">,</span> <span class="n">gChildPid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>&#x000A;      <span class="n">kill</span><span class="p">(</span><span class="n">gChildPid</span><span class="p">,</span> <span class="n">sig</span><span class="p">);</span>&#x000A;      <span class="n">gChildPid</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>&#x000A;      <span class="n">gbAttached</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">cleanup</span><span class="p">();</span>&#x000A;&#x000A;    <span class="n">kill</span><span class="p">(</span><span class="n">getpid</span><span class="p">(),</span> <span class="n">sig</span><span class="p">);</span>&#x000A;    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="cm">/** Function to read the next 15 bytes of memory given an address&#x000A; *  There is definitely a problem with over-reading since most&#x000A; *  instructions are not that big.&#x000A;**/</span>&#x000A;<span class="kt">int</span> <span class="nf">getInsn</span><span class="p">(</span><span class="n">byte</span><span class="o">*</span> <span class="n">insn</span><span class="p">,</span> <span class="kt">long</span> <span class="n">pc</span><span class="p">,</span> <span class="n">pid_t</span> <span class="n">pid</span><span class="p">,</span> <span class="kt">int</span> <span class="n">max</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> &#x000A;  <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;  <span class="kt">long</span><span class="o">*</span> <span class="n">insn_l</span> <span class="o">=</span> <span class="p">(</span><span class="kt">long</span><span class="o">*</span><span class="p">)</span><span class="n">insn</span><span class="p">;</span>&#x000A;  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">max</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">),</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">errno</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;    <span class="n">insn_l</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">ptrace</span><span class="p">(</span><span class="n">PTRACE_PEEKTEXT</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">pc</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="n">insn_l</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">errno</span><span class="p">))</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;&#x000A;<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>&#x000A;<span class="p">{</span>&#x000A;  <span class="n">pid_t</span> <span class="n">childpid</span><span class="p">;</span>&#x000A;  <span class="kt">int</span> <span class="n">status</span><span class="p">;</span>&#x000A;  <span class="k">struct</span> <span class="n">user_regs_struct</span> <span class="n">regs</span><span class="p">;</span>&#x000A;  <span class="kt">char</span><span class="o">*</span> <span class="n">child_argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">};</span>&#x000A;  &#x000A;  <span class="n">byte</span> <span class="n">insn</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>&#x000A;&#x000A;  <span class="k">struct</span> <span class="n">sigaction</span> <span class="n">sa</span><span class="p">;</span>&#x000A;  <span class="n">sa</span><span class="p">.</span><span class="n">sa_handler</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">signal_handler</span><span class="p">;</span>&#x000A;  <span class="n">sigemptyset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sa</span><span class="p">.</span><span class="n">sa_mask</span><span class="p">);</span>&#x000A;  <span class="n">sa</span><span class="p">.</span><span class="n">sa_flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;&#x000A;  <span class="kt">char</span><span class="o">*</span> <span class="n">msgFilename</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>&#x000A;&#x000A;  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>&#x000A;  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">"-o"</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">i</span><span class="o">++</span><span class="p">;</span>&#x000A;      <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">)</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">msgFilename</span> <span class="o">=</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>  &#x000A;      <span class="p">}</span>&#x000A;      <span class="k">else</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Error: Filename expected after -o</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> &#x000A;      <span class="p">}</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">strcmp</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">"-cb"</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">i</span><span class="o">++</span><span class="p">;</span>&#x000A;      <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span><span class="p">)</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">child_argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>  &#x000A;      <span class="p">}</span>&#x000A;      <span class="k">else</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Error: Filename expected after -cb</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;        <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> &#x000A;      <span class="p">}</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="k">else</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">child_argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>&#x000A;      <span class="k">break</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">child_argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Error: a CB must be defined</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="c1">//set the default filenames if needed&#x000A;</span>  <span class="k">if</span> <span class="p">(</span><span class="n">msgFilename</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="kt">int</span> <span class="n">childNameLen</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">child_argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>&#x000A;    <span class="n">msgFilename</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)(</span><span class="n">malloc</span><span class="p">(</span><span class="n">childNameLen</span> <span class="o">+</span> <span class="mi">5</span><span class="p">));</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">msgFilename</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Error: Could not allocate space for a filename</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;      <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="n">strcpy</span><span class="p">(</span><span class="n">msgFilename</span><span class="p">,</span> <span class="n">child_argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>&#x000A;    <span class="n">strcpy</span><span class="p">(</span><span class="n">msgFilename</span> <span class="o">+</span> <span class="n">childNameLen</span><span class="p">,</span> <span class="s">".log"</span><span class="p">);</span>&#x000A;  <span class="p">}</span>  &#x000A;&#x000A;  <span class="n">childpid</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>&#x000A; &#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">childpid</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1">//if error&#x000A;</span>  <span class="p">{</span>&#x000A;    <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Unable to fork</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="k">if</span> <span class="p">(</span><span class="n">childpid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="c1">//Child says trace me please - the other parameters are ignored&#x000A;</span>    <span class="n">ptrace</span><span class="p">(</span><span class="n">PTRACE_TRACEME</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>&#x000A;    <span class="n">execve</span><span class="p">(</span><span class="n">child_argv</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">child_argv</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>&#x000A;  <span class="p">}</span>&#x000A;  <span class="k">else</span>&#x000A;  <span class="p">{</span>&#x000A;    <span class="c1">//attach to the child to stop its execution&#x000A;</span>    <span class="n">ptrace</span><span class="p">(</span><span class="n">PTRACE_ATTACH</span><span class="p">,</span> <span class="n">childpid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>&#x000A;    <span class="n">gbAttached</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>&#x000A;    <span class="n">gChildPid</span> <span class="o">=</span> <span class="n">childpid</span><span class="p">;</span>&#x000A;&#x000A;    <span class="c1">//register the signal handler&#x000A;</span>    <span class="k">if</span> <span class="p">(</span><span class="n">sigaction</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sa</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Warning: Could not register the signal handler</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">sigaction</span><span class="p">(</span><span class="n">SIGALRM</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sa</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Warning: Could not register the signal handler</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;&#x000A;    <span class="c1">//close the stdin and stdout fds&#x000A;</span>    <span class="n">close</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>&#x000A;    <span class="n">close</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>    &#x000A;&#x000A;    <span class="c1">//open up the log files&#x000A;</span>    <span class="n">gMsgLog</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">msgFilename</span><span class="p">,</span> <span class="s">"w+"</span><span class="p">);</span>&#x000A;    <span class="k">if</span> <span class="p">(</span><span class="n">gMsgLog</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Error: Could not open %s for writing</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">msgFilename</span><span class="p">);</span>&#x000A;      <span class="k">goto</span> <span class="n">detatch</span><span class="p">;</span>&#x000A;    <span class="p">}</span>&#x000A;&#x000A;    <span class="c1">// Now that everything is setup, we can singlestep the child&#x000A;</span>    <span class="c1">//1. Wait for the child to be ready&#x000A;</span>    <span class="k">while</span> <span class="p">(</span><span class="n">waitpid</span><span class="p">(</span><span class="n">childpid</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">status</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="n">childpid</span><span class="p">)</span>&#x000A;    <span class="p">{</span>&#x000A;      <span class="c1">//if the child has exited then cleanup&#x000A;</span>      <span class="k">if</span> <span class="p">(</span><span class="n">WIFEXITED</span><span class="p">(</span><span class="n">status</span><span class="p">))</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="n">cleanup</span><span class="p">();</span>&#x000A;        <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;     &#x000A;      <span class="c1">//if the child exited due to a signal - we handle&#x000A;</span>      <span class="c1">// the signal just incase we need to kill ourself&#x000A;</span>      <span class="k">if</span> <span class="p">(</span><span class="n">WIFSIGNALED</span><span class="p">(</span><span class="n">status</span><span class="p">))</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="c1">//if the child terminated with a signal - then we should replicate the signal here&#x000A;</span>        <span class="n">handle_child_signals</span><span class="p">(</span><span class="n">WTERMSIG</span><span class="p">(</span><span class="n">status</span><span class="p">));</span>&#x000A;        <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>&#x000A;      <span class="p">}</span>&#x000A;&#x000A;      <span class="c1">//if the child is not stopped then wait until the child&#x000A;</span>      <span class="c1">// is stopped&#x000A;</span>      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">WIFSTOPPED</span><span class="p">(</span><span class="n">status</span><span class="p">))</span>&#x000A;      <span class="p">{</span>&#x000A;        <span class="k">continue</span><span class="p">;</span>&#x000A;      <span class="p">}</span>&#x000A;&#x000A;      <span class="c1">//The child could have stopped due to a signal&#x000A;</span>      <span class="c1">// so handle that possibility&#x000A;</span>      <span class="n">handle_child_signals</span><span class="p">(</span><span class="n">WSTOPSIG</span><span class="p">(</span><span class="n">status</span><span class="p">));</span>&#x000A;      &#x000A;      <span class="c1">//get the CPU state&#x000A;</span>      <span class="n">ptrace</span><span class="p">(</span><span class="n">PTRACE_GETREGS</span><span class="p">,</span> <span class="n">childpid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">regs</span><span class="p">);</span>&#x000A;&#x000A;      <span class="c1">//get a number of bytes (15)&#x000A;</span>      <span class="n">getInsn</span><span class="p">(</span><span class="n">insn</span><span class="p">,</span> <span class="n">regs</span><span class="p">.</span><span class="n">eip</span><span class="p">,</span> <span class="n">childpid</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>&#x000A;      <span class="c1">//we ignore the read errors from ptrace_PEEK at this time&#x000A;</span>&#x000A;      <span class="c1">//print the instruction and the raw bytes&#x000A;</span>      <span class="n">fprintf</span><span class="p">(</span><span class="n">gMsgLog</span><span class="p">,</span> <span class="s">"%08x : %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">regs</span><span class="p">.</span><span class="n">eip</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span>&#x000A;                     <span class="p">,</span> <span class="n">insn</span><span class="p">[</span><span class="mi">14</span><span class="p">]);</span>&#x000A;&#x000A;      <span class="c1">//singlestep the child&#x000A;</span>      <span class="n">ptrace</span><span class="p">(</span><span class="n">PTRACE_SINGLESTEP</span><span class="p">,</span> <span class="n">childpid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>&#x000A;    <span class="p">}</span>&#x000A;&#x000A;    <span class="nl">detatch:</span>&#x000A;    <span class="n">ptrace</span><span class="p">(</span><span class="n">PTRACE_DETACH</span><span class="p">,</span> <span class="n">childpid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>&#x000A;    <span class="n">cleanup</span><span class="p">();</span>&#x000A;  <span class="p">}</span>&#x000A;&#x000A;  <span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>&#x000A;<span class="p">}</span>&#x000A;</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id='impressum'>Published by Legitimate Business Syndicate</div>
+      <div id='timestamp'>Built at 2016-05-20T17:40:31Z</div>
+      <div>
+        <ul>
+          <li><a href="https://legitbs.net">Homepage</a></li>
+          <li><a href="https://twitter.com/legitbs_ctf">Twitter</a></li>
+          <li><a href="https://github.com/legitbs">GitHub</a></li>
+          <li><a href="https://github.com/legitbs/cgc-docs">This repo</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="../../../assets/javascripts/application.js"></script>
+  </body>
+</html>
